@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
 	subsets: ['latin'],
 	variable: '--font-sans',
 })
