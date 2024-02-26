@@ -28,6 +28,7 @@ export function About() {
 									height='1000'
 									width='1000'
 									className='rounded-lg mb-10 object-cover'
+									priority
 								/>
 							)}
 							{item.description}
