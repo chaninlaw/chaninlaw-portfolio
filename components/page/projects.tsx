@@ -15,7 +15,7 @@ export function Projects() {
 						src={'/projects/Vite-React-TS.png'}
 						alt='The JS playground with Markdown editor'
 						width={300}
-						height={200}
+						height={172.5}
 					/>
 				),
 				tags: ['Vite', 'React', 'TypeScript', 'npm package'],
@@ -37,7 +37,7 @@ export function Projects() {
 						src={'/projects/Frontend-Mentor-Pricing-Component-with-toggle.png'}
 						alt='Pricing Component with toggle'
 						width={300}
-						height={200}
+						height={172.5}
 					/>
 				),
 				tags: ['CSS', 'HTML'],
@@ -57,7 +57,7 @@ export function Projects() {
 						src={'/projects/Nin-s-Portfolio.png'}
 						alt='my first portfolio with react'
 						width={300}
-						height={200}
+						height={172.5}
 					/>
 				),
 				tags: ['React', 'Tailwindcss', 'HTML'],
@@ -79,21 +79,21 @@ export function Projects() {
 							src={'/projects/Frontend-Mentor-Space-tourism-website.png'}
 							alt='Space tourism website'
 							width={300}
-							height={200}
+							height={172.5}
 						/>
 						<ImageFallback
 							className='object-contain'
 							src={'/projects/Frontend-Mentor-Space-tourism-website (1).png'}
 							alt='Space tourism website page 2'
 							width={300}
-							height={200}
+							height={172.5}
 						/>
 						<ImageFallback
 							className='object-contain'
 							src={'/projects/Frontend-Mentor-Space-tourism-website (2).png'}
 							alt='Space tourism website page 3'
 							width={300}
-							height={200}
+							height={172.5}
 						/>
 						<ImageFallback
 							className='object-contain'
@@ -171,7 +171,7 @@ export function Projects() {
 							src={'/projects/Dashboard-Todos-App.png'}
 							alt='Dashboard of Todos app'
 							width={300}
-							height={200}
+							height={172.5}
 						/>
 					</div>
 				),
