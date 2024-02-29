@@ -1,8 +1,8 @@
 import { Boxes } from '@/components/ui/background-boxes'
+import Image from 'next/image'
 import { memo } from 'react'
 import { BackgroundGradient } from '../ui/background-gradient'
 import { motion } from 'framer-motion'
-import { ImageFallback } from '../ui/ImageFallback'
 
 function LandingPage() {
 	return (
@@ -17,12 +17,12 @@ function LandingPage() {
 				>
 					<div className='flex relative z-20'>
 						<BackgroundGradient containerClassName='rounded-full'>
-							<ImageFallback
+							<Image
 								className='object-none w-80 h-80 rounded-full object-bottom select-none'
-								src={'/profile.jpg'}
-								alt='profile image'
+								src={'/IMG_0402.jpg'}
 								width={300}
 								height={300}
+								alt='profile image'
 								priority
 							/>
 						</BackgroundGradient>
