@@ -1,5 +1,12 @@
 import { WakatimeResponse } from '@/lib/types'
 import { useEffect, useState } from 'react'
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from '@/components/ui/accordion'
+import { HighlightJS } from '../ui/highlight-js'
 
 export function Skills() {
 	const [data, setData] = useState<WakatimeResponse | undefined>()
@@ -15,12 +22,15 @@ export function Skills() {
 	// }, [])
 
 	return (
-		<div className='h-full w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center'>
-			{/* Radial gradient for the container to give a faded look */}
-			<div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
-			<p className='text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8'>
-				Coming soon
-			</p>
+		<div className='h-full w-full dark:bg-stone-900'>
+			<Accordion type='single' collapsible defaultValue={'item-1'}>
+				<AccordionItem value='item-1' className='border-0'>
+					<AccordionTrigger className='flex justify-start space-x-1 my-1'>
+						<HighlightJS js={`function add( ) {`} />
+					</AccordionTrigger>
+					<AccordionContent></AccordionContent>
+				</AccordionItem>
+			</Accordion>
 		</div>
 	)
 }
