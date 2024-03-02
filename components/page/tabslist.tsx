@@ -13,6 +13,30 @@ export const DEFAULT_TABS = [
 		icon: <VscBrowser />,
 		content: <Landing />,
 	},
+	{
+		name: 'about.tsx',
+		value: 'about',
+		icon: <FaReact className='text-xs text-blue-400' />,
+		content: <About />,
+	},
+	{
+		name: 'skills.tsx',
+		value: 'skills',
+		icon: <FaReact className='text-xs text-blue-400' />,
+		content: <Skills />,
+	},
+	{
+		name: 'projects.tsx',
+		value: 'projects',
+		icon: <FaReact className='text-xs text-blue-400' />,
+		content: <Projects />,
+	},
+	{
+		name: 'contact.tsx',
+		value: 'contact',
+		icon: <FaReact className='text-xs text-blue-400' />,
+		content: <Contact />,
+	},
 ]
 
 export type TabsListValue =

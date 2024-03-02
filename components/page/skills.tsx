@@ -1,12 +1,6 @@
 import { WakatimeResponse } from '@/lib/types'
 import { useEffect, useState } from 'react'
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from '@/components/ui/accordion'
-import { HighlightJS } from '../ui/highlight-js'
+import { Monaco } from '../monaco'
 
 export function Skills() {
 	const [data, setData] = useState<WakatimeResponse | undefined>()
@@ -21,16 +15,13 @@ export function Skills() {
 	// 	fetchSkills()
 	// }, [])
 
+	const value = `
+  
+  `
+
 	return (
 		<div className='h-full w-full dark:bg-stone-900'>
-			<Accordion type='single' collapsible defaultValue={'item-1'}>
-				<AccordionItem value='item-1' className='border-0'>
-					<AccordionTrigger className='flex justify-start space-x-1 my-1'>
-						<HighlightJS js={`function add( ) {`} />
-					</AccordionTrigger>
-					<AccordionContent></AccordionContent>
-				</AccordionItem>
-			</Accordion>
+			<Monaco />
 		</div>
 	)
 }
