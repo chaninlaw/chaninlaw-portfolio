@@ -1,3 +1,5 @@
+'use client'
+
 import { editor } from 'monaco-editor'
 import Editor from '@monaco-editor/react'
 import { useRef } from 'react'
@@ -24,6 +26,17 @@ export const Monaco: React.FC<MonacoProps> = ({
 			defaultLanguage='typescript'
 			defaultValue={value}
 			onMount={handleEditorDidMount}
+			options={{
+				wordWrap: 'on',
+				minimap: { enabled: false },
+				showUnused: false,
+				folding: false,
+				lineNumbersMinChars: 3,
+				// fontSize: 16,
+				scrollBeyondLastLine: false,
+				automaticLayout: true,
+				tabSize: 2,
+			}}
 		/>
 	)
 }

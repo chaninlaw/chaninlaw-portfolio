@@ -1,10 +1,13 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+'use client'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useEditor } from '.'
 import { BsX } from 'react-icons/bs'
-import { type TabsListValue } from '@/components/page/tabslist'
+import { type TabsListValue } from '@/lib/constants'
+import { useRouter } from 'next/navigation'
 
 export function EditorTabs() {
 	const { tabLists, setTabLists, currentTab, setCurrentTab } = useEditor()
+	const router = useRouter()
 	const onDeleteTab = (value: TabsListValue) => {
 		setTabLists((prev) => prev.filter((tab) => tab.value !== value))
 	}
@@ -17,9 +20,10 @@ export function EditorTabs() {
 			<TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background'>
 				{tabLists.map((tab) => (
 					<TabsTrigger
-						className='w-fit h-full flex space-x-1 group'
+						className='w-fit h-full flex space-x-1 group data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent'
 						key={tab.value}
 						value={tab.value}
+						onClick={() => router.push(tab.value)}
 					>
 						<span>{tab.icon}</span>
 						<span>{tab.name}</span>
@@ -30,15 +34,6 @@ export function EditorTabs() {
 					</TabsTrigger>
 				))}
 			</TabsList>
-			{tabLists.map((tab) => (
-				<TabsContent
-					className='m-0 h-[calc(100vh-124px)] overflow-y-scroll scroll-smooth'
-					key={tab.value}
-					value={tab.value}
-				>
-					{tab.content}
-				</TabsContent>
-			))}
 		</Tabs>
 	)
 }

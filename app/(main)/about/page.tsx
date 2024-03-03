@@ -1,18 +1,16 @@
-'use client'
-import React from 'react'
 import { Caladea } from 'next/font/google'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
 
-export function About() {
+export default function AboutPage() {
 	return (
-		<section className='h-full'>
-			<div className='max-w-2xl mx-auto antialiased pt-4 relative'>
+		<section className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
+			<div className='h-full max-w-4xl mx-auto antialiased py-4 relative '>
 				{dummyContent.map((item, index) => (
 					<div key={`content-${index}`} className='mb-10'>
-						<h2 className='bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>
+						<h2 className='bg-transparent text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>
 							{item.badge}
 						</h2>
 

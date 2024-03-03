@@ -1,12 +1,12 @@
 'use client'
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-	const [rows, setRows] = React.useState<any[] | undefined>()
-	const [cols, setCols] = React.useState<any[] | undefined>()
-
+	const rows = new Array(150).fill(1)
+	const cols = new Array(100).fill(1)
 	let colors = [
 		'--sky-300',
 		'--pink-300',
@@ -18,12 +18,6 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 		'--indigo-300',
 		'--violet-300',
 	]
-
-	React.useEffect(() => {
-		setRows(new Array(150).fill(undefined))
-		setCols(new Array(100).fill(undefined))
-	}, [])
-
 	const getRandomColor = () => {
 		return colors[Math.floor(Math.random() * colors.length)]
 	}
@@ -39,12 +33,12 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 			)}
 			{...rest}
 		>
-			{rows?.map((_, i) => (
+			{rows.map((_, i) => (
 				<motion.div
 					key={`row` + i}
 					className='w-16 h-8 border-l border-stone-700 relative'
 				>
-					{cols?.map((_, j) => (
+					{cols.map((_, j) => (
 						<motion.div
 							whileHover={{
 								backgroundColor: `var(${getRandomColor()})`,
@@ -80,4 +74,4 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 	)
 }
 
-export const Boxes = React.memo(BoxesCore)
+export const Boxes = BoxesCore

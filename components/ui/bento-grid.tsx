@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import { InfiniteMovingCards } from './infinite-moving-cards'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
+import React from 'react'
 
 export const BentoGrid = ({
 	className,
@@ -33,7 +34,7 @@ export const BentoGridItem = ({
 	className?: string
 	title?: string | React.ReactNode
 	description?: string | React.ReactNode
-	header?: React.ReactNode
+	header?: React.ReactNode[]
 	tags?: string[]
 	links?: { title: string; href: string }[]
 }) => {
@@ -44,7 +45,11 @@ export const BentoGridItem = ({
 				className
 			)}
 		>
-			<InfiniteMovingCards items={[header]} direction='right' speed='slow' />
+			{header && header?.length > 1 ? (
+				<InfiniteMovingCards items={header} direction='right' speed='slow' />
+			) : (
+				<div className='flex justify-center items-center'>{header}</div>
+			)}
 			<div className='group-hover/bento:translate-x-2 transition duration-200'>
 				{tags?.map((tag) => (
 					<Badge className='mx-1 select-none' key={tag} variant={'outline'}>
