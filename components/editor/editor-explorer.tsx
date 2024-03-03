@@ -1,3 +1,4 @@
+'use client'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { FaReact } from 'react-icons/fa'
 import {
@@ -7,15 +8,15 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion'
 import { useEditor } from '.'
-import {
-	DEAULT_TABS_LIST,
-	type TabsListValue,
-} from '@/components/page/tabslist'
+import { DEAULT_TABS_LIST, type TabsListValue } from '@/lib/constants'
+import { useRouter } from 'next/navigation'
 
 export function EditorExplorer() {
 	const { tabLists, setTabLists, setCurrentTab } = useEditor()
+	const router = useRouter()
 	const onClickOpenEditors = (value: TabsListValue) => {
 		setCurrentTab(value)
+		router.push(value)
 	}
 
 	const onClickAddTab = (tab: (typeof DEAULT_TABS_LIST)[number]) => {
@@ -26,7 +27,9 @@ export function EditorExplorer() {
 			setTabLists((prev) => [...prev, tab])
 		}
 		setCurrentTab(tab.value)
+		router.push(tab.value)
 	}
+
 	return (
 		<div className='w-full h-full border-r border-border text-[10px] tracking-wide flex flex-col justify-between'>
 			<div className='flex flex-col'>

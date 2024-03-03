@@ -1,6 +1,4 @@
-export interface WakatimeResponse {
-	data: WakatimeData
-}
+export interface WakatimeResponse extends WakatimeData {}
 
 interface WakatimeData {
 	id: string

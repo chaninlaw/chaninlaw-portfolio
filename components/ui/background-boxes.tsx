@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -73,4 +74,4 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 	)
 }
 
-export const Boxes = React.memo(BoxesCore)
+export const Boxes = BoxesCore
