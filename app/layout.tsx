@@ -62,7 +62,7 @@ export default function RootLayout({
 										<ResizableHandle />
 										<ResizablePanel defaultSize={85}>
 											<EditorTabs />
-											<main className='min-h-[calc(100vh-128px)] overflow-y-scroll'>
+											<main className='h-[calc(100vh-128px)] overflow-y-scroll'>
 												{children}
 											</main>
 										</ResizablePanel>
