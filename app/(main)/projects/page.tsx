@@ -15,6 +15,8 @@ export default function ProjectsPage() {
 					alt='The JS playground with Markdown editor'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Vite-React-TS.png'
 				/>,
 			],
 			tags: ['Vite', 'React', 'TypeScript', 'npm package'],
@@ -38,6 +40,8 @@ export default function ProjectsPage() {
 					alt='Pricing Component with toggle'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Frontend-Mentor-Pricing-Component-with-toggle.png'
 				/>,
 			],
 			tags: ['CSS', 'HTML'],
@@ -59,6 +63,8 @@ export default function ProjectsPage() {
 					alt='my first portfolio with react'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Nin-s-Portfolio.png'
 				/>,
 			],
 			tags: ['React', 'Tailwindcss', 'HTML'],
@@ -81,6 +87,8 @@ export default function ProjectsPage() {
 					alt='Space tourism website'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Frontend-Mentor-Space-tourism-website.png'
 				/>,
 				<Image
 					key={5}
@@ -89,6 +97,8 @@ export default function ProjectsPage() {
 					alt='Space tourism website page 2'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Frontend-Mentor-Space-tourism-website (1).png'
 				/>,
 				<Image
 					key={6}
@@ -97,6 +107,8 @@ export default function ProjectsPage() {
 					alt='Space tourism website page 3'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Frontend-Mentor-Space-tourism-website (2).png'
 				/>,
 				<Image
 					key={7}
@@ -104,7 +116,9 @@ export default function ProjectsPage() {
 					src={'/projects/Frontend-Mentor-Space-tourism-website (3).png'}
 					alt='Space tourism website page 4'
 					width={300}
-					height={200}
+					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Frontend-Mentor-Space-tourism-website (3).png'
 				/>,
 			],
 			tags: ['React', 'Tailwindcss', 'HTML'],
@@ -126,7 +140,9 @@ export default function ProjectsPage() {
 					src={'/projects/Shortly-URL-shortening.png'}
 					alt='Shortly URL shortening'
 					width={300}
-					height={200}
+					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Shortly-URL-shortening.png'
 				/>,
 			],
 			tags: ['React', 'Typescript', 'Tailwindcss', 'HTML'],
@@ -147,7 +163,9 @@ export default function ProjectsPage() {
 					src={'/projects/Simon.png'}
 					alt='Simon game'
 					width={300}
-					height={200}
+					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Simon.png'
 				/>,
 			],
 			tags: ['Javascript', 'CSS', 'HTML'],
@@ -169,7 +187,9 @@ export default function ProjectsPage() {
 					src={'/projects/Todos-App-Ultimate-Task-Management-Solution.png'}
 					alt='Todos app'
 					width={300}
-					height={200}
+					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Todos-App-Ultimate-Task-Management-Solution.png'
 				/>,
 				<Image
 					key={11}
@@ -178,6 +198,8 @@ export default function ProjectsPage() {
 					alt='Dashboard of Todos app'
 					width={300}
 					height={172.5}
+					placeholder='blur'
+					blurDataURL='/projects/Dashboard-Todos-App.png'
 				/>,
 			],
 			tags: ['NextJS', 'Next auth', 'Tailwindcss', 'Next UI'],

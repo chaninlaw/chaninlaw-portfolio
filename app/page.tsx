@@ -18,11 +18,12 @@ export default function Home() {
 						<BackgroundGradient containerClassName='rounded-full'>
 							<Image
 								className='object-none w-80 h-80 rounded-full object-bottom select-none'
-								src={'/IMG_0402.jpg'}
+								src={'/profile.jpg'}
 								width={300}
 								height={300}
 								alt='profile image'
-								priority
+								placeholder='blur'
+								blurDataURL='/profile.jpg'
 							/>
 						</BackgroundGradient>
 					</div>

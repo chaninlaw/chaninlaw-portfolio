@@ -7,10 +7,11 @@ const request_init: RequestInit = {
 	headers: {
 		Authorization: `Basic ${apiKey}`,
 	},
+	next: { revalidate: 60 * 60 * 24 },
 }
 type Params = {
 	insight_type:
-		| 'weekday'
+		| 'weekdays'
 		| 'days'
 		| 'best_day'
 		| 'daily_average'
@@ -48,8 +49,8 @@ export const apiWakatime = {
 		const { data }: { data: Status } = await response.json()
 		return data
 	},
-	getStatusBar: async ({ range }: Omit<Params, 'insight_type'>) => {
-		const response = await fetch(`${endpoint}status_bar/${range}`, request_init)
+	getStatusBar: async () => {
+		const response = await fetch(`${endpoint}status_bar/today`, request_init)
 		const { data }: { data: StatusBar } = await response.json()
 		return data
 	},
