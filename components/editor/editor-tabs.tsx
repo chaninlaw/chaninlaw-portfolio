@@ -3,15 +3,21 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useEditor } from '.'
 import { BsX } from 'react-icons/bs'
 import { type TabsListValue } from '@/lib/constants'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export function EditorTabs() {
 	const { tabLists, setTabLists, currentTab, setCurrentTab } = useEditor()
 	const router = useRouter()
+	const pathname = usePathname()
+
+	useEffect(() => {
+		setCurrentTab(pathname as TabsListValue)
+	}, [pathname, setCurrentTab])
+
 	const onDeleteTab = (value: TabsListValue) => {
 		setTabLists((prev) => prev.filter((tab) => tab.value !== value))
 	}
-
 	return (
 		<Tabs
 			value={currentTab}
