@@ -20,6 +20,7 @@ import { Statistic } from '../ui/Statistic'
 
 export async function BestdayCard() {
 	const data = await apiWakatime.getStats({ range: 'all_time' })
+
 	return (
 		<Card className='border-stone-800 flex-1'>
 			<CardHeader className='flex flex-row justify-between items-center pb-0 space-y-0'>
