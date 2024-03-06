@@ -13,6 +13,7 @@ export async function WeedayBar() {
 				...item,
 				total: item.total / 3600,
 				average: item.average / 3600,
+				name: item.name.substring(0, 3),
 			}))}
 		/>
 	)
