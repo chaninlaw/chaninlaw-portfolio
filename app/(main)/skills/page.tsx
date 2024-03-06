@@ -4,6 +4,7 @@ import { LanguagesBar } from '@/components/skills/languages-bar'
 import { TodayTimeSpentCard } from '@/components/skills/today-timespent-card'
 import { TotalTimeSpentCard } from '@/components/skills/total-timespent-card'
 import { WeedayBar } from '@/components/skills/weekday-bar'
+import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Suspense } from 'react'
 
@@ -39,7 +40,9 @@ export default function SkillsPage() {
 							</h3>
 						</div>
 						<div className='h-[600px] p-6 pt-0 pl-2'>
-							<WeedayBar />
+							<Suspense fallback={<SkeletonChart />}>
+								<WeedayBar />
+							</Suspense>
 						</div>
 					</div>
 					<div className='rounded-xl border bg-card border-stone-800 text-card-foreground shadow col-span-3'>
@@ -52,7 +55,9 @@ export default function SkillsPage() {
 							</p>
 						</div>
 						<div className='h-[600px] p-6 pt-0 pl-2'>
-							<LanguagesBar />
+							<Suspense fallback={<SkeletonChart />}>
+								<LanguagesBar />
+							</Suspense>
 						</div>
 					</div>
 				</div>
@@ -63,12 +68,20 @@ export default function SkillsPage() {
 
 const SkeletonCard = () => {
 	return (
-		<div className='flex flex-col space-y-3'>
-			<Skeleton className='h-[125px] w-[250px] rounded-xl' />
+		<Card className='flex-1 flex flex-col space-y-3 border-stone-800 p-4'>
+			<Skeleton className='w-full rounded-xl' />
 			<div className='space-y-2'>
-				<Skeleton className='h-4 w-[250px]' />
-				<Skeleton className='h-4 w-[200px]' />
+				<div className='flex justify-between'>
+					<Skeleton className='h-4 w-2/3' />
+					<Skeleton className='h-4 w-4' />
+				</div>
+				<Skeleton className='h-4 w-1/3 mt-2' />
+				<Skeleton className='h-4 w-2/3' />
 			</div>
-		</div>
+		</Card>
 	)
+}
+
+const SkeletonChart = () => {
+	return <Skeleton className='w-full h-full rounded-xl' />
 }
