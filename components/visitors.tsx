@@ -8,10 +8,8 @@ export function Visitors() {
 	const [loading, setLoading] = useState(false)
 
 	const fetchVisitors = async () => {
-		let baseUrl
-		if (process.env.NODE_ENV === 'production') {
-			baseUrl = process.env.VERCEL_URL
-		} else {
+		let baseUrl: string | undefined = ''
+		if (process.env.NODE_ENV === 'development') {
 			baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 		}
 		setLoading(true)

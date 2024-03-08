@@ -2,8 +2,6 @@ import { z } from 'zod'
 
 const envSchema = z.object({
 	NEXT_PUBLIC_BASE_URL: z.string().optional(),
-	NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
-	VERCEL_URL: z.string().optional(),
 	WAKATIME_API_KEY: z.string(),
 	WAKATIME_CLIENT_ID: z.string(),
 	WAKATIME_CLIENT_SECRET: z.string(),
