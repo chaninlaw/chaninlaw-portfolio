@@ -1,18 +1,20 @@
 import { redis } from '@/lib/redis'
+import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
+	unstable_noStore()
 	try {
 		const ip = req.headers.get('x-forwarded-for') || req.ip
 		const today = new Date().toISOString().slice(0, 10)
 		const key = 'visitor'
 		const value = `visit:${today}:${ip}`
 
-		await redis.connect()
-		await redis.sAdd(key, value)
+		const client = await redis.connect()
+		await client.sAdd(key, value)
 
-		const visitCount = await redis.sCard(key)
-		await redis.disconnect()
+		const visitCount = await client.sCard(key)
+		await client.disconnect()
 
 		return NextResponse.json({ visitCount }, { status: 200 })
 	} catch (error) {
