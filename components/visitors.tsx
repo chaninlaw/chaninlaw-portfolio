@@ -8,8 +8,14 @@ export function Visitors() {
 	const [loading, setLoading] = useState(false)
 
 	const fetchVisitors = async () => {
+		let baseUrl
+		if (process.env.NODE_ENV === 'production') {
+			baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+		} else {
+			baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+		}
 		setLoading(true)
-		fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/visitors`)
+		fetch(`${baseUrl}/api/visitors`)
 			.then(async (res) => {
 				const data = await res.json()
 				setVisitors(data.visitCount)
