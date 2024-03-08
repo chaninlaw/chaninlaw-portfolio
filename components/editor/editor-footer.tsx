@@ -10,6 +10,7 @@ import {
 	VscWarning,
 } from 'react-icons/vsc'
 import { Visitors } from '../visitors'
+import { Timer } from '../timer'
 
 export function EditorFooter() {
 	return (
@@ -38,7 +39,7 @@ export function EditorFooter() {
 				</li>
 				<li className='flex justify-center items-center space-x-1'>
 					<VscHistory />
-					<small>4 hrs 53 min</small>
+					<Timer />
 				</li>
 			</ul>
 			<ul className='h-7 border-t border-border flex items-center space-x-4 px-2'>
