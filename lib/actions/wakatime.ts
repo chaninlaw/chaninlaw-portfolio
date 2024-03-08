@@ -1,7 +1,6 @@
-import { env } from '../env'
 import { Goals, Insight, Status, StatusBar } from './types'
 
-const apiKey = env.wakatime.apiKey
+const apiKey = process.env.WAKATIME_API_KEY
 const endpoint = `https://wakatime.com/api/v1/users/current/`
 const request_init: RequestInit = {
 	method: 'GET',

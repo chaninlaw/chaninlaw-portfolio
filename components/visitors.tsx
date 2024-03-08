@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { VscEye, VscLoading } from 'react-icons/vsc'
 import { Statistic } from './ui/Statistic'
-import { env } from '@/lib/env'
 
 export function Visitors() {
 	const [visitors, setVisitors] = useState(0)
@@ -10,7 +9,7 @@ export function Visitors() {
 
 	const fetchVisitors = async () => {
 		setLoading(true)
-		fetch(`${env.baseUrl}/api/visitors`)
+		fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/visitors`)
 			.then(async (res) => {
 				const data = await res.json()
 				setVisitors(data.visitCount)
