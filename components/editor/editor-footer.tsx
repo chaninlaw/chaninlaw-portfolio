@@ -9,6 +9,7 @@ import {
 	VscSync,
 	VscWarning,
 } from 'react-icons/vsc'
+import { Visitors } from '../visitors'
 
 export function EditorFooter() {
 	return (
@@ -32,9 +33,8 @@ export function EditorFooter() {
 					<VscWarning />
 					<small>0</small>
 				</li>
-				<li className='flex justify-center items-center space-x-1'>
-					<VscEye />
-					<small>0</small>
+				<li className='flex justify-center items-center space-x-1 pr-2'>
+					<Visitors />
 				</li>
 				<li className='flex justify-center items-center space-x-1'>
 					<VscHistory />
