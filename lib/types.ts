@@ -201,7 +201,7 @@ interface Editor {
 	total_seconds: number
 }
 
-interface Language {
+export interface Language {
 	decimal: string
 	digital: string
 	hours: number

@@ -7,7 +7,7 @@ export default function Loading() {
 			{[...Array(10)].map((_, index) => (
 				<Skeleton
 					key={index}
-					className={cn('w-full h-full row-span-1 rounded-xl', {
+					className={cn('w-full h-96 row-span-1 rounded-xl', {
 						'md:col-span-2': index === 3 || index === 6,
 					})}
 				/>

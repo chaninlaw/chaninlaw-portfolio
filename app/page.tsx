@@ -12,7 +12,7 @@ export default function Home() {
 				<MotionDiv
 					className='container py-14 space-y-10 flex flex-col items-center h-full'
 					initial={{ y: 100, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
+					animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
 				>
 					<div className='flex relative z-20'>
 						<BackgroundGradient containerClassName='rounded-full'>

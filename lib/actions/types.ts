@@ -108,7 +108,7 @@ export interface StatusBar {
 	range: Range
 }
 
-interface Weekday {
+export interface Weekday {
 	average: number
 	categories: Category[]
 	count: number
