@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
 const envSchema = z.object({
-	NEXT_PUBLIC_BASE_URL: z.string(),
+	NEXT_PUBLIC_BASE_URL: z.string().optional(),
+	NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
 	WAKATIME_API_KEY: z.string(),
 	WAKATIME_CLIENT_ID: z.string(),
 	WAKATIME_CLIENT_SECRET: z.string(),
@@ -10,9 +11,7 @@ const envSchema = z.object({
 	REDIS_PORT: z.string(),
 })
 
-const parsedEnv = envSchema.parse(process.env)
-
-export const env = parsedEnv
+export const env = envSchema.parse(process.env)
 
 type EnvVarSchemaType = z.infer<typeof envSchema>
 
