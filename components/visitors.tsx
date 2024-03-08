@@ -10,7 +10,7 @@ export function Visitors() {
 	const fetchVisitors = async () => {
 		let baseUrl
 		if (process.env.NODE_ENV === 'production') {
-			baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+			baseUrl = process.env.VERCEL_URL
 		} else {
 			baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 		}
