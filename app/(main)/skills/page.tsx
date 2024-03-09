@@ -10,7 +10,7 @@ import { Suspense } from 'react'
 
 export default function SkillsPage() {
 	return (
-		<section className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
+		<section className='h-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
 			<div className='flex-1 space-y-4 p-8 pt-6'>
 				<div className=''>
 					<h2 className='text-3xl font-bold tracking-tight'>Skills</h2>
@@ -39,7 +39,7 @@ export default function SkillsPage() {
 								Weekdays Overview
 							</h3>
 						</div>
-						<div className='h-[600px] p-6 pt-0 pl-2'>
+						<div className='h-[500px] p-6 pt-0 pl-2'>
 							<Suspense fallback={<SkeletonChart />}>
 								<WeedayBar />
 							</Suspense>
@@ -54,7 +54,7 @@ export default function SkillsPage() {
 								Top 10 languages by time spent
 							</p>
 						</div>
-						<div className='h-[600px] p-6 pt-0 pl-2'>
+						<div className='h-[500px] p-6 pt-0 pl-2'>
 							<Suspense fallback={<SkeletonChart />}>
 								<LanguagesBar />
 							</Suspense>
