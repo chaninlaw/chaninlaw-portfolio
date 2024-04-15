@@ -8,6 +8,8 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Suspense } from 'react'
 
+export const revalidate = 86400
+
 export default function SkillsPage() {
 	return (
 		<section className='h-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
