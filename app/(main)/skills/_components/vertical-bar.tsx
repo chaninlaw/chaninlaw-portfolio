@@ -13,7 +13,7 @@ import {
   ResponsiveContainer,
   TooltipProps
 } from 'recharts'
-import { Card } from '../ui/card'
+import { Card } from '@/components/ui/card'
 import { Weekday } from '@/actions/types'
 
 export function VerticalBar({ data }: { data: any[] }) {
