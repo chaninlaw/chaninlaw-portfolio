@@ -6,13 +6,13 @@ import Highlight from 'react-highlight'
 hljs.registerLanguage('javascript', javascript)
 
 interface IHighlightJSProps {
-	js?: string
+  js?: string
 }
 export const HighlightJS: React.FC<IHighlightJSProps> = ({ js = '' }) => {
-	const highlightedCode = hljs.highlight(js, { language: 'javascript' }).value
-	return (
-		<Highlight className='text-sm' innerHTML>
-			{highlightedCode}
-		</Highlight>
-	)
+  const highlightedCode = hljs.highlight(js, { language: 'javascript' }).value
+  return (
+    <Highlight className='text-sm' innerHTML>
+      {highlightedCode}
+    </Highlight>
+  )
 }
