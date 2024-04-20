@@ -8,7 +8,7 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion'
 import { useEditor } from '.'
-import { DEAULT_TABS_LIST, type TabsListValue } from '@/lib/constants'
+import { DEAULT_TABS_LIST, type TabsListValue } from './items'
 import { useRouter } from 'next/navigation'
 
 export function EditorExplorer() {

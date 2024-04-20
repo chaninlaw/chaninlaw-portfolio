@@ -1,4 +1,4 @@
-import { apiWakatime } from '@/lib/actions/wakatime'
+import { apiWakatime } from '@/actions/wakatime'
 import { VerticalBar } from '../charts/vertical-bar'
 
 export async function WeedayBar() {

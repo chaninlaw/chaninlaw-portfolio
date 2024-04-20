@@ -1,8 +1,11 @@
-let baseUrl: string | undefined = ''
+import { env } from '@/env'
 
-if (process.env.NODE_ENV === 'development') {
-	baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+export const client = (endpoint: string, init?: RequestInit) => {
+	let baseUrl: string | undefined = ''
+
+	if (env.NEXT_PUBLIC_NODE_ENV === 'development') {
+		baseUrl = env.NEXT_PUBLIC_APP_URL
+	}
+
+	return fetch(`${baseUrl}${endpoint}`, init)
 }
-
-export const client = (endpoint: string, init?: RequestInit) =>
-	fetch(`${baseUrl}${endpoint}`, init)

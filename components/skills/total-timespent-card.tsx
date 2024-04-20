@@ -13,7 +13,7 @@ import {
 	HoverCardTrigger,
 } from '@/components/ui/hover-card'
 import { CalendarIcon, InfoCircledIcon } from '@radix-ui/react-icons'
-import { apiWakatime } from '@/lib/actions/wakatime'
+import { apiWakatime } from '@/actions/wakatime'
 import { Statistic } from '../ui/Statistic'
 import { dateFormatter } from '@/lib/utils'
 

@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/hover-card'
 import { CalendarIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { Statistic } from '../ui/Statistic'
-import { apiWakatime } from '@/lib/actions/wakatime'
+import { apiWakatime } from '@/actions/wakatime'
 import { dateFormatter } from '@/lib/utils'
 
 export async function DailyAverageCard() {

@@ -1,11 +1,19 @@
-export default function ContactPage() {
+import { validateRequest } from '@/auth/validate-request'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+
+export default async function ContactPage() {
+	const { user } = await validateRequest()
+
 	return (
 		<div className='h-full w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center'>
-			{/* Radial gradient for the container to give a faded look */}
-			<div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
-			<p className='text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8'>
-				Coming soon
-			</p>
+			<div className='w-full h-full grid grid-cols-2'>
+				<div className='col-span-1 flex justify-center items-center'>
+					{!user && <Link href='/login/github'>Login</Link>}
+					{user && user.username}
+				</div>
+				<div className='col-span-1 flex justify-center items-center'>Test2</div>
+			</div>
 		</div>
 	)
 }

@@ -14,7 +14,7 @@ import {
 	TooltipProps,
 } from 'recharts'
 import { Card } from '../ui/card'
-import { Weekday } from '@/lib/actions/types'
+import { Weekday } from '@/actions/types'
 
 export function VerticalBar({ data }: { data: any[] }) {
 	return (

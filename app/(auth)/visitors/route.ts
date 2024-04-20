@@ -1,4 +1,4 @@
-import { redis } from '@/lib/redis'
+import { redis } from '@/server/redis'
 import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 

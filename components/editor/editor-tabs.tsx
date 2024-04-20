@@ -2,7 +2,7 @@
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useEditor } from '.'
 import { BsX } from 'react-icons/bs'
-import { type TabsListValue } from '@/lib/constants'
+import { type TabsListValue } from './items'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
