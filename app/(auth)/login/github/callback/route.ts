@@ -27,7 +27,7 @@ export async function GET(request: Request): Promise<Response> {
 
     // Check if user already exists
     const existingUser = await db.query.users.findFirst({
-      where: (user, opt) => opt.eq(user.github_id, githubUser.id)
+      where: (user, opt) => opt.eq(user.githubId, githubUser.id)
     })
 
     if (existingUser) {
@@ -47,7 +47,7 @@ export async function GET(request: Request): Promise<Response> {
     // Insert user
     await db.insert(users).values({
       id: userId,
-      github_id: githubUser.id,
+      githubId: githubUser.id,
       username: githubUser.login,
       avatar: githubUser.avatar_url,
       email: githubUser.email
