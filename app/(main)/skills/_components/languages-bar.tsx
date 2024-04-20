@@ -1,5 +1,5 @@
 import { apiWakatime } from '@/actions/wakatime'
-import { HorizontalBar } from '../charts/horizontal-bar'
+import { HorizontalBar } from './horizontal-bar'
 
 export async function LanguagesBar() {
   const data = await apiWakatime.getInsight({

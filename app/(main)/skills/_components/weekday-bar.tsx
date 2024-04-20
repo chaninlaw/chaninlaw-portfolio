@@ -1,5 +1,5 @@
 import { apiWakatime } from '@/actions/wakatime'
-import { VerticalBar } from '../charts/vertical-bar'
+import { VerticalBar } from './vertical-bar'
 
 export async function WeedayBar() {
   const data = await apiWakatime.getInsight({
