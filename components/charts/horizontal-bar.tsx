@@ -14,7 +14,7 @@ import {
 	TooltipProps,
 } from 'recharts'
 import { Card } from '../ui/card'
-import { Language } from '@/lib/types'
+import { Language } from '@/types/wakatime'
 
 export function HorizontalBar({ data }: { data: Language[] }) {
 	return (
