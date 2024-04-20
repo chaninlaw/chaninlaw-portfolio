@@ -7,7 +7,7 @@ const request_init: RequestInit = {
 	headers: {
 		Authorization: `Basic ${apiKey}`,
 	},
-	next: { revalidate: 60 * 60 * 24 },
+	next: { revalidate: 86400 },
 }
 type Params = {
 	insight_type:

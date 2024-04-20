@@ -31,7 +31,7 @@ export function EditorExplorer() {
 	}
 
 	return (
-		<div className='w-full h-full border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
+		<div className='w-full h-full min-w-40 overflow-x-hidden border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
 			<div className='flex flex-col'>
 				<div className='flex justify-between items-center p-2'>
 					<p className='uppercase'>Expolorer</p>
