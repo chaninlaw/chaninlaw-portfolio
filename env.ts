@@ -20,8 +20,8 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_VERCEL_ENV: z.union([z.literal('development'), z.literal('preview'), z.literal('production')]).default('development'),
-    NEXT_PUBLIC_VERCEL_URL: z.string().optional()
+    NEXT_PUBLIC_NODE_ENV: z.union([z.literal('development'), z.literal('preview'), z.literal('production')]).default('development'),
+    NEXT_PUBLIC_APP_URL: z.string().optional()
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
@@ -34,8 +34,8 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
-    NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,
-    NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL
+    NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

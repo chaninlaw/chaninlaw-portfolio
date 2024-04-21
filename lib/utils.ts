@@ -14,7 +14,7 @@ export const dateFormatter = new Intl.DateTimeFormat('en-us', {
 })
 
 export function absoluteUrl(path: string) {
-  return new URL(path, env.NEXT_PUBLIC_VERCEL_URL).href
+  return new URL(path, env.NEXT_PUBLIC_APP_URL).href
 }
 
 export function timeAgo(date: Date) {
