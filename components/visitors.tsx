@@ -8,9 +8,9 @@ export function Visitors() {
   const [visitors, setVisitors] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  const fetchVisitors = async () => {
+  const fetchVisitors = async (controller: AbortController) => {
     setLoading(true)
-    client(`/api/visitors`)
+    client(`/api/visitors`, { signal: controller.signal })
       .then(async (res) => {
         const data = await res.json()
         setVisitors(data.visitCount)
@@ -20,7 +20,13 @@ export function Visitors() {
   }
 
   useEffect(() => {
-    fetchVisitors()
+    const controller = new AbortController()
+    const fetcher = setTimeout(() => fetchVisitors(controller))
+
+    return () => {
+      clearTimeout(fetcher)
+      controller.abort()
+    }
   }, [])
 
   return (
