@@ -12,7 +12,7 @@ export function SubmitButton({ children, ...props }: { children: React.ReactNode
     <Button {...props} type='submit' disabled={pending}>
       {pending && (
         <MotionDiv initial={{ x: 10 }} animate={{ x: 0 }}>
-          <VscLoading className='animate-spin ml-1' />
+          <VscLoading className='animate-spin mr-1' />
         </MotionDiv>
       )}
       {children}
