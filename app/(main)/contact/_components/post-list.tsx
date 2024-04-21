@@ -25,7 +25,7 @@ export async function PostList() {
           </div>
           <div className='space-y-4'>
             {posts.map((post) => (
-              <PostItem key={post.id} post={post} />
+              <PostItem key={post.id} post={post} currentUser={user} />
             ))}
           </div>
         </div>

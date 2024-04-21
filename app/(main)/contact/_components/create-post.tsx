@@ -13,11 +13,9 @@ import { createPostSchema } from '../_actions/validation'
 import { createPost } from '../_actions'
 
 import { PlusCircledIcon } from '@radix-ui/react-icons'
-import { MotionDiv } from '@/components/ui/motion-div'
-import { VscLoading } from 'react-icons/vsc'
+import { ClientSubmitButton } from '@/components/button/client-submit-button'
 
 export const CreatePost = ({ authorId }: { authorId: string }) => {
-  const [loading, setLoading] = React.useState(false)
   const [open, setOpen] = React.useState(false)
 
   const form = useForm<z.infer<typeof createPostSchema>>({
@@ -29,7 +27,6 @@ export const CreatePost = ({ authorId }: { authorId: string }) => {
   })
 
   const handleSubmit = async (data: z.infer<typeof createPostSchema>) => {
-    setLoading(true)
     const { success } = await createPost(data)
     if (!success) {
       return
@@ -37,7 +34,6 @@ export const CreatePost = ({ authorId }: { authorId: string }) => {
       form.reset()
     }
     setOpen(false)
-    setLoading(false)
   }
 
   const handleOpen = (open: boolean) => {
@@ -81,14 +77,7 @@ export const CreatePost = ({ authorId }: { authorId: string }) => {
             />
 
             <DialogFooter className='mt-2'>
-              <Button type='submit' disabled={loading}>
-                {loading && (
-                  <MotionDiv initial={{ x: 10 }} animate={{ x: 0 }}>
-                    <VscLoading className='animate-spin mr-1' />
-                  </MotionDiv>
-                )}
-                Create Post
-              </Button>
+              <ClientSubmitButton loading={form.formState.isSubmitting}>Create Post</ClientSubmitButton>
             </DialogFooter>
           </form>
         </Form>
