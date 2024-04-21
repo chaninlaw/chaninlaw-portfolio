@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "db:push": "drizzle-kit push:pg",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "dotenv npx tsx server/db/migrate.ts",
     "db:studio": "drizzle-kit studio --port 8000",
     "lint": "next lint"
   },

@@ -1,6 +1,6 @@
 import { neon } from '@neondatabase/serverless'
-import { drizzle } from 'drizzle-orm/postgres-js'
-import { migrate } from 'drizzle-orm/postgres-js/migrator'
+import { drizzle } from 'drizzle-orm/neon-http'
+import { migrate } from 'drizzle-orm/neon-http/migrator'
 
 import { env } from '@/env'
 import * as schema from './schema'
