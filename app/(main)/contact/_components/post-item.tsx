@@ -61,9 +61,11 @@ export function PostItem({ post, avatarClassName, currentUser, ...props }: PostI
             <div className='text-xs text-gray-500 dark:text-gray-400'>{timeAgo(post.createdAt)}</div>
           </div>
           <div className='flex items-center gap-2'>
-            <Button size='sm' variant='ghost' onClick={() => handleClickReply(post.id)}>
-              Reply
-            </Button>
+            {currentUser && (
+              <Button size='sm' variant='ghost' onClick={() => handleClickReply(post.id)}>
+                Reply
+              </Button>
+            )}
           </div>
         </div>
         <p>{post.content}</p>
