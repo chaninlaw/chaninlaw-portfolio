@@ -1,5 +1,5 @@
 import { relations } from 'drizzle-orm'
-import { pgTableCreator, index, text, timestamp, varchar, serial, integer } from 'drizzle-orm/pg-core'
+import { pgTableCreator, index, text, timestamp, varchar, serial, integer, uuid } from 'drizzle-orm/pg-core'
 import { DATABASE_PREFIX as prefix } from '@/lib/constants'
 
 export const pgTable = pgTableCreator((name) => `${prefix}_${name}`)
@@ -33,7 +33,7 @@ export const sessions = pgTable(
 )
 
 export const posts = pgTable('posts', {
-  id: serial('id').primaryKey(),
+  id: uuid('id').primaryKey().defaultRandom(),
   content: text('content'),
   authorId: varchar('author_id', { length: 21 }).notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
@@ -52,10 +52,12 @@ export const postsRelations = relations(posts, ({ one, many }) => ({
 }))
 
 export const comments = pgTable('comments', {
-  id: serial('id').primaryKey(),
+  id: uuid('id').primaryKey().defaultRandom(),
   text: text('text'),
   authorId: varchar('author_id', { length: 21 }).notNull(),
-  postId: integer('post_id').references(() => posts.id),
+  postId: uuid('post_id')
+    .references(() => posts.id)
+    .notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { mode: 'date' }).$onUpdate(() => new Date())
 })
