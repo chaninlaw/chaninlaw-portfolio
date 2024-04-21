@@ -1,9 +1,10 @@
+'use server'
+
 import { lucia, validateRequest } from '@/auth'
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 
-export async function logout(): Promise<ActionResult> {
-  'use server'
+export async function logout(prevState: ActionResult): Promise<ActionResult> {
   const { session } = await validateRequest()
 
   if (!session) {
