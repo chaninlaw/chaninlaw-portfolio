@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import { CalendarIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { Statistic } from '@/components/ui/Statistic'
-import { apiWakatime } from '@/actions/wakatime'
+import { apiWakatime } from '../_actions'
 import { dateFormatter } from '@/lib/utils'
 
 export async function DailyAverageCard() {
@@ -29,9 +29,7 @@ export async function DailyAverageCard() {
                   <p className='text-sm'>Number of languages: {data.languages.length}</p>
                   <div className='flex justify-end items-center pt-2'>
                     <CalendarIcon className='mr-2 h-4 w-4 opacity-70' />
-                    <span className='text-xs text-muted-foreground'>
-                      {dateFormatter.format(new Date(data.modified_at))}
-                    </span>
+                    <span className='text-xs text-muted-foreground'>{dateFormatter.format(new Date(data.modified_at))}</span>
                   </div>
                 </div>
               </div>
@@ -44,9 +42,7 @@ export async function DailyAverageCard() {
         <span className='text-lg'>hrs</span> <Statistic start={0} end={(data.daily_average / 60) % 60} />
         <span className='text-lg'>mins</span>
       </CardContent>
-      <CardFooter className='text-xs text-muted-foreground'>
-        last updated at {dateFormatter.format(new Date(data.modified_at))}
-      </CardFooter>
+      <CardFooter className='text-xs text-muted-foreground'>last updated at {dateFormatter.format(new Date(data.modified_at))}</CardFooter>
     </Card>
   )
 }

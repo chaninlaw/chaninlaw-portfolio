@@ -1,20 +1,9 @@
 'use client'
 
 import React from 'react'
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  TooltipProps
-} from 'recharts'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, TooltipProps } from 'recharts'
 import { Card } from '@/components/ui/card'
-import { Weekday } from '@/actions/types'
+import { Weekday } from '@/types/wakatime'
 
 export function VerticalBar({ data }: { data: any[] }) {
   return (

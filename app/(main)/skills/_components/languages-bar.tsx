@@ -1,4 +1,4 @@
-import { apiWakatime } from '@/actions/wakatime'
+import { apiWakatime } from '../_actions'
 import { HorizontalBar } from './horizontal-bar'
 
 export async function LanguagesBar() {

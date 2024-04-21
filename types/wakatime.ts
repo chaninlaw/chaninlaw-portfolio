@@ -17,6 +17,7 @@ export interface Insight {
   user_id: string
   weekdays: Weekday[]
   writes_only: boolean
+  languages: Language[]
 }
 
 export interface Goals {
@@ -107,7 +108,7 @@ export interface StatusBar {
   range: Range
 }
 
-interface Weekday {
+export interface Weekday {
   average: number
   categories: Category[]
   count: number
