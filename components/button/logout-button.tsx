@@ -7,11 +7,11 @@ import { toast } from 'sonner'
 
 export const LogoutButton = () => {
   const [formState, formAction] = useFormState(logout, {
-    error: null
+    success: true
   })
 
-  if (formState.error) {
-    toast.error(formState.error)
+  if (!formState.success) {
+    toast.error(formState.message)
   }
 
   return (
