@@ -1,5 +1,5 @@
 import { env } from '@/env'
-import { Goals, Insight, Status, StatusBar } from './types'
+import { Insight, Goals, Status, StatusBar } from '@/types/wakatime'
 
 const apiKey = env.WAKATIME_API_KEY
 const endpoint = `https://wakatime.com/api/v1/users/current/`

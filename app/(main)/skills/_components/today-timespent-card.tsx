@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import { CalendarIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { Statistic } from '@/components/ui/Statistic'
-import { apiWakatime } from '@/actions/wakatime'
+import { apiWakatime } from '../_actions'
 import { dateFormatter } from '@/lib/utils'
 
 export async function TodayTimeSpentCard() {
@@ -37,9 +37,7 @@ export async function TodayTimeSpentCard() {
                   </p>
                   <div className='flex justify-end items-center pt-2'>
                     <CalendarIcon className='mr-2 h-4 w-4 opacity-70' />
-                    <span className='text-xs text-muted-foreground'>
-                      {dateFormatter.format(new Date(data.range.end))}
-                    </span>
+                    <span className='text-xs text-muted-foreground'>{dateFormatter.format(new Date(data.range.end))}</span>
                   </div>
                 </div>
               </div>
@@ -52,9 +50,7 @@ export async function TodayTimeSpentCard() {
         <span className='text-lg'>hrs</span> <Statistic start={0} end={(data.grand_total.total_seconds / 60) % 60} />
         <span className='text-lg'>mins</span>
       </CardContent>
-      <CardFooter className='text-xs text-muted-foreground'>
-        at {dateFormatter.format(new Date(data.range.date))}
-      </CardFooter>
+      <CardFooter className='text-xs text-muted-foreground'>at {dateFormatter.format(new Date(data.range.date))}</CardFooter>
     </Card>
   )
 }
