@@ -56,7 +56,7 @@ export const comments = pgTable('comments', {
   text: text('text'),
   authorId: varchar('author_id', { length: 21 }).notNull(),
   postId: uuid('post_id')
-    .references(() => posts.id)
+    .references(() => posts.id, { onDelete: 'cascade' })
     .notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { mode: 'date' }).$onUpdate(() => new Date())
