@@ -37,23 +37,28 @@ export const GetInTouch = () => {
           </form>
           <div className='flex flex-col md:flex-row items-center justify-center gap-6'>
             <div className='space-y-2'>
-              <div className='font-medium'>John Doe</div>
+              <div className='font-medium'>Chanin Lawlertrattana</div>
               <div className='text-gray-500 dark:text-gray-400'>
                 <a className='hover:underline' href='#'>
-                  +1 (234) 567-890
+                  +66 (635) 032-466
                 </a>
               </div>
             </div>
             <div className='flex items-center gap-4'>
-              <Link className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50' href='#'>
-                <TwitterLogoIcon className='h-6 w-6' />
-                <span className='sr-only'>Twitter</span>
-              </Link>
-              <Link className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50' href='#'>
+              <Link
+                className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
+                target='_blank
+              '
+                href='https://linkedin.com/in/chaninlaw'
+              >
                 <LinkedInLogoIcon className='h-6 w-6' />
                 <span className='sr-only'>LinkedIn</span>
               </Link>
-              <Link className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50' href='#'>
+              <Link
+                className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
+                target='_blank'
+                href='https://github.com/chaninlaw'
+              >
                 <GitHubLogoIcon className='h-6 w-6' />
                 <span className='sr-only'>GitHub</span>
               </Link>
