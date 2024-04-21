@@ -1,11 +1,11 @@
 import { relations } from 'drizzle-orm'
-import { pgTableCreator, index, text, timestamp, varchar } from 'drizzle-orm/pg-core'
+import { pgTableCreator, index, text, timestamp, varchar, serial, integer } from 'drizzle-orm/pg-core'
 import { DATABASE_PREFIX as prefix } from '@/lib/constants'
 
 export const pgTable = pgTableCreator((name) => `${prefix}_${name}`)
 
 export const users = pgTable('users', {
-  id: varchar('id', { length: 255 }).primaryKey(),
+  id: varchar('id', { length: 21 }).primaryKey(),
   githubId: varchar('github_id', { length: 255 }).unique(),
   username: varchar('username', { length: 255 }),
   email: varchar('email', { length: 255 }),
@@ -21,9 +21,7 @@ export const sessions = pgTable(
   'sessions',
   {
     id: varchar('id', { length: 255 }).primaryKey(),
-    userId: varchar('user_id', { length: 255 })
-      .notNull()
-      .references(() => users.id),
+    userId: varchar('user_id', { length: 21 }).notNull(),
     expiresAt: timestamp('expires_at', {
       withTimezone: true,
       mode: 'date'
@@ -34,36 +32,44 @@ export const sessions = pgTable(
   })
 )
 
-export const comment = pgTable(
-  'comment',
-  {
-    id: varchar('id', { length: 255 }).primaryKey(),
-    userId: varchar('user_id', { length: 255 })
-      .notNull()
-      .references(() => users.id),
-    content: text('content').notNull(),
-    createdAt: timestamp('created_at').defaultNow().notNull(),
-    updatedAt: timestamp('updated_at', { mode: 'date' }).$onUpdate(() => new Date()),
-    parentId: varchar('parent_id', { length: 15 })
-  },
-  (t) => ({
-    userIdx: index('comment_user_idx').on(t.userId)
-  })
-)
+export const posts = pgTable('posts', {
+  id: serial('id').primaryKey(),
+  content: text('content'),
+  authorId: varchar('author_id', { length: 21 }).notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at', { mode: 'date' }).$onUpdate(() => new Date())
+})
 
-export const commentRelations = relations(comment, ({ one, many }) => ({
-  user: one(users, {
-    fields: [comment.userId],
+export type Posts = typeof posts.$inferSelect
+export type NewPosts = typeof posts.$inferInsert
+
+export const postsRelations = relations(posts, ({ one, many }) => ({
+  author: one(users, {
+    fields: [posts.authorId],
     references: [users.id]
   }),
-  parent: one(comment, {
-    fields: [comment.parentId],
-    references: [comment.id]
+  comments: many(comments)
+}))
+
+export const comments = pgTable('comments', {
+  id: serial('id').primaryKey(),
+  text: text('text'),
+  authorId: varchar('author_id', { length: 21 }).notNull(),
+  postId: integer('post_id').references(() => posts.id),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at', { mode: 'date' }).$onUpdate(() => new Date())
+})
+
+export const commentsRelations = relations(comments, ({ one }) => ({
+  post: one(posts, {
+    fields: [comments.postId],
+    references: [posts.id]
   }),
-  children: many(comment, {
-    relationName: 'children'
+  author: one(users, {
+    fields: [comments.authorId],
+    references: [users.id]
   })
 }))
 
-export type Comment = typeof comment.$inferSelect
-export type NewComment = typeof comment.$inferInsert
+export type Comments = typeof comments.$inferSelect
+export type NewComments = typeof comments.$inferInsert
