@@ -56,16 +56,30 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: hsl(12 6.5% 15.1%);
+  background: hsl(60 4.8% 95.9%);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(12 10 9 / 50%);
+  background: hsl(60 4.8% 95.9%);
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(12 10 9 / 80%);
+  background: hsl(60 4.8% 95.9%);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: hsl(12 6.5% 15.1%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(12 10 9 / 50%);
+  }
+
+  :-webkit-scrollbar-thumb:hover {
+    background: rgb(12 10 9 / 80%);
+  }
 }

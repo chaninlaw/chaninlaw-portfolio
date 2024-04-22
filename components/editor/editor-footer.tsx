@@ -1,14 +1,4 @@
-import {
-  VscBell,
-  VscCheckAll,
-  VscError,
-  VscEye,
-  VscHistory,
-  VscRemote,
-  VscSourceControl,
-  VscSync,
-  VscWarning
-} from 'react-icons/vsc'
+import { VscBell, VscCheckAll, VscError, VscEye, VscHistory, VscRemote, VscSourceControl, VscSync, VscWarning } from 'react-icons/vsc'
 import { Visitors } from '../visitors'
 import { Timer } from '../timer'
 
@@ -17,7 +7,7 @@ export function EditorFooter() {
     <div className='h-6 flex justify-between items-center'>
       <ul className='h-full border-t border-border flex items-center space-x-4'>
         <li className='h-full w-10 rounded-bl-xl bg-blue-600/80 border-r border-border flex justify-center items-center'>
-          <VscRemote />
+          <VscRemote className='text-white' />
         </li>
         <li className='flex justify-center items-center'>
           <VscSourceControl className='text-sm' />

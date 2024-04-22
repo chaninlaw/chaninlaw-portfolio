@@ -23,17 +23,14 @@ export function EditorTabs() {
       <TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background'>
         {tabLists.map((tab) => (
           <TabsTrigger
-            className='w-fit h-full flex space-x-1 group data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent'
+            className='w-fit h-full flex space-x-1 rounded-b-none group bg-secondary dark:bg-background data-[state=active]:bg-background dark:data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent'
             key={tab.value}
             value={tab.value}
             onClick={() => router.push(tab.value)}
           >
             <span>{tab.icon}</span>
             <span>{tab.name}</span>
-            <BsX
-              className='opacity-0 group-hover:opacity-100 hover:rounded-md hover:bg-white/5'
-              onClick={onDeleteTab.bind(null, tab.value)}
-            />
+            <BsX className='opacity-0 group-hover:opacity-100 hover:rounded-md hover:bg-white/5' onClick={onDeleteTab.bind(null, tab.value)} />
           </TabsTrigger>
         ))}
       </TabsList>

@@ -9,6 +9,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={0}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Vite-React-TS.png'}
           alt='The JS playground with Markdown editor'
@@ -34,6 +35,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={2}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Pricing-Component-with-toggle.png'}
           alt='Pricing Component with toggle'
@@ -57,6 +59,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={3}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Nin-s-Portfolio.png'}
           alt='my first portfolio with react'
@@ -81,6 +84,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={4}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website.png'}
           alt='Space tourism website'
@@ -91,6 +95,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={5}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (1).png'}
           alt='Space tourism website page 2'
@@ -101,6 +106,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={6}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (2).png'}
           alt='Space tourism website page 3'
@@ -111,6 +117,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={7}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (3).png'}
           alt='Space tourism website page 4'
@@ -135,6 +142,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={8}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Shortly-URL-shortening.png'}
           alt='Shortly URL shortening'
@@ -158,6 +166,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={9}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Simon.png'}
           alt='Simon game'
@@ -181,6 +190,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={10}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Todos-App-Ultimate-Task-Management-Solution.png'}
           alt='Todos app'
@@ -191,6 +201,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={11}
+          priority
           className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Dashboard-Todos-App.png'}
           alt='Dashboard of Todos app'
