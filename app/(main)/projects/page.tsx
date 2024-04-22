@@ -9,7 +9,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={0}
-          className='object-contain'
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Vite-React-TS.png'}
           alt='The JS playground with Markdown editor'
           width={300}
@@ -34,8 +34,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={2}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Pricing-Component-with-toggle.png'}
           alt='Pricing Component with toggle'
           width={300}
@@ -58,8 +57,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={3}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Nin-s-Portfolio.png'}
           alt='my first portfolio with react'
           width={300}
@@ -83,8 +81,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={4}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website.png'}
           alt='Space tourism website'
           width={300}
@@ -94,8 +91,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={5}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (1).png'}
           alt='Space tourism website page 2'
           width={300}
@@ -105,8 +101,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={6}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (2).png'}
           alt='Space tourism website page 3'
           width={300}
@@ -116,8 +111,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={7}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Frontend-Mentor-Space-tourism-website (3).png'}
           alt='Space tourism website page 4'
           width={300}
@@ -141,8 +135,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={8}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Shortly-URL-shortening.png'}
           alt='Shortly URL shortening'
           width={300}
@@ -165,8 +158,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={9}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Simon.png'}
           alt='Simon game'
           width={300}
@@ -189,8 +181,7 @@ export default function ProjectsPage() {
       header: [
         <Image
           key={10}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Todos-App-Ultimate-Task-Management-Solution.png'}
           alt='Todos app'
           width={300}
@@ -200,8 +191,7 @@ export default function ProjectsPage() {
         />,
         <Image
           key={11}
-          className='object-contain'
-          style={{ width: 'auto', height: 'auto' }}
+          className='w-auto h-auto aspect-[300/172.5] object-contain'
           src={'/projects/Dashboard-Todos-App.png'}
           alt='Dashboard of Todos app'
           width={300}
