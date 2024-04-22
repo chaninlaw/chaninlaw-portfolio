@@ -1,6 +1,7 @@
 import { relations } from 'drizzle-orm'
 import { pgTableCreator, index, text, timestamp, varchar, serial, integer, uuid } from 'drizzle-orm/pg-core'
 import { DATABASE_PREFIX as prefix } from '@/lib/constants'
+export * from './email'
 
 export const pgTable = pgTableCreator((name) => `${prefix}_${name}`)
 
