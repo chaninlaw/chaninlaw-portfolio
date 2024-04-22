@@ -11,6 +11,7 @@ import { EditorNavSide } from '@/components/editor/editor-nav-side'
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
 import { EditorContextProvider } from '@/components/editor'
 import { EditorTabs } from '@/components/editor/editor-tabs'
+import { Toaster } from 'sonner'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
             </div>
           </EditorContextProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )
