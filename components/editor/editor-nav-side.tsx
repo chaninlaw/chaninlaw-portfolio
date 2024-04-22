@@ -3,21 +3,21 @@ import { VscDebugAlt, VscExtensions, VscFiles, VscSearch, VscSourceControl } fro
 export function EditorNavSide() {
   return (
     <div className='h-full w-12'>
-      <ul className='flex flex-col items-center py-3 space-y-6'>
+      <ul className='flex flex-col items-center py-3 space-y-6 text-foreground/70 dark:text-white/60'>
         <li>
-          <VscFiles className='text-white/60 w-6 h-6' />
+          <VscFiles className='w-6 h-6' />
         </li>
         <li>
-          <VscSearch className='text-white/60 w-6 h-6' />
+          <VscSearch className='w-6 h-6' />
         </li>
         <li>
-          <VscSourceControl className='text-white/60 w-6 h-6' />
+          <VscSourceControl className='w-6 h-6' />
         </li>
         <li>
-          <VscDebugAlt className='text-white/60 w-6 h-6' />
+          <VscDebugAlt className='w-6 h-6' />
         </li>
         <li>
-          <VscExtensions className='text-white/60 w-6 h-6' />
+          <VscExtensions className='w-6 h-6' />
         </li>
       </ul>
     </div>

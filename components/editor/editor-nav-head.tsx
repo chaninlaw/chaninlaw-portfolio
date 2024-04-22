@@ -16,24 +16,24 @@ export function EditorNavHead() {
           <ArrowRightIcon className='text-stone-500' />
         </li>
         <li>
-          <div className='h-full p-1 m-1 w-[300px] rounded-lg border border-stone-500 bg-white/5 flex justify-center items-center space-x-1'>
-            <VscSearch className='text-white/60 text-sm' />
+          <div className='h-full p-1 m-1 w-[300px] rounded-lg border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
+            <VscSearch className='text-foreground text-sm' />
             <span className='text-xs'>Chanin</span>
           </div>
         </li>
       </ul>
-      <ul className='flex items-center p-2 space-x-2'>
+      <ul className='flex items-center p-2 space-x-2 dark:text-white/60'>
         <li>
-          <VscLayoutSidebarLeft className='text-white/60' />
+          <VscLayoutSidebarLeft />
         </li>
         <li>
-          <VscLayoutPanel className='text-white/60' />
+          <VscLayoutPanel />
         </li>
         <li>
-          <VscLayoutSidebarRightOff className='text-white/60' />
+          <VscLayoutSidebarRightOff />
         </li>
         <li>
-          <VscLayout className='text-white/60' />
+          <VscLayout />
         </li>
       </ul>
     </div>
