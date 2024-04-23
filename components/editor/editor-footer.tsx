@@ -1,6 +1,6 @@
-import { VscBell, VscCheckAll, VscError, VscEye, VscHistory, VscRemote, VscSourceControl, VscSync, VscWarning } from 'react-icons/vsc'
-import { Visitors } from '../visitors'
-import { Timer } from '../timer'
+import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl, VscSync, VscWarning } from 'react-icons/vsc'
+import Visitors from '@/components/visitors'
+import { Timer } from '@/components/timer'
 
 export function EditorFooter() {
   return (
