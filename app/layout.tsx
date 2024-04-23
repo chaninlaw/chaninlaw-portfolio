@@ -13,6 +13,7 @@ import { EditorContextProvider } from '@/components/editor'
 import { EditorTabs } from '@/components/editor/editor-tabs'
 import { Toaster } from 'sonner'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -58,6 +59,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Toaster />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
