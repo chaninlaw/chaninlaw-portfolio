@@ -1,4 +1,4 @@
-import { asc } from 'drizzle-orm'
+import { desc } from 'drizzle-orm'
 import { db } from '@/server/db'
 import { posts } from '@/server/db/schema'
 
@@ -17,6 +17,6 @@ export const getPostsWithUser = async () => {
         }
       }
     },
-    orderBy: [asc(posts.createdAt)]
+    orderBy: [desc(posts.createdAt)]
   })
 }
