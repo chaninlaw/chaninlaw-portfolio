@@ -23,7 +23,8 @@ export default function Home() {
                 height={300}
                 alt='profile image'
                 placeholder='blur'
-                blurDataURL='/profile.jpg'
+                blurDataURL='iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0MmD6AwACogFyY0zWRwAAAABJRU5ErkJggg=='
+                priority
               />
             </BackgroundGradient>
           </div>

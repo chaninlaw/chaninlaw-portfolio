@@ -1,5 +1,6 @@
 'use server'
 
+import { cache } from 'react'
 import { z } from 'zod'
 import { db } from '@/server/db'
 import { revalidatePath } from 'next/cache'
@@ -12,7 +13,7 @@ import { comments, emails, posts } from '@/server/db/schema'
 import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 import type { ActionResult } from '@/types/serverAction'
 
-export const createPost = async (data: z.infer<typeof createPostSchema>): Promise<ActionResult> => {
+export const createPost = cache(async (data: z.infer<typeof createPostSchema>): Promise<ActionResult> => {
   const parsed = createPostSchema.safeParse(data)
 
   if (!parsed.success) {
@@ -40,9 +41,9 @@ export const createPost = async (data: z.infer<typeof createPostSchema>): Promis
     success: true,
     message: 'Your post has been sent.'
   }
-}
+})
 
-export const replyPost = async (data: z.infer<typeof replyPostSchema>): Promise<ActionResult> => {
+export const replyPost = cache(async (data: z.infer<typeof replyPostSchema>): Promise<ActionResult> => {
   const parsed = replyPostSchema.safeParse(data)
 
   if (!parsed.success) {
@@ -70,9 +71,9 @@ export const replyPost = async (data: z.infer<typeof replyPostSchema>): Promise<
     success: true,
     message: 'Your comment has been sent.'
   }
-}
+})
 
-export const sendEmail = async (prevState: ActionResult, formData: FormData): Promise<ActionResult> => {
+export const sendEmail = cache(async (prevState: ActionResult, formData: FormData): Promise<ActionResult> => {
   const parsed = sendEmailSchema.safeParse(Object.fromEntries(formData))
 
   if (!parsed.success) {
@@ -114,4 +115,4 @@ export const sendEmail = async (prevState: ActionResult, formData: FormData): Pr
     success: true,
     message: 'Your email has been sent.'
   }
-}
+})
