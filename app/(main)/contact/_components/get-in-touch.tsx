@@ -16,11 +16,12 @@ export const GetInTouch = () => {
   const formRef = React.useRef<HTMLFormElement>(null)
 
   React.useEffect(() => {
+    if (!formRef.current) return
     if (formState.success === false) {
       toast.error(formState.message)
     } else if (formState.success === true) {
       toast.success(formState.message)
-      formRef.current?.reset()
+      formRef.current.reset()
     }
   }, [formState])
 
@@ -34,7 +35,19 @@ export const GetInTouch = () => {
               Have a question or want to work together? Fill out the form below or reach out through my social channels.
             </p>
           </div>
-          <form ref={formRef} action={formAction} className='space-y-4 text-left'>
+          <form
+            ref={formRef}
+            action={async (formData) => {
+              try {
+                await formAction(formData)
+                formRef.current?.reset()
+                toast.success(formState.message)
+              } catch (error) {
+                toast.error(formState.message)
+              }
+            }}
+            className='space-y-4 text-left'
+          >
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
               <div className='space-y-2'>
                 <Label htmlFor='name'>Name</Label>

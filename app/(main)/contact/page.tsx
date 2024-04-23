@@ -1,3 +1,4 @@
+import { Separator } from '@/components/ui/separator'
 import { GetInTouch } from './_components/get-in-touch'
 import { PostList } from './_components/post-list'
 
@@ -8,7 +9,9 @@ export default async function ContactPage() {
         <div className='col-span-1 flex'>
           <PostList />
         </div>
+
         <div className='col-span-1 flex'>
+          <Separator className='hidden sm:block' orientation='vertical' />
           <GetInTouch />
         </div>
       </div>

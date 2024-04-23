@@ -1,21 +1,26 @@
 'use client'
 
+import * as React from 'react'
 import { useFormState } from 'react-dom'
 import { SubmitButton } from './submit-button'
 import { logout } from '@/auth/actions'
 import { toast } from 'sonner'
 
 export const LogoutButton = () => {
+  const formRef = React.useRef<HTMLFormElement>(null)
   const [formState, formAction] = useFormState(logout, {
     success: null
   })
 
-  if (!formState.success) {
-    toast.error(formState.message)
-  }
+  React.useEffect(() => {
+    if (!formRef.current) return
+    if (formState.success === false) {
+      toast.error(formState.message)
+    }
+  }, [formState])
 
   return (
-    <form action={formAction}>
+    <form ref={formRef} action={formAction}>
       <SubmitButton variant={'outline'}>Logout</SubmitButton>
     </form>
   )
