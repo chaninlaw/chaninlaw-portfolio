@@ -3,15 +3,7 @@ import { FaApple } from 'react-icons/fa'
 import { IoBatteryHalfOutline } from 'react-icons/io5'
 import { IoIosWifi } from 'react-icons/io'
 import { BsPersonCircle, BsToggles } from 'react-icons/bs'
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger
-} from './ui/menubar'
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from './ui/menubar'
 import { cn } from '@/lib/utils'
 import React from 'react'
 
@@ -21,7 +13,7 @@ interface MenuItems {
   children?: MenuItems[]
 }
 
-export function Navbar() {
+export function Navbar({ className }: { className?: string }) {
   const menuitems: MenuItems[][] = [
     [
       {
@@ -50,7 +42,7 @@ export function Navbar() {
   ]
   return (
     <header className='bg-background'>
-      <nav>
+      <nav className={cn(className)}>
         <Menubar className='h-7 flex justify-between items-center py-0 border-0 border-b border-border bg-white/5'>
           {menuitems.map((item, index) => (
             <MenubarMenu key={`menu=${index}`}>

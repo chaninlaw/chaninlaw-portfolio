@@ -16,7 +16,7 @@ export default function SkillsPage() {
           <h2 className='text-3xl font-bold tracking-tight'>Skills</h2>
           <p className='text-xs uppercase text-muted-foreground'>Dashboard Summary</p>
         </div>
-        <div className='flex space-x-2'>
+        <div className='flex gap-2 flex-wrap md:flex-nowrap md:space-x-2'>
           <Suspense fallback={<SkeletonCard />}>
             <TotalTimeSpentCard />
           </Suspense>
@@ -41,7 +41,7 @@ export default function SkillsPage() {
               </Suspense>
             </div>
           </div>
-          <div className='rounded-xl border bg-card border-stone-800 text-card-foreground shadow col-span-3'>
+          <div className='rounded-xl border bg-card border-stone-800 text-card-foreground shadow col-span-4 md:col-span-3'>
             <div className='flex flex-col space-y-1.5 p-6'>
               <h3 className='font-semibold leading-none tracking-tight'>Recent Languages</h3>
               <p className='text-sm text-muted-foreground'>Top 10 languages by time spent</p>
