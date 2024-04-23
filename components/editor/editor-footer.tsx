@@ -15,10 +15,10 @@ export function EditorFooter() {
         <li className='flex justify-center items-center'>
           <small>main*</small>
         </li>
-        <li className=''>
+        <li className='hidden sm:flex'>
           <VscSync />
         </li>
-        <li className='flex justify-center items-center space-x-1'>
+        <li className='hidden sm:flex justify-center items-center space-x-1'>
           <VscError />
           <small>0</small>
           <VscWarning />
@@ -33,17 +33,17 @@ export function EditorFooter() {
         </li>
       </ul>
       <ul className='h-7 border-t border-border flex items-center space-x-4 px-2'>
-        <li className='flex justify-center items-center'>
+        <li className='hidden sm:flex justify-center items-center'>
           <small>made with 🤍</small>
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='hidden md:flex justify-center items-center'>
           <small>{'{ }'} Typescript JSX</small>
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='hidden md:flex justify-center items-center '>
           <VscCheckAll />
           <small>Prettier</small>
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='hidden sm:flex justify-center items-center'>
           <VscBell />
         </li>
       </ul>

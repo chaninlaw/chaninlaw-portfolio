@@ -47,39 +47,51 @@
     --input: 12 6.5% 15.1%;
     --ring: 24 5.7% 82.9%;
   }
-}
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: hsl(60 4.8% 95.9%);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: hsl(60 4.8% 95.9%);
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(60 4.8% 95.9%);
-}
-
-@media (prefers-color-scheme: dark) {
+  /* Track */
   ::-webkit-scrollbar-track {
-    background: hsl(12 6.5% 15.1%);
+    background: hsl(60 4.8% 95.9%);
   }
 
+  /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(12 10 9 / 50%);
+    background: hsl(60 4.8% 95.9%);
+    border-radius: 5px;
   }
 
-  :-webkit-scrollbar-thumb:hover {
-    background: rgb(12 10 9 / 80%);
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(60 4.8% 95.9%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+      background: hsl(12 6.5% 15.1%);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(12 10 9 / 50%);
+    }
+
+    :-webkit-scrollbar-thumb:hover {
+      background: rgb(12 10 9 / 80%);
+    }
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

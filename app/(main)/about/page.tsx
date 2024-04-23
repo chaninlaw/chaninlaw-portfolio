@@ -6,7 +6,7 @@ const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
 
 export default function AboutPage() {
   return (
-    <section className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
+    <section className='container dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
       <div className='h-full max-w-4xl mx-auto antialiased py-4 relative '>
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className='mb-10'>

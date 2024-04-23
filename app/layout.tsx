@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-          <Navbar />
+          <Navbar className='hidden lg:block' />
           <EditorContextProvider>
             <div className='h-full'>
               <div className='border-2 border-border rounded-xl flex flex-col w-full h-full'>
@@ -48,7 +48,7 @@ export default function RootLayout({
                     <ResizableHandle />
                     <ResizablePanel defaultSize={85}>
                       <EditorTabs />
-                      <main className='h-[calc(100vh-128px)] overflow-y-scroll'>{children}</main>
+                      <main className='h-[calc(100vh-100px)] lg:h-[calc(100vh-128px)] overflow-y-scroll'>{children}</main>
                     </ResizablePanel>
                   </ResizablePanelGroup>
                 </div>

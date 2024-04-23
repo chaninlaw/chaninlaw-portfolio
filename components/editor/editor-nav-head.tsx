@@ -9,30 +9,30 @@ export function EditorNavHead() {
         <li className='w-3 h-3 rounded-full bg-green-500'></li>
       </ul>
       <ul className='flex items-center space-x-2'>
-        <li>
+        <li className='hidden sm:block'>
           <ArrowLeftIcon className='text-stone-500' />
         </li>
-        <li>
+        <li className='hidden sm:block'>
           <ArrowRightIcon className='text-stone-500' />
         </li>
         <li>
-          <div className='h-full p-1 m-1 w-[300px] rounded-lg border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
+          <div className='h-full p-1 m-1 w-[200px] sm:w-[300px] rounded-lg border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
             <VscSearch className='text-foreground text-sm' />
             <span className='text-xs'>Chanin</span>
           </div>
         </li>
       </ul>
       <ul className='flex items-center p-2 space-x-2 dark:text-white/60'>
-        <li>
+        <li className='hidden sm:block'>
           <VscLayoutSidebarLeft />
         </li>
-        <li>
+        <li className='hidden sm:block'>
           <VscLayoutPanel />
         </li>
-        <li>
+        <li className='hidden sm:block'>
           <VscLayoutSidebarRightOff />
         </li>
-        <li>
+        <li className='hidden sm:block'>
           <VscLayout />
         </li>
       </ul>

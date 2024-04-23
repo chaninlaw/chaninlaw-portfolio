@@ -20,7 +20,7 @@ export function EditorTabs() {
   }
   return (
     <Tabs value={currentTab} onValueChange={(e) => setCurrentTab(e as TabsListValue)}>
-      <TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background'>
+      <TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background hidden-scrollbar'>
         {tabLists.map((tab) => (
           <TabsTrigger
             className='w-fit h-full flex space-x-1 rounded-b-none group bg-secondary dark:bg-background data-[state=active]:bg-background dark:data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent'
