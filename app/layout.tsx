@@ -12,6 +12,7 @@ import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/componen
 import { EditorContextProvider } from '@/components/editor'
 import { EditorTabs } from '@/components/editor/editor-tabs'
 import { Toaster } from 'sonner'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function RootLayout({
           </EditorContextProvider>
         </ThemeProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
