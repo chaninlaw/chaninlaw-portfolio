@@ -1,6 +1,7 @@
 import { env } from '@/env'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { cache } from 'react'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -43,4 +44,4 @@ export function timeAgo(date: Date) {
   }
 }
 
-export const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then((res) => res.json())
+export const fetcher = cache((...args: Parameters<typeof fetch>) => fetch(...args).then((res) => res.json()))

@@ -14,7 +14,10 @@
     "email": "email dev --port 3003"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@hookform/resolvers": "^3.3.4",
+    "@liveblocks/client": "^1.11.2",
+    "@liveblocks/react": "^1.11.2",
     "@lucia-auth/adapter-drizzle": "^1.0.7",
     "@monaco-editor/react": "^4.6.0",
     "@neondatabase/serverless": "^0.9.1",

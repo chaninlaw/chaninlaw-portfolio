@@ -11,16 +11,10 @@ interface EditorContextValue {
 const EditorContext = React.createContext<EditorContextValue | undefined>(undefined)
 
 export const EditorContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [tabLists, setTabLists] = React.useState<typeof DEAULT_TABS_LIST>(
-    DEFAULT_TABS as unknown as typeof DEAULT_TABS_LIST
-  )
+  const [tabLists, setTabLists] = React.useState<typeof DEAULT_TABS_LIST>(DEFAULT_TABS as unknown as typeof DEAULT_TABS_LIST)
   const [currentTab, setCurrentTab] = React.useState<TabsListValue>('/')
 
-  return (
-    <EditorContext.Provider value={{ tabLists, setTabLists, currentTab, setCurrentTab }}>
-      {children}
-    </EditorContext.Provider>
-  )
+  return <EditorContext.Provider value={{ tabLists, setTabLists, currentTab, setCurrentTab }}>{children}</EditorContext.Provider>
 }
 
 export const useEditor = () => {

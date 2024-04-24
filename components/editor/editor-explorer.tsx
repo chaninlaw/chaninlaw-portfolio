@@ -5,8 +5,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useEditor } from '.'
 import { DEAULT_TABS_LIST, type TabsListValue } from './items'
 import { useRouter } from 'next/navigation'
-import { ModeToggle } from '../theme-toggle'
+import { ModeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
+import { LiveAvatar } from '../liveblocks/live-avatar'
+import { Room } from '../liveblocks/room'
 
 export function EditorExplorer() {
   const { tabLists, setTabLists, setCurrentTab, currentTab } = useEditor()
@@ -48,6 +50,7 @@ export function EditorExplorer() {
                 <div
                   key={tab.value}
                   className={cn('pl-8 flex items-center space-x-1 cursor-pointer', { 'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab })}
+                  onMouseEnter={() => router.prefetch(tab.value)}
                   onClick={onClickOpenEditors.bind(null, tab.value)}
                 >
                   {tab.icon}
@@ -68,6 +71,7 @@ export function EditorExplorer() {
                 <div
                   key={tab.value}
                   className={cn('pl-8 flex items-center space-x-1 cursor-pointer', { 'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab })}
+                  onMouseEnter={() => router.prefetch(tab.value)}
                   onClick={onClickAddTab.bind(null, tab)}
                 >
                   {tab.icon}
@@ -80,17 +84,9 @@ export function EditorExplorer() {
       </div>
 
       <div className='flex flex-col'>
-        <Accordion type='single' collapsible>
-          <AccordionItem value='item-3' className='border-0'>
-            <AccordionTrigger className='font-bold uppercase flex justify-start space-x-1 my-1'>Outline</AccordionTrigger>
-            <AccordionContent>
-              <div className='ml-8 flex items-center space-x-1'>
-                <FaReact className='text-xs text-blue-400' />
-                <span>index.tsx</span>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <Room>
+          <LiveAvatar />
+        </Room>
 
         <Accordion type='single' collapsible>
           <AccordionItem value='item-4' className='border-0'>
