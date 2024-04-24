@@ -5,9 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@faker-js/faker':
+    specifier: ^8.4.1
+    version: 8.4.1
   '@hookform/resolvers':
     specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.51.3)
+  '@liveblocks/client':
+    specifier: ^1.11.2
+    version: 1.11.2
+  '@liveblocks/react':
+    specifier: ^1.11.2
+    version: 1.11.2(react@18.2.0)
   '@lucia-auth/adapter-drizzle':
     specifier: ^1.0.7
     version: 1.0.7(lucia@3.1.1)
@@ -991,6 +1000,11 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  /@faker-js/faker@8.4.1:
+    resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: false
+
   /@floating-ui/core@1.6.0:
     resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
     dependencies:
@@ -1101,6 +1115,28 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /@liveblocks/client@1.11.2:
+    resolution: {integrity: sha512-iBKrSLyGSDDHDz86Gh0fXUhYDw6Es32TCX6NcADOcq+YyLNHsAD9a4VStYyn2FC+owgV1dyjQmfir6HVBQX5DA==}
+    dependencies:
+      '@liveblocks/core': 1.11.2
+    dev: false
+
+  /@liveblocks/core@1.11.2:
+    resolution: {integrity: sha512-OHeKDExpaMnlKMPTpW+Z51eF4iLGOYKWK010QfPobRa1gUTAGsrYy1bA1JGmkcH4vPg4h3vijOhKPr6M7yBsiw==}
+    dev: false
+
+  /@liveblocks/react@1.11.2(react@18.2.0):
+    resolution: {integrity: sha512-C/NMos2txoz1oCIoNe5cFZ0nvUMerSupG3M4qw8+knAFgYfG5JgCcxsF32KB6Mfi9oUTSmXnWmksCOhGz/N0Hg==}
+    peerDependencies:
+      react: ^16.14.0 || ^17 || ^18
+    dependencies:
+      '@liveblocks/client': 1.11.2
+      '@liveblocks/core': 1.11.2
+      nanoid: 3.3.7
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
 
   /@lucia-auth/adapter-drizzle@1.0.7(lucia@3.1.1):
     resolution: {integrity: sha512-X/V7fLBca8EC/gPXCntwbQpb0+F9oEuRoHElvsi9rCrdnGhCMNxHgwAvgiQ6pes+rIYpyvx4n3hvjqo/fPo03A==}

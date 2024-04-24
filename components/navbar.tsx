@@ -33,9 +33,9 @@ export function Navbar({ className }: { className?: string }) {
       { name: 'Help', children: [] }
     ],
     [
-      { name: <IoBatteryHalfOutline className='text-2xl' />, children: [] },
-      { name: <BsPersonCircle />, children: [] },
-      { name: <IoIosWifi className='text-xl' />, children: [] },
+      { name: <IoBatteryHalfOutline aria-labelledby='battery status icon' className='text-2xl' />, children: [] },
+      { name: <BsPersonCircle aria-labelledby='user profile icon' />, children: [] },
+      { name: <IoIosWifi aria-labelledby='wifi icon' className='text-xl' />, children: [] },
       // { name: <BsToggles />, children: [] },
       { name: 'Mon 26 Feb 13:33', children: [] }
     ]

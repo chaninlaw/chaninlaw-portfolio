@@ -1,7 +1,9 @@
-import { Boxes } from '@/components/ui/background-boxes'
-import { BackgroundGradient } from '@/components/ui/background-gradient'
+import dynamic from 'next/dynamic'
 import { MotionDiv } from '@/components/ui/motion-div'
 import Image from 'next/image'
+
+const BackgroundGradient = dynamic(() => import('@/components/ui/background-gradient').then((mod) => mod.BackgroundGradient), { ssr: false })
+const Boxes = dynamic(() => import('@/components/ui/background-boxes').then((mod) => mod.Boxes), { ssr: false })
 
 export default function Home() {
   return (
