@@ -54,6 +54,7 @@ interface DatabaseSessionAttributes {}
 interface DatabaseUserAttributes extends Omit<DbUser, 'hashedPassword'> {}
 
 export const uncachedValidateRequest = async (): Promise<{ user: User; session: Session } | { user: null; session: null }> => {
+  'use server'
   const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null
   if (!sessionId) {
     return { user: null, session: null }
