@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   unstable_noStore()
   try {
     if (process.env.NODE_ENV === 'development') {
-      return NextResponse.json({ visitCount: 0 }, { status: 200 })
+      return NextResponse.json({ visitCount: 999 }, { status: 200 })
     }
     const ip = req.headers.get('x-forwarded-for') || req.ip
     const today = new Date().toISOString().slice(0, 10)
