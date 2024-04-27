@@ -30,7 +30,7 @@ export async function BestdayCard() {
                   <p className='text-sm'>Timezone: {data.timezone}</p>
                   <div className='flex justify-end items-center pt-2'>
                     <CalendarIcon className='mr-2 h-4 w-4 opacity-70' />
-                    <span className='text-xs text-muted-foreground'>{dateFormatter.format(new Date(data.modified_at))}</span>
+                    <span className='text-xs text-muted-foreground'>{dateFormatter(data.modified_at)}</span>
                   </div>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export async function BestdayCard() {
         <span className='text-lg'>hrs</span> <Statistic start={0} end={(data.best_day.total_seconds / 60) % 60} />
         <span className='text-lg'>mins</span>
       </CardContent>
-      <CardFooter className='text-xs text-muted-foreground'>at {dateFormatter.format(new Date(data.best_day.date))}</CardFooter>
+      <CardFooter className='text-xs text-muted-foreground'>at {dateFormatter(data.best_day.date)}</CardFooter>
     </Card>
   )
 }

@@ -7,12 +7,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const dateFormatter = new Intl.DateTimeFormat('en-us', {
-  // weekday: "long",
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric'
-})
+export const dateFormatter = (dateStr: string) => {
+  try {
+    const date = new Date(dateStr)
+    return new Intl.DateTimeFormat('en-us', {
+      // weekday: "long",
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }).format(date)
+  } catch (error) {
+    console.log('Invalid date:', error)
+    return 'Invalid date'
+  }
+}
 
 export function absoluteUrl(path: string) {
   return new URL(path, env.NEXT_PUBLIC_APP_URL).href
