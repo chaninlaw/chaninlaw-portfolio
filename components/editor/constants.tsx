@@ -1,6 +1,15 @@
 import { FaReact } from 'react-icons/fa'
 import { VscBrowser, VscFilePdf } from 'react-icons/vsc'
 
+export type TabsListValue = '/' | '/about' | '/skills' | '/projects' | '/contact' | '/resume'
+
+type TabsLists = {
+  name: string
+  value: TabsListValue
+  icon: React.ReactNode
+  downloadable?: string
+}[]
+
 export const DEFAULT_TABS = [
   {
     name: 'Preview',
@@ -29,14 +38,6 @@ export const DEFAULT_TABS = [
   }
 ]
 
-export type TabsListValue = '/' | '/about' | '/skills' | '/projects' | '/contact' | '/resume'
-
-type TabsLists = {
-  name: string
-  value: TabsListValue
-  icon: React.ReactNode
-  downloadable?: string
-}[]
 export const DEAULT_TABS_LIST: TabsLists = [
   {
     name: 'Preview',
