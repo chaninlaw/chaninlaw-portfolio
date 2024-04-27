@@ -1,6 +1,7 @@
-import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl, VscSync, VscWarning } from 'react-icons/vsc'
+import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl, VscWarning } from 'react-icons/vsc'
 import Visitors from '@/components/visitors'
 import { Timer } from '@/components/timer'
+import { SyncStatus } from '@/components/sync-status'
 
 export function EditorFooter() {
   return (
@@ -16,7 +17,7 @@ export function EditorFooter() {
           <small>main*</small>
         </li>
         <li className='hidden sm:flex'>
-          <VscSync />
+          <SyncStatus />
         </li>
         <li className='hidden sm:flex justify-center items-center space-x-1'>
           <VscError />
