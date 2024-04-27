@@ -2,7 +2,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 import { VscLayout, VscLayoutPanel, VscLayoutSidebarLeft, VscLayoutSidebarRightOff, VscSearch } from 'react-icons/vsc'
 export function EditorNavHead() {
   return (
-    <div className='border-b border-border flex justify-between'>
+    <div aria-hidden='true' className='border-b border-border flex justify-between'>
       <ul className='flex items-center p-2 space-x-2 '>
         <li className='w-3 h-3 rounded-full bg-red-500'></li>
         <li className='w-3 h-3 rounded-full bg-yellow-500'></li>

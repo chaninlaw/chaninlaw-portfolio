@@ -22,7 +22,7 @@ export const LiveAvatar = () => {
               return (
                 <Avatar key={connectionId}>
                   <AvatarImage src={info?.avatar} />
-                  <AvatarFallback>{info.name.slice(0, 2)}</AvatarFallback>
+                  <AvatarFallback>{info?.name.slice(0, 2)}</AvatarFallback>
                 </Avatar>
               )
             })}

@@ -4,8 +4,8 @@ import { createRoomContext, createLiveblocksContext } from '@liveblocks/react'
 import { env } from '@/env'
 
 const client = createClient({
-  publicApiKey: env.NEXT_PUBLIC_LIVEBLOCKS_API_KEY,
-  // authEndpoint: "/api/liveblocks-auth",
+  // publicApiKey: env.NEXT_PUBLIC_LIVEBLOCKS_API_KEY,
+  authEndpoint: '/api/liveblocks-auth',
   throttle: 16,
   async resolveUsers({ userIds }) {
     // Used only for Comments and Notifications. Return a list of user information
@@ -72,7 +72,6 @@ type Storage = {
 type UserMeta = {
   id: string
   info: {
-    id: string
     name: string
     avatar: string
   }
