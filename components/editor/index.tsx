@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { DEAULT_TABS_LIST, DEFAULT_TABS, type TabsListValue } from './items'
+import { DEAULT_TABS_LIST, DEFAULT_TABS, type TabsListValue } from './constants'
 
 interface EditorContextValue {
   tabLists: typeof DEAULT_TABS_LIST

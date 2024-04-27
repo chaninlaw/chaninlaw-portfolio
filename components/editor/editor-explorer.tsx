@@ -2,7 +2,7 @@
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { useEditor } from '.'
-import { DEAULT_TABS_LIST, type TabsListValue } from './items'
+import { DEAULT_TABS_LIST, type TabsListValue } from './constants'
 import { useRouter } from 'next/navigation'
 import { ModeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
