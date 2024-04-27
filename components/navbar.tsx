@@ -42,7 +42,7 @@ export function Navbar({ className }: { className?: string }) {
   ]
   return (
     <header className='bg-background'>
-      <nav className={cn(className)}>
+      <nav aria-hidden='true' className={cn(className)}>
         <Menubar className='h-7 flex justify-between items-center py-0 border-0 border-b border-border bg-white/5'>
           {menuitems.map((item, index) => (
             <MenubarMenu key={`menu=${index}`}>

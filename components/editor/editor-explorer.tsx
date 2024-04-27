@@ -1,14 +1,13 @@
 'use client'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
-import { FaReact } from 'react-icons/fa'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { useEditor } from '.'
 import { DEAULT_TABS_LIST, type TabsListValue } from './items'
 import { useRouter } from 'next/navigation'
 import { ModeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
-import { LiveAvatar } from '../liveblocks/live-avatar'
-import { Room } from '../liveblocks/room'
+import { LiveAvatar } from '@/components/liveblocks/live-avatar'
+import { Room } from '@/components/liveblocks/room'
 
 export function EditorExplorer() {
   const { tabLists, setTabLists, setCurrentTab, currentTab } = useEditor()
@@ -92,10 +91,7 @@ export function EditorExplorer() {
           <AccordionItem value='item-4' className='border-0'>
             <AccordionTrigger className='font-bold uppercase flex justify-start space-x-1 my-1'>Timeline</AccordionTrigger>
             <AccordionContent>
-              <div className='ml-8 flex items-center space-x-1'>
-                <FaReact className='text-xs text-blue-400' />
-                <span>index.tsx</span>
-              </div>
+              <div className='ml-8 flex items-center space-x-1'>Nice to meet you.</div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
