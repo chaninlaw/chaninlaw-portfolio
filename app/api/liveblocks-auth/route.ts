@@ -1,6 +1,6 @@
 import { env } from '@/env'
 import { Liveblocks } from '@liveblocks/node'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest } from 'next/server'
 
 /**
  * Authenticating your Liveblocks application
@@ -11,7 +11,7 @@ const liveblocks = new Liveblocks({
   secret: env.LIVEBLOCKS_SECRET_KEY
 })
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest) {
   // We're generating random users and avatars here.
   // In a real-world scenario, this is where you'd assign the
   // user based on their real identity from your auth provider.
