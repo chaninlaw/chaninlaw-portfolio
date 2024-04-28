@@ -6,7 +6,7 @@ import { EditorKeyboardCapture } from './editor-keyboard-capture'
 
 export function EditorFooter() {
   return (
-    <div className='h-6 flex justify-between items-center'>
+    <div className='h-6 flex justify-between items-center border-t border-border'>
       <ul className='h-full border-t border-border flex items-center space-x-4'>
         <li className='h-full w-10 rounded-bl-xl bg-blue-500/90 border-r border-border flex justify-center items-center'>
           <VscRemote className='text-white' />
