@@ -7,18 +7,15 @@ export function EditorFooter() {
   return (
     <div className='h-6 flex justify-between items-center'>
       <ul className='h-full border-t border-border flex items-center space-x-4'>
-        <li className='h-full w-10 rounded-bl-xl bg-blue-600/80 border-r border-border flex justify-center items-center'>
+        <li className='h-full w-10 rounded-bl-xl bg-blue-500/90 border-r border-border flex justify-center items-center'>
           <VscRemote className='text-white' />
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='hidden sm:flex justify-center items-center space-x-1'>
           <VscSourceControl className='text-sm' />
-        </li>
-        <li className='flex justify-center items-center'>
           <small>main*</small>
-        </li>
-        <li className='hidden sm:flex'>
           <SyncStatus />
         </li>
+
         <li className='hidden sm:flex justify-center items-center space-x-1'>
           <VscError />
           <small>0</small>
