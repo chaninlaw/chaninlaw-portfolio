@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic'
-import { MotionDiv } from '@/components/ui/motion-div'
 import Image from 'next/image'
+import { Dancing_Script } from 'next/font/google'
+import { MotionDiv } from '@/components/ui/motion-div'
+
+const dancingScript = Dancing_Script({ subsets: ['latin'], weight: ['500'] })
 
 const BackgroundGradient = dynamic(() => import('@/components/ui/background-gradient').then((mod) => mod.BackgroundGradient), { ssr: false })
 const Boxes = dynamic(() => import('@/components/ui/background-boxes').then((mod) => mod.Boxes), { ssr: false })
@@ -31,7 +34,9 @@ export default function Home() {
             </BackgroundGradient>
           </div>
           <div className='flex flex-col items-center relative z-20'>
-            <h1 className='md:text-6xl text-xl text-foreground dark:text-white relative z-20 font-serif select-none'>Hi, I&apos;m Chanin</h1>
+            <h1 className='md:text-6xl text-xl text-foreground dark:text-white relative z-20 select-none' style={dancingScript.style}>
+              Hi, I am Chanin
+            </h1>
             <p className='mt-2 text-neutral-400 dark:text-neutral-300 uppercase'>Frontend Developer</p>
             <div className='mt-4 max-w-lg text-center'>
               <p>
