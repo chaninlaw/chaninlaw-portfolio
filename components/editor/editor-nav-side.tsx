@@ -13,6 +13,7 @@ export function EditorNavSide() {
       icon: <VscFiles className='w-6 h-6' />,
       content: 'Explorer',
       shortcut: '⇧⌘E',
+      badge: 0,
       onClick: () => setCurrentSidebar('explorer')
     },
     {
@@ -20,6 +21,7 @@ export function EditorNavSide() {
       icon: <VscSearch className='w-6 h-6' />,
       content: 'Search',
       shortcut: '⇧⌘F',
+      badge: 0,
       onClick: () => setCurrentSidebar('search')
     },
     {
@@ -27,6 +29,7 @@ export function EditorNavSide() {
       icon: <VscSourceControl className='w-6 h-6' />,
       content: 'Source Control',
       shortcut: '⇧⌘G',
+      badge: 0,
       onClick: () => setCurrentSidebar('source')
     },
     {
@@ -34,6 +37,7 @@ export function EditorNavSide() {
       icon: <VscDebugAlt className='w-6 h-6' />,
       content: 'Run and Debug',
       shortcut: '⇧⌘D',
+      badge: 0,
       onClick: () => setCurrentSidebar('debug')
     },
     {
@@ -41,6 +45,7 @@ export function EditorNavSide() {
       icon: <VscExtensions className='w-6 h-6' />,
       content: 'Extensions',
       shortcut: '⇧⌘X',
+      badge: 1,
       onClick: () => setCurrentSidebar('extensions')
     }
   ]
@@ -52,12 +57,20 @@ export function EditorNavSide() {
           <li key={item.key} className='w-full'>
             <Tooltip delayDuration={0}>
               <TooltipTrigger
-                className={cn('w-full py-3 flex justify-center hover:text-black dark:hover:text-white', {
+                className={cn('w-full relative py-3 flex justify-center hover:text-black dark:hover:text-white', {
                   'text-black dark:text-white border-l-2 border-blue-500/90': currentSidebar === item.key
                 })}
                 onClick={item.onClick}
               >
                 {item.icon}
+                {item.badge > 0 && (
+                  <span
+                    aria-hidden
+                    className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center text-white text-[8px] rounded-full bg-blue-600'
+                  >
+                    {item.badge > 9 ? '9+' : item.badge}
+                  </span>
+                )}
               </TooltipTrigger>
               <TooltipContent className='bg-background text-primary border border-muted-foreground shadow-xl' side='right' align='center'>
                 <small className='text-xs text-black/75 dark:text-white/75'>
