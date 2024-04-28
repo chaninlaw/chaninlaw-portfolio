@@ -19,7 +19,7 @@ export default function MetaLlamaChat() {
             <AvatarImage className='object-contain' src='https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png' />
             <AvatarFallback>HF</AvatarFallback>
           </Avatar>
-          <Link className='flex items-center space-x-1' href='https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct'>
+          <Link className='flex items-center space-x-1' href='https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct' target='_blank'>
             <span className='select-none upp group-hover:underline'>Hugging Face</span>
             <ArrowTopRightIcon className='group-hover:-translate-y-1 transition-all' />
           </Link>
