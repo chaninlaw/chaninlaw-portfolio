@@ -17,9 +17,9 @@ export const GetInTouch = () => {
 
   React.useEffect(() => {
     if (!formRef.current) return
-    if (formState.success === false) {
+    if (formState.success === false && formState.message) {
       toast.error(formState.message)
-    } else if (formState.success === true) {
+    } else if (formState.success === true && formState.message) {
       toast.success(formState.message)
       formRef.current.reset()
     }
