@@ -8,8 +8,9 @@ import { ModeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
 import { LiveAvatar } from '@/components/liveblocks/live-avatar'
 import { Room } from '@/components/liveblocks/room'
+import { Button } from '@/components/ui/button'
 
-export function EditorExplorer() {
+export function EditorSidebarExplorer() {
   const { tabLists, setTabLists, setCurrentTab, currentTab } = useEditor()
   const router = useRouter()
 
@@ -30,12 +31,14 @@ export function EditorExplorer() {
   }
 
   return (
-    <div className='w-full h-full min-w-40 overflow-x-hidden bg-secondary dark:bg-background border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
+    <>
       <div className='flex flex-col'>
-        <div className='flex justify-between items-center p-2'>
+        <div className='flex justify-between items-center px-2 py-1.5'>
           <p className='uppercase'>Expolorer</p>
           <ModeToggle>
-            <DotsHorizontalIcon />
+            <Button variant='ghost' className='h-5 w-5 p-0'>
+              <DotsHorizontalIcon />
+            </Button>
           </ModeToggle>
         </div>
 
@@ -48,7 +51,9 @@ export function EditorExplorer() {
               {tabLists.map((tab) => (
                 <div
                   key={tab.value}
-                  className={cn('pl-8 flex items-center space-x-1 cursor-pointer', { 'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab })}
+                  className={cn('pl-8 flex items-center space-x-1 cursor-pointer hover:bg-slate-300/20 dark:hover:bg-zinc-100/10', {
+                    'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab
+                  })}
                   onMouseEnter={() => router.prefetch(tab.value)}
                   onClick={onClickOpenEditors.bind(null, tab.value)}
                 >
@@ -69,7 +74,9 @@ export function EditorExplorer() {
               {DEAULT_TABS_LIST.map((tab) => (
                 <div
                   key={tab.value}
-                  className={cn('pl-8 flex items-center space-x-1 cursor-pointer', { 'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab })}
+                  className={cn('pl-8 flex items-center space-x-1 cursor-pointer hover:bg-slate-300/20 dark:hover:bg-zinc-100/10', {
+                    'bg-sky-100 dark:bg-sky-100/20': tab.value === currentTab
+                  })}
                   onMouseEnter={() => router.prefetch(tab.value)}
                   onClick={onClickAddTab.bind(null, tab)}
                 >
@@ -96,6 +103,6 @@ export function EditorExplorer() {
           </AccordionItem>
         </Accordion>
       </div>
-    </div>
+    </>
   )
 }

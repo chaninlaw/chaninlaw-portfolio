@@ -2,18 +2,20 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
+import { Toaster } from 'sonner'
+
 import { Navbar } from '@/components/navbar'
-import { EditorExplorer } from '@/components/editor/editor-explorer'
 import { EditorFooter } from '@/components/editor/editor-footer'
 import { EditorNavHead } from '@/components/editor/editor-nav-head'
 import { EditorNavSide } from '@/components/editor/editor-nav-side'
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
+import { EditorContent } from '@/components/editor/editor-content'
+import { EditorSidebar } from '@/components/editor/editor-sidebar'
 import { EditorTabs } from '@/components/editor/editor-tabs'
-import { Toaster } from 'sonner'
+
+import { Providers } from './providers'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Providers } from './providers'
-import { EditorContent } from '@/components/editor/editor-content'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -25,11 +27,7 @@ export const metadata: Metadata = {
   description: 'My website about me'
 }
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
@@ -42,7 +40,9 @@ export default function RootLayout({
                 <EditorNavSide />
                 <ResizablePanelGroup direction='horizontal' className='h-full'>
                   <ResizablePanel defaultSize={15}>
-                    <EditorExplorer />
+                    <div className='w-full h-full min-w-40 overflow-x-hidden bg-secondary dark:bg-background border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
+                      <EditorSidebar />
+                    </div>
                   </ResizablePanel>
                   <ResizableHandle />
                   <ResizablePanel defaultSize={85}>

@@ -1,6 +1,8 @@
 import { FaReact } from 'react-icons/fa'
 import { VscBrowser, VscFilePdf } from 'react-icons/vsc'
 
+export type SidebarValue = 'explorer' | 'search' | 'source' | 'debug' | 'extensions'
+
 export type TabsListValue = '/' | '/about' | '/skills' | '/projects' | '/contact' | '/resume'
 
 type TabsLists = {
