@@ -81,7 +81,7 @@ const config = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate'), addVariablesForColors, dotBackground]
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate'), addVariablesForColors, dotBackground]
 } satisfies Config
 
 export default config
