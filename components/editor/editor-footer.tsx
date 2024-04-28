@@ -2,6 +2,7 @@ import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl
 import Visitors from '@/components/visitors'
 import { Timer } from '@/components/timer'
 import { SyncStatus } from '@/components/sync-status'
+import { EditorKeyboardCapture } from './editor-keyboard-capture'
 
 export function EditorFooter() {
   return (
@@ -28,6 +29,9 @@ export function EditorFooter() {
         <li className='flex justify-center items-center space-x-1'>
           <VscHistory />
           <Timer />
+        </li>
+        <li className='hidden sm:flex justify-center items-center space-x-1'>
+          <EditorKeyboardCapture />
         </li>
       </ul>
       <ul className='h-7 border-t border-border flex items-center space-x-4 px-2'>
