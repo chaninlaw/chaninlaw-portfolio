@@ -33,11 +33,19 @@ Inside of this project, you'll see the following folders and files:
 ├── types/
 ├── drizzle.config.ts
 ├── env.ts
+├── liveblocks.config.ts
 ├── middleware.ts
 ├── next.config.mjs
 └── package.json
 └── tailwind.config.ts
+└── velite.config.ts
 ```
+
+> `drizzle.config.ts` config for drizzle orm
+> 
+> `liveblocks.config.ts` config for webscoket library
+> 
+> `velite.config.ts` config for .mdx and SSG on nextjs
 
 ## 🚩 Commands
 All commands are run from the root of the project, from a terminal:
