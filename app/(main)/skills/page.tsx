@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: 'Visualize me skills with graphs and charts here.'
 }
 
-export const revalidate = 0
+export const dynamic = 'force-dynamic'
 
 export default function SkillsPage() {
   return (
