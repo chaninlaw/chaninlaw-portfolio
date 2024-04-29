@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { Caladea } from 'next/font/google'
 import { Separator } from '@/components/ui/separator'
@@ -8,6 +9,11 @@ import { buttonVariants } from '@/components/ui/button'
 import { CalendarIcon } from '@radix-ui/react-icons'
 
 const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
+
+export const metadata: Metadata = {
+  title: 'Blogs',
+  description: 'List of all my blogs and their links'
+}
 
 export default function AboutPage() {
   return (

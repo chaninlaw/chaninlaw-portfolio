@@ -1,12 +1,17 @@
 'use client'
 
-import {} from 'react-dom'
+// import { Metadata } from 'next'
 import Link from 'next/link'
 import { useChat } from 'ai/react'
 import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar'
 import { Chat, ChatHeader, ChatInput, ChatMessages } from './_components/chat'
 
 import { ArrowTopRightIcon } from '@radix-ui/react-icons'
+
+// export const metadata: Metadata = {
+//   title: 'Meta Llama Chat',
+//   description: 'Meta Llama Chat connect with Hugging Face inference API.'
+// }
 
 export default function MetaLlamaChat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({ api: 'api/meta-llama' })

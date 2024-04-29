@@ -23,7 +23,10 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Chanin' portfolio",
+  title: {
+    default: "Chanin' portfolio",
+    template: "%s | Chanin' portfolio"
+  },
   description: 'My website about me'
 }
 
