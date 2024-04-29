@@ -39,3 +39,7 @@ next-env.d.ts
 
 # migrate
 drizzle
+
+# velite
+.velite
+public/static
