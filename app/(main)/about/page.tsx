@@ -14,7 +14,7 @@ export default function AboutPage() {
 
             <p className={cn(calsans.className, 'text-xl mb-4')}>{item.title}</p>
 
-            <div className='text-sm  prose prose-sm dark:prose-invert'>
+            <div className='text-sm  prose prose-sm dark:prose-invert max-w-full'>
               {item?.image && (
                 <Image priority src={item.image} alt='blog thumbnail' height='1000' width='1000' className='rounded-lg mb-10 object-cover' />
               )}
