@@ -1,88 +1,46 @@
+import Link from 'next/link'
 import { Caladea } from 'next/font/google'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { Separator } from '@/components/ui/separator'
+
+import { posts } from '#site/content'
+import { cn, dateFormatter } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
+import { CalendarIcon } from '@radix-ui/react-icons'
 
 const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
 
 export default function AboutPage() {
   return (
-    <section className='container dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
-      <div className='h-full max-w-4xl mx-auto antialiased py-4 relative '>
-        {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className='mb-10'>
-            <h2 className='bg-transparent text-foreground  rounded-full text-sm w-fit px-4 py-1 mb-4'>{item.badge}</h2>
-
-            <p className={cn(calsans.className, 'text-xl mb-4')}>{item.title}</p>
-
-            <div className='text-sm  prose prose-sm dark:prose-invert max-w-full'>
-              {item?.image && (
-                <Image priority src={item.image} alt='blog thumbnail' height='1000' width='1000' className='rounded-lg mb-10 object-cover' />
-              )}
-              {item.description}
-            </div>
+    <section className='h-full container dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] mb-2'>
+      <div className='h-full max-w-4xl mx-auto antialiased py-4 relative'>
+        <div className=''>
+          <h2 className='text-3xl mb-1 md:mb-2 sm:text-5xl md:text-6xl lg:text-7xl font-black text-center tracking-wide'>Latest Posts</h2>
+          <Separator />
+        </div>
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <article className='prose prose-sm dark:prose-invert max-w-full my-6'>
+              <Link href={post.slug}>
+                <h2 className={cn('text-xl', calsans.className)}>{post.title}</h2>
+              </Link>
+              {post.description && <p className='text-sm m-0'>{post.description}</p>}
+              <div className='flex justify-between items-center'>
+                <dl className='m-0'>
+                  <dt className='sr-only'>Published On</dt>
+                  <dd className='p-0 text-xs sm:text-sm font-medium flex items-center gap-1'>
+                    <CalendarIcon className='h-4 w-4' />
+                    <time dateTime={post.date}>{dateFormatter(post.date)}</time>
+                  </dd>
+                </dl>
+                <Link href={'/' + post.slug} className={cn('no-underline', buttonVariants({ variant: 'link' }), 'py-0')}>
+                  Read more →
+                </Link>
+              </div>
+            </article>
+            <Separator />
           </div>
         ))}
       </div>
     </section>
   )
 }
-
-const dummyContent = [
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt Lorem
-          ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
-        </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad veniam in commodo id reprehenderit adipisicing. Proident duis exercitation
-          ad quis ex cupidatat cupidatat occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod reprehenderit deserunt amet laborum consequat adipisicing officia qui irure
-          id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud. Amet culpa officia aliquip deserunt veniam deserunt officia adipisicing
-          aliquip proident officia sunt.
-        </p>
-      </>
-    ),
-    badge: 'React',
-    image: '/dummy/felix-lam-J7fxkhtOqt0-unsplash.jpg'
-  },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint cillum ut mollit.
-        </p>
-      </>
-    ),
-    badge: 'Changelog',
-    image: '/dummy/paul-skorupskas-7KLa-xLbSXA-unsplash.jpg'
-  },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: 'Launch Week',
-    image: '/dummy/simon-berger-twukN12EN7c-unsplash.jpg'
-  }
-]
