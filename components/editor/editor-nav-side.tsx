@@ -66,7 +66,7 @@ export function EditorNavSide() {
                 {item.badge > 0 && (
                   <span
                     aria-hidden
-                    className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center text-white text-[8px] rounded-full bg-blue-600'
+                    className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center font-black text-white text-[8px] rounded-full bg-blue-600'
                   >
                     {item.badge > 9 ? '9+' : item.badge}
                   </span>

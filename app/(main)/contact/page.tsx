@@ -1,6 +1,12 @@
+import { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
 import { GetInTouch } from './_components/get-in-touch'
 import { PostList } from './_components/post-list'
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'You can get my contact and contact me here.'
+}
 
 export default async function ContactPage() {
   return (

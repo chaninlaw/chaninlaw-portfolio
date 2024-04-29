@@ -1,3 +1,6 @@
+import { Metadata } from 'next'
+import { Suspense } from 'react'
+
 import { BestdayCard } from './_components/bestday-card'
 import { DailyAverageCard } from './_components/daily-average-card'
 import { LanguagesBar } from './_components/languages-bar'
@@ -6,7 +9,13 @@ import { TotalTimeSpentCard } from './_components/total-timespent-card'
 import { WeedayBar } from './_components/weekday-bar'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
-import { Suspense } from 'react'
+
+export const metadata: Metadata = {
+  title: 'Skills',
+  description: 'Visualize me skills with graphs and charts here.'
+}
+
+export const revalidate = 0
 
 export default function SkillsPage() {
   return (
