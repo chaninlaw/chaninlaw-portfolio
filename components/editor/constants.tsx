@@ -3,7 +3,7 @@ import { VscBrowser, VscFilePdf } from 'react-icons/vsc'
 
 export type SidebarValue = 'explorer' | 'search' | 'source' | 'debug' | 'extensions'
 
-export type TabsListValue = '/' | '/about' | '/skills' | '/projects' | '/contact' | '/resume'
+export type TabsListValue = '/' | '/blogs' | '/skills' | '/projects' | '/contact' | '/resume'
 
 type TabsLists = {
   name: string
@@ -19,8 +19,8 @@ export const DEFAULT_TABS = [
     icon: <VscBrowser />
   },
   {
-    name: 'about.tsx',
-    value: '/about',
+    name: 'blogs.tsx',
+    value: '/blogs',
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
@@ -47,8 +47,8 @@ export const DEAULT_TABS_LIST: TabsLists = [
     icon: <VscBrowser />
   },
   {
-    name: 'about.tsx',
-    value: '/about',
+    name: 'blogs.tsx',
+    value: '/blogs',
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
