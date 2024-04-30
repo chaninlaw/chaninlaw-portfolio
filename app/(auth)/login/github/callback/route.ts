@@ -4,6 +4,7 @@ import { OAuth2RequestError } from 'arctic'
 import { generateId } from 'lucia'
 import { db } from '@/server/db'
 import { users } from '@/server/db/schema'
+import { paths } from '@/lib/paths'
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url)
@@ -37,7 +38,7 @@ export async function GET(request: Request): Promise<Response> {
       return new Response(null, {
         status: 302,
         headers: {
-          Location: '/contact'
+          Location: paths.contact
         }
       })
     }
@@ -59,7 +60,7 @@ export async function GET(request: Request): Promise<Response> {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: '/contact'
+        Location: paths.contact
       }
     })
   } catch (e) {

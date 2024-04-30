@@ -12,6 +12,7 @@ import WelcomeEmail from '@/emails/welcome'
 import { comments, emails, posts } from '@/server/db/schema'
 import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 import type { ActionResult } from '@/types/serverAction'
+import { paths } from '@/lib/paths'
 
 export const createPost = cache(async (data: z.infer<typeof createPostSchema>): Promise<ActionResult> => {
   const parsed = createPostSchema.safeParse(data)
@@ -36,7 +37,7 @@ export const createPost = cache(async (data: z.infer<typeof createPostSchema>): 
     }
   }
 
-  revalidatePath('/contact')
+  revalidatePath(paths.contact)
   return {
     success: true,
     message: 'Your post has been sent.'
@@ -66,7 +67,7 @@ export const replyPost = cache(async (data: z.infer<typeof replyPostSchema>): Pr
     }
   }
 
-  revalidatePath('/contact')
+  revalidatePath(paths.contact)
   return {
     success: true,
     message: 'Your comment has been sent.'

@@ -7,6 +7,7 @@ import { posts } from '#site/content'
 import { cn, dateFormatter } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { CalendarIcon } from '@radix-ui/react-icons'
+import { paths } from '@/lib/paths'
 
 const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -26,7 +27,7 @@ export default function AboutPage() {
         {posts.map((post) => (
           <div key={post.slug}>
             <article className='prose prose-sm dark:prose-invert max-w-full my-6'>
-              <Link href={post.slug}>
+              <Link href={paths.blog(post.slugAsParams)}>
                 <h2 className={cn('text-xl', calsans.className)}>{post.title}</h2>
               </Link>
               {post.description && <p className='text-sm m-0'>{post.description}</p>}
@@ -38,7 +39,7 @@ export default function AboutPage() {
                     <time dateTime={post.date}>{dateFormatter(post.date)}</time>
                   </dd>
                 </dl>
-                <Link href={'/' + post.slug} className={cn('no-underline', buttonVariants({ variant: 'link' }), 'py-0')}>
+                <Link href={paths.blog(post.slugAsParams)} className={cn('no-underline', buttonVariants({ variant: 'link' }), 'py-0')}>
                   Read more →
                 </Link>
               </div>

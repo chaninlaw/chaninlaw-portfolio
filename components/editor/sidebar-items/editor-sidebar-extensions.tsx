@@ -7,6 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { FaMeta } from 'react-icons/fa6'
 import { TbDiscountCheckFilled } from 'react-icons/tb'
+import { paths } from '@/lib/paths'
 
 export function EditorSidebarExtensions() {
   return (
@@ -27,7 +28,7 @@ export function EditorSidebarExtensions() {
               Installed
             </AccordionTrigger>
             <AccordionContent>
-              <Link href={'/meta-llama'}>
+              <Link href={paths.extensions.metaLlama}>
                 <Alert className='flex space-x-2 border-none rounded-none hover:bg-slate-300/20 dark:hover:bg-zinc-100/10'>
                   <FaMeta className='h-5 w-5' />
                   <div className='text-sm text-nowrap'>

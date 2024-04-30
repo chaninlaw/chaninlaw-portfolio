@@ -1,3 +1,4 @@
+import { paths } from '@/lib/paths'
 import { FaReact } from 'react-icons/fa'
 import { VscBrowser, VscFilePdf } from 'react-icons/vsc'
 
@@ -15,27 +16,27 @@ type TabsLists = {
 export const DEFAULT_TABS = [
   {
     name: 'Preview',
-    value: '/',
+    value: paths.home,
     icon: <VscBrowser />
   },
   {
     name: 'blogs.tsx',
-    value: '/blogs',
+    value: paths.blogs,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'skills.tsx',
-    value: '/skills',
+    value: paths.skills,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'projects.tsx',
-    value: '/projects',
+    value: paths.projects,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'contact.tsx',
-    value: '/contact',
+    value: paths.contact,
     icon: <FaReact className='text-xs text-blue-400' />
   }
 ]
@@ -43,27 +44,27 @@ export const DEFAULT_TABS = [
 export const DEAULT_TABS_LIST: TabsLists = [
   {
     name: 'Preview',
-    value: '/',
+    value: paths.home,
     icon: <VscBrowser />
   },
   {
     name: 'blogs.tsx',
-    value: '/blogs',
+    value: paths.blogs,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'skills.tsx',
-    value: '/skills',
+    value: paths.skills,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'projects.tsx',
-    value: '/projects',
+    value: paths.projects,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
     name: 'contact.tsx',
-    value: '/contact',
+    value: paths.contact,
     icon: <FaReact className='text-xs text-blue-400' />
   },
   {
