@@ -15,8 +15,6 @@ export const metadata: Metadata = {
   description: 'Visualize me skills with graphs and charts here.'
 }
 
-export const dynamic = 'force-dynamic'
-
 export default function SkillsPage() {
   return (
     <section className='h-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>

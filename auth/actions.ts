@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { ActionResult } from '@/types/serverAction'
 import { cache } from 'react'
+import { paths } from '@/lib/paths'
 
 export const logout = cache(async (prevState: ActionResult): Promise<ActionResult> => {
   const { session } = await validateRequest()
@@ -20,7 +21,7 @@ export const logout = cache(async (prevState: ActionResult): Promise<ActionResul
 
   const sessionCookie = lucia.createBlankSessionCookie()
   cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
-  return redirect('/contact')
+  return redirect(paths.contact)
 })
 
 export const getUser = cache(async () => {

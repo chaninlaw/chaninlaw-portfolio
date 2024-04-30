@@ -5,9 +5,10 @@ import useSWR from 'swr'
 import { VscEye, VscLoading } from 'react-icons/vsc'
 import { Statistic } from './ui/Statistic'
 import { fetcher } from '@/lib/utils'
+import { paths } from '@/lib/paths'
 
 function Visitors() {
-  const { data, isLoading } = useSWR<{ visitCount: number }>(`/api/visitors`, fetcher)
+  const { data, isLoading } = useSWR<{ visitCount: number }>(paths.api.visitors, fetcher)
 
   return (
     <>

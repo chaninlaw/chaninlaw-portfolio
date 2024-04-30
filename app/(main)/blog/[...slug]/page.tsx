@@ -6,6 +6,7 @@ import { posts } from '#site/content'
 import { MDX } from '@/components/mdx-components'
 import { notFound } from 'next/navigation'
 import { Tag } from '@/components/tag'
+import { paths } from '@/lib/paths'
 
 interface PostPageProps {
   params: {
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       url: post.slug,
       images: [
         {
-          url: `/api/og?${ogSearchParams.toString()}`,
+          url: `${paths.api.og}?${ogSearchParams.toString()}`,
           width: 1200,
           height: 630,
           alt: post.title
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [`/api/og?${ogSearchParams.toString()}`]
+      images: [`${paths.api.og}?${ogSearchParams.toString()}`]
     }
   }
 }

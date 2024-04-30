@@ -8,6 +8,7 @@ import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { GitHub } from 'arctic'
 import { sessions, users, type User as DbUser } from '@/server/db/schema'
 import { absoluteUrl } from '@/lib/utils'
+import { paths } from '@/lib/paths'
 
 const adapter = new DrizzlePostgreSQLAdapter(db, sessions, users)
 
@@ -39,7 +40,7 @@ export const lucia = new Lucia(adapter, {
 })
 
 export const github = new GitHub(env.GITHUB_CLIENT_ID, env.GITHUB_CLIENT_SECRET, {
-  redirectURI: absoluteUrl('/login/github/callback')
+  redirectURI: absoluteUrl(paths.login.githubCallback)
 })
 
 declare module 'lucia' {
