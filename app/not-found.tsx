@@ -25,9 +25,9 @@ export default function NotFound() {
   }, [])
 
   return (
-    <main className='w-full h-full bg-stone-900'>
+    <main className='w-full h-full bg-white dark:bg-stone-900'>
       <div className='container max-w-sm space-y-10 py-24'>
-        <SiVisualstudiocode className='h-80 w-80 fill-background' />
+        <SiVisualstudiocode className='h-80 w-80 fill-secondary dark:fill-background' />
         <div className='grid grid-cols-3'>
           <div className='col-span-2 text-end text-stone-500 space-y-4'>
             <p>Show all commands</p>
