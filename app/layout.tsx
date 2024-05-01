@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
-import { Toaster } from 'sonner'
 
 import { Navbar } from '@/components/navbar'
 import { EditorFooter } from '@/components/editor/editor-footer'
@@ -14,8 +13,6 @@ import { EditorSidebar } from '@/components/editor/editor-sidebar'
 import { EditorTabs } from '@/components/editor/editor-tabs'
 
 import { Providers } from './providers'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -58,9 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </Providers>
-        <Toaster />
-        <Analytics />
-        <SpeedInsights />
+
       </body>
     </html>
   )
