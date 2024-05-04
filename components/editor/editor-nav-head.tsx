@@ -1,3 +1,4 @@
+'use client'
 import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 import { VscLayout, VscLayoutPanel, VscLayoutSidebarLeft, VscLayoutSidebarRightOff, VscSearch } from 'react-icons/vsc'
 export function EditorNavHead() {

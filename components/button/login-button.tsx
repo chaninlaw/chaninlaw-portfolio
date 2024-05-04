@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { Button } from '@/components/ui/button'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { useState } from 'react'

@@ -1,5 +1,4 @@
 'use client'
-
 import { useCallback, useEffect, useMemo } from 'react'
 import { useEditor } from '@/components/editor'
 import { EditorSidebarExplorer } from '@/components/editor/sidebar-items/editor-sidebar-explorer'

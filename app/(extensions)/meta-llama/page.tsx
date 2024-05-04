@@ -1,7 +1,7 @@
 'use client'
 
 // import { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { useChat } from 'ai/react'
 import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar'
 import { Chat, ChatHeader, ChatInput, ChatMessages } from './_components/chat'

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { ModeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'

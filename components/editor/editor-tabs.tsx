@@ -1,13 +1,16 @@
 'use client'
-import { useEffect } from 'react'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { useEditor } from '.'
-import { BsX } from 'react-icons/bs'
-import { type TabsListValue } from './constants'
+import { useEffect, startTransition, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import { useProgress } from 'react-transition-progress'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useEditor } from '@/components/editor'
+
+import { type TabsListValue } from './constants'
+import { BsX } from 'react-icons/bs'
 
 export function EditorTabs() {
   const { tabLists, setTabLists, currentTab, setCurrentTab } = useEditor()
+  const startProgress = useProgress()
   const router = useRouter()
   const pathname = usePathname()
 
@@ -15,9 +18,13 @@ export function EditorTabs() {
     setCurrentTab(pathname as TabsListValue)
   }, [pathname, setCurrentTab])
 
-  const onDeleteTab = (value: TabsListValue) => {
-    setTabLists((prev) => prev.filter((tab) => tab.value !== value))
-  }
+  const onDeleteTab = useCallback(
+    (value: TabsListValue) => {
+      setTabLists((prev) => prev.filter((tab) => tab.value !== value))
+    },
+    [setTabLists]
+  )
+
   return (
     <Tabs value={currentTab} onValueChange={(e) => setCurrentTab(e as TabsListValue)}>
       <TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background overflow-x-scroll whitespace-nowrap hidden-scrollbar'>
@@ -27,7 +34,12 @@ export function EditorTabs() {
             key={tab.value}
             value={tab.value}
             onMouseEnter={() => router.prefetch(tab.value)}
-            onClick={() => router.push(tab.value)}
+            onClick={() => {
+              startTransition(() => {
+                startProgress()
+                router.push(tab.value)
+              })
+            }}
           >
             <span aria-hidden='true'>{tab.icon}</span>
             <span>{tab.name}</span>

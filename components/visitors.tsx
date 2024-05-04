@@ -1,5 +1,4 @@
 'use client'
-
 import * as React from 'react'
 import useSWR from 'swr'
 import { VscEye, VscLoading } from 'react-icons/vsc'

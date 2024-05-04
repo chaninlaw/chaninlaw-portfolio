@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
@@ -13,6 +13,7 @@ import { EditorSidebar } from '@/components/editor/editor-sidebar'
 import { EditorTabs } from '@/components/editor/editor-tabs'
 
 import { Providers } from './providers'
+import { validateRequest } from '@/auth'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -27,12 +28,18 @@ export const metadata: Metadata = {
   description: 'My website about me'
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const viewport: Viewport = {
+  colorScheme: 'dark light'
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const sessions = await validateRequest()
+
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <Navbar className='hidden lg:block' />
-        <Providers>
+        <Providers sessions={sessions}>
           <div className='h-full'>
             <div className='border-2 border-border rounded-xl flex flex-col w-full h-full'>
               <EditorNavHead />
@@ -55,7 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </Providers>
-
       </body>
     </html>
   )

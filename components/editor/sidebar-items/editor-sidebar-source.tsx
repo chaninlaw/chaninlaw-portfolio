@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { ModeToggle } from '@/components/theme-toggle'
 
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 
 export function EditorSidebarSource() {
   const items = [
