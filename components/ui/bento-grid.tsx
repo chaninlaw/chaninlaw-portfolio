@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { InfiniteMovingCards } from './infinite-moving-cards'
 import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import React from 'react'
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {

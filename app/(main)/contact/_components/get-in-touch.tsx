@@ -1,6 +1,6 @@
 'use client'
 import * as React from 'react'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { useFormState } from 'react-dom'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'

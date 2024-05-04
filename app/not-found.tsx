@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
-import Link from 'next/link'
+
+import { Link } from '@/components/link'
 import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@/components/ui/toast'
 import { Kbd } from '@/components/ui/kbd'

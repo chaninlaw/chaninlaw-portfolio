@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { Caladea } from 'next/font/google'
 import { Separator } from '@/components/ui/separator'
 

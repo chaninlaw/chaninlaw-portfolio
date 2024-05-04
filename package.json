@@ -88,6 +88,7 @@
     "react-hook-form": "^7.51.3",
     "react-icons": "^5.1.0",
     "react-resizable-panels": "^2.0.18",
+    "react-transition-progress": "^0.0.3",
     "recharts": "^2.12.6",
     "redis": "^4.6.13",
     "resend": "^3.2.0",

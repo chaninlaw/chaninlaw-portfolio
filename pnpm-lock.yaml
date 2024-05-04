@@ -215,6 +215,9 @@ dependencies:
   react-resizable-panels:
     specifier: ^2.0.18
     version: 2.0.18(react-dom@18.3.1)(react@18.3.1)
+  react-transition-progress:
+    specifier: ^0.0.3
+    version: 0.0.3(framer-motion@11.1.7)(next@14.2.2)(react@18.3.1)
   recharts:
     specifier: ^2.12.6
     version: 2.12.6(react-dom@18.3.1)(react@18.3.1)
@@ -8908,6 +8911,21 @@ packages:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
+  /react-transition-progress@0.0.3(framer-motion@11.1.7)(next@14.2.2)(react@18.3.1):
+    resolution: {integrity: sha512-Cewk4kOqmE5Ru6b/JamfvaAfiO3i211g+PYUGRm4kmuYekKnmzLcJeX+r3Aa4Ri3Ro6VY+jsfx1ixO1JLFbnEQ==}
+    peerDependencies:
+      framer-motion: '*'
+      next: '*'
+      react: '*'
+    peerDependenciesMeta:
+      next:
+        optional: true
+    dependencies:
+      framer-motion: 11.1.7(react-dom@18.3.1)(react@18.3.1)
+      next: 14.2.2(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
     dev: false
 
   /react@18.2.0:
