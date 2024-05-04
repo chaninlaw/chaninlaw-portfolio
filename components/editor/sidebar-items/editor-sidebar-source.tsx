@@ -87,7 +87,7 @@ export function EditorSidebarSource() {
         <div className='flex justify-between items-center px-2 py-1.5'>
           <p className='uppercase'>Certification</p>
           <ModeToggle>
-            <Button variant='ghost' className='h-5 w-5 p-0'>
+            <Button variant='ghost' aria-label='Toggle theme' className='h-5 w-5 p-0'>
               <DotsHorizontalIcon />
             </Button>
           </ModeToggle>
