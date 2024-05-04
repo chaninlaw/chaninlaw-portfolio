@@ -41,11 +41,21 @@ Inside of this project, you'll see the following folders and files:
 └── velite.config.ts
 ```
 
-> `drizzle.config.ts` config for drizzle orm
-> 
-> `liveblocks.config.ts` config for webscoket library
-> 
-> `velite.config.ts` config for .mdx and SSG on nextjs
+- **.velite/**: Contains configuration files and data for the application.
+- **app/**: Contains the main application code, divided into sections like authentication, extensions, and main features like blog, contact, projects, and skills.
+- **api/**: Contains API routes for different functionalities of the application.
+- **auth/**: Contains authentication-related actions and configurations.
+- **components/**: Contains reusable UI components organized into subfolders like buttons, editors, liveblocks, and UI elements.
+- **config/**: Contains configuration files for the site.
+- **content/**: Contains content for the blog section of the application.
+- **drizzle/**: Contains database migration files and meta information.
+- **emails/**: Contains email templates.
+- **hooks/**: Contains custom hooks used in the application.
+- **lib/**: Contains utility functions and constants used across the application.
+- **server/**: Contains server-side code for database, queries, and Redis operations.
+- **styles/**: Contains global CSS styles.
+- **types/**: Contains TypeScript type definitions for server actions and Wakatime data.
+- **velite.config.ts**: Configuration file for the Velite module.
 
 ## 🚩 Commands
 All commands are run from the root of the project, from a terminal:
