@@ -21,7 +21,7 @@ export const LiveAvatar = () => {
             {others.slice(0, 3).map(({ connectionId, info }) => {
               return (
                 <Avatar key={connectionId}>
-                  <AvatarImage src={info?.avatar} />
+                  <AvatarImage src={info?.avatar} alt='other useravatar' />
                   <AvatarFallback>{info?.name.slice(0, 2)}</AvatarFallback>
                 </Avatar>
               )
@@ -36,7 +36,7 @@ export const LiveAvatar = () => {
             {currentUser && (
               <div className='relative ml-8 first:ml-0'>
                 <Avatar>
-                  <AvatarImage src={currentUser.info?.avatar} />
+                  <AvatarImage src={currentUser.info?.avatar} alt='your avatar' />
                   <AvatarFallback>You</AvatarFallback>
                 </Avatar>
               </div>

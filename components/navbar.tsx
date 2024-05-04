@@ -33,9 +33,9 @@ export function Navbar({ className }: { className?: string }) {
       { name: 'Help', children: [] }
     ],
     [
-      { name: <IoBatteryHalfOutline aria-labelledby='battery status icon' className='text-2xl' />, children: [] },
-      { name: <BsPersonCircle aria-labelledby='user profile icon' />, children: [] },
-      { name: <IoIosWifi aria-labelledby='wifi icon' className='text-xl' />, children: [] },
+      { name: <IoBatteryHalfOutline aria-label='battery status icon' className='text-2xl' />, children: [] },
+      { name: <BsPersonCircle aria-label='user profile icon' />, children: [] },
+      { name: <IoIosWifi aria-label='wifi icon' className='text-xl' />, children: [] },
       // { name: <BsToggles />, children: [] },
       { name: 'Mon 26 Feb 13:33', children: [] }
     ]
@@ -49,7 +49,9 @@ export function Navbar({ className }: { className?: string }) {
               <div className='flex items-center text-sm'>
                 {item.map((item, index) => (
                   <React.Fragment key={`menu-item=${index}`}>
-                    <MenubarTrigger className={cn('p-2 py-1', item.className)}>{item.name}</MenubarTrigger>
+                    <MenubarTrigger role='button' className={cn('p-2 py-1', item.className)}>
+                      {item.name}
+                    </MenubarTrigger>
                     <MenubarContent>
                       {item.children?.map((child, index) => (
                         <MenubarItem key={`menu-list-item=${index}`} className={child.className}>
