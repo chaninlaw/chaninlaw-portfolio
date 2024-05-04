@@ -52,14 +52,18 @@ export function EditorNavSide() {
 
   return (
     <div className='h-full'>
-      <ul className='w-12 flex flex-col items-center text-foreground/70 dark:text-white/60'>
-        {items.map((item) => (
+      <ul role='tablist' className='w-12 flex flex-col items-center text-foreground/70 dark:text-white/60'>
+        {items.map((item, index) => (
           <li key={item.key} className='w-full'>
             <Tooltip delayDuration={0}>
               <TooltipTrigger
                 className={cn('w-full relative py-3 flex justify-center hover:text-black dark:hover:text-white', {
                   'text-black dark:text-white border-l-2 border-blue-500/90': currentSidebar === item.key
                 })}
+                role='tab'
+                tabIndex={index}
+                aria-label={item.key}
+                aria-selected={currentSidebar === item.key}
                 onClick={item.onClick}
               >
                 {item.icon}
