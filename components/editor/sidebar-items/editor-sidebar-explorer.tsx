@@ -1,4 +1,5 @@
 'use client'
+import { useCallback, startTransition } from 'react'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { useEditor } from '@/components/editor'
@@ -9,26 +10,40 @@ import { cn } from '@/lib/utils'
 import { LiveAvatar } from '@/components/liveblocks/live-avatar'
 import { Room } from '@/components/liveblocks/room'
 import { Button } from '@/components/ui/button'
+import { useProgress } from 'react-transition-progress'
 
 export function EditorSidebarExplorer() {
   const { tabLists, setTabLists, setCurrentTab, currentTab } = useEditor()
   const router = useRouter()
+  const startProgress = useProgress()
 
-  const onClickOpenEditors = (value: TabsListValue) => {
-    setCurrentTab(value)
-    router.push(value)
-  }
+  const onClickOpenEditors = useCallback(
+    (value: TabsListValue) => {
+      setCurrentTab(value)
+      startTransition(() => {
+        startProgress()
+        router.push(value)
+      })
+    },
+    [setCurrentTab, startProgress, router]
+  )
 
-  const onClickAddTab = (tab: (typeof DEAULT_TABS_LIST)[number]) => {
-    if (tab.downloadable) {
-      return window.open(tab.downloadable, '_blank')
-    }
-    if (!tabLists.some((t) => t.value === tab.value)) {
-      setTabLists((prev) => [...prev, tab])
-    }
-    setCurrentTab(tab.value)
-    router.push(tab.value)
-  }
+  const onClickAddTab = useCallback(
+    (tab: (typeof DEAULT_TABS_LIST)[number]) => {
+      if (tab.downloadable) {
+        return window.open(tab.downloadable, '_blank')
+      }
+      if (!tabLists.some((t) => t.value === tab.value)) {
+        setTabLists((prev) => [...prev, tab])
+      }
+      setCurrentTab(tab.value)
+      startTransition(() => {
+        startProgress()
+        router.push(tab.value)
+      })
+    },
+    [router, setCurrentTab, setTabLists, startProgress, tabLists]
+  )
 
   return (
     <>
