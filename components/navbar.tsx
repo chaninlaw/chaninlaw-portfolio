@@ -49,9 +49,7 @@ export function Navbar({ className }: { className?: string }) {
               <div className='flex items-center text-sm'>
                 {item.map((item, index) => (
                   <React.Fragment key={`menu-item=${index}`}>
-                    <MenubarTrigger role='button' className={cn('p-2 py-1', item.className)}>
-                      {item.name}
-                    </MenubarTrigger>
+                    <MenubarTrigger className={cn('p-2 py-1', item.className)}>{item.name}</MenubarTrigger>
                     <MenubarContent>
                       {item.children?.map((child, index) => (
                         <MenubarItem key={`menu-list-item=${index}`} className={child.className}>
