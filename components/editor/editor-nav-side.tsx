@@ -52,37 +52,35 @@ export function EditorNavSide() {
 
   return (
     <div className='h-full'>
-      <ul role='tablist' className='w-12 flex flex-col items-center text-foreground/70 dark:text-white/60'>
-        {items.map((item, index) => (
-          <li key={item.key} className='w-full' role='tab' tabIndex={index}>
-            <Tooltip delayDuration={0}>
-              <TooltipTrigger
-                className={cn('w-full relative py-3 flex justify-center hover:text-black dark:hover:text-white', {
-                  'text-black dark:text-white border-l-2 border-blue-500/90': currentSidebar === item.key
-                })}
-                aria-label={item.key}
-                aria-selected={currentSidebar === item.key}
-                onClick={item.onClick}
-              >
-                {item.icon}
-                {item.badge > 0 && (
-                  <span
-                    aria-hidden
-                    className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center font-black text-white text-[8px] rounded-full bg-blue-600'
-                  >
-                    {item.badge > 9 ? '9+' : item.badge}
-                  </span>
-                )}
-              </TooltipTrigger>
-              <TooltipContent className='bg-background text-primary border border-muted-foreground shadow-xl' side='right' align='center'>
-                <small className='text-xs text-black/75 dark:text-white/75'>
-                  {item.content} (<kbd className='font-sans tracking-widest'>{item.shortcut}</kbd>)
-                </small>
-              </TooltipContent>
-            </Tooltip>
-          </li>
+      <div className='w-12 flex flex-col items-center text-foreground/70 dark:text-white/60'>
+        {items.map((item) => (
+          <Tooltip key={item.key} delayDuration={0}>
+            <TooltipTrigger
+              className={cn('w-full relative py-3 flex justify-center hover:text-black dark:hover:text-white', {
+                'text-black dark:text-white border-l-2 border-blue-500/90': currentSidebar === item.key
+              })}
+              aria-label={item.key}
+              aria-selected={currentSidebar === item.key}
+              onClick={item.onClick}
+            >
+              {item.icon}
+              {item.badge > 0 && (
+                <span
+                  aria-hidden
+                  className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center font-black text-white text-[8px] rounded-full bg-blue-600'
+                >
+                  {item.badge > 9 ? '9+' : item.badge}
+                </span>
+              )}
+            </TooltipTrigger>
+            <TooltipContent className='bg-background text-primary border border-muted-foreground shadow-xl' side='right' align='center'>
+              <small className='text-xs text-black/75 dark:text-white/75'>
+                {item.content} (<kbd className='font-sans tracking-widest'>{item.shortcut}</kbd>)
+              </small>
+            </TooltipContent>
+          </Tooltip>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
