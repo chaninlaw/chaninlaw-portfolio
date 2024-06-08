@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function SkillsPage() {
   return (
     <section className='h-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
-      <div className='flex-1 space-y-4 p-8 pt-6'>
+      <div className='flex-1 space-y-4 mx-8 pt-6'>
         <div className=''>
           <h2 className='text-3xl font-bold tracking-tight'>Skills</h2>
           <p className='text-xs uppercase text-muted-foreground'>Dashboard Summary</p>

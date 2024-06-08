@@ -228,7 +228,7 @@ export default function ProjectsPage() {
   ]
 
   return (
-    <div className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
+    <div className='container dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2]'>
       <BentoGrid className='h-full py-4 max-w-6xl mx-auto'>
         {items.map((item, i) => (
           <BentoGridItem key={`bento-grid=${i}`} {...item} className={i === 3 || i === 6 ? 'md:col-span-2' : ''} />

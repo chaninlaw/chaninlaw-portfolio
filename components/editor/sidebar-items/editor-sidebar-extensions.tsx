@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { FaMeta } from 'react-icons/fa6'
-import { TbDiscountCheckFilled } from 'react-icons/tb'
+import { TbRosetteDiscountCheckFilled } from 'react-icons/tb'
 import { paths } from '@/lib/paths'
 
 export function EditorSidebarExtensions() {
@@ -37,7 +37,7 @@ export function EditorSidebarExtensions() {
                       Meta developed and released the Meta Llama 3 family of large language models (LLMs)
                     </AlertDescription>
                     <AlertDescription className='text-xs flex items-center gap-1'>
-                      <TbDiscountCheckFilled />
+                      <TbRosetteDiscountCheckFilled />
                       meta
                     </AlertDescription>
                   </div>
