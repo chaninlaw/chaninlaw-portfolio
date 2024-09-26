@@ -14,6 +14,9 @@ export function Link({ children, href, replace, ...props }: Parameters<typeof Ne
       href={href}
       {...props}
       onClick={(e) => {
+        if (props.target) {
+          return
+        }
         e.preventDefault()
 
         // Cancel navigation
