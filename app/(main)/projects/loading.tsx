@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 
 export default function Loading() {
   return (
-    <div className='h-full py-4 max-w-6xl mx-auto grid md:auto-rows-auto grid-cols-1 md:grid-cols-3 gap-4'>
+    <div className='container h-full py-4 max-w-6xl mx-auto grid md:auto-rows-auto grid-cols-1 md:grid-cols-3 gap-4'>
       {[...Array(10)].map((_, index) => (
         <Skeleton
           key={index}
