@@ -1,9 +1,10 @@
+import { FiArrowUpRight } from 'react-icons/fi'
+import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+
+import { Link } from '@/components/link'
 import { Button } from '@/components/ui/button'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { ModeToggle } from '@/components/theme-toggle'
-
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
-import { Link } from '@/components/link'
 
 export function EditorSidebarSource() {
   const items = [
@@ -101,11 +102,16 @@ export function EditorSidebarSource() {
             <AccordionContent>
               <ul className='text-nowrap space-y-1'>
                 {items.map((item) => (
-                  <Link key={item.id} href={item.url} target='_blank'>
-                    <li className='pl-8 flex flex-col space-x-1 cursor-pointer hover:bg-slate-300/20 dark:hover:bg-zinc-100/10'>
-                      <p className='font-medium text-sm text-ellipsis'>{item.name}</p>
+                  <Link key={item.id} href={item.url} target='_blank' className='group'>
+                    <li className='pl-8 flex flex-col space-x-1 cursor-pointer group-hover:bg-slate-300/20 dark:group-hover:bg-zinc-100/10 transition-transform'>
+                      <p className='font-medium text-sm text-ellipsis group-hover:underline'>{item.name}</p>
                       <p>Instructors: {item.instructors[0]}</p>
-                      <p className='text-xs text-muted-foreground'>{item.date}</p>
+                      <p className='text-xs text-muted-foreground flex items-center gap-1'>
+                        <span>{item.date}</span>
+                        <span className=' group-hover:translate-x-[10%] group-hover:-translate-y-[10%]'>
+                          <FiArrowUpRight />
+                        </span>
+                      </p>
                     </li>
                   </Link>
                 ))}
