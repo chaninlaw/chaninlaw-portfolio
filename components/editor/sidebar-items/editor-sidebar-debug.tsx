@@ -34,7 +34,7 @@ export function EditorSidebarDebug() {
             }}
             className='grid w-full items-start gap-6'
           >
-            <fieldset className='grid gap-6 rounded-lg border border-stone-400 p-4'>
+            <fieldset className='grid gap-6 rounded-lg border border-border p-4'>
               <legend className='-ml-1 px-1 text-sm font-medium'>Report Bug</legend>
               <div className='grid gap-3'>
                 <Label htmlFor='role'>Bug Type</Label>

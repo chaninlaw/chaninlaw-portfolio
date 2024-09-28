@@ -23,7 +23,7 @@ export default function SkillsPage() {
           <h2 className='text-3xl font-bold tracking-tight'>Skills</h2>
           <p className='text-xs uppercase text-muted-foreground'>Dashboard Summary</p>
         </div>
-        <div className='flex gap-2 flex-wrap md:flex-nowrap md:space-x-2'>
+        <div className='flex gap-2 flex-wrap xl:flex-nowrap xl:space-x-2'>
           <Suspense fallback={<SkeletonCard />}>
             <TotalTimeSpentCard />
           </Suspense>
