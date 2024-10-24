@@ -1,0 +1,86 @@
+---
+title: "The Building Blocks of Rust"
+description: The lecture from my study basic of Rust with Stephen Grider's course.
+date: 2024-10-24
+tags: ["rust", "language", "basic"]
+published: true
+---
+
+# Core concepts: The Building Blocks of Rust
+
+The basics of Rust revolve around understanding the language's key constructs, such as importing functionality, attributes, struct definitions, method implementations, and the main function. Rust's syntax and design are centered on safety, concurrency, and performance.
+
+## `use` Statements
+
+```rust
+use rand::{seq::SliceRandom, thread_rng};
+```
+
+- import code from crates (packages) or other files in your project
+- You can import multiple things on a single line using curly braces
+
+## Attributes
+
+```rust
+#[derive(Debug)]
+struct Deck {
+  cards: Vec<String>,
+}
+```
+
+- Provide extra instructions to the complier
+- `derive` is an **attribute**. Tells the compilter to add additional code to the struct
+- `Debug` is a **trait**. Has functions included that aid in debugging (link printing a struct)
+
+## Structs
+
+```rust
+struct Deck {
+  cards: Vec<String>,
+}
+```
+
+- Defines a collection of fields (data) that are related in some way
+- Can be used to tie together data + functionality if we add an `impl` block
+
+
+## Inherent Implementations
+
+```rust
+impl Deck {
+  fn new() -> Self {
+    // code
+  }
+
+  fn shuffle(&self) {
+    // code
+  }
+}
+```
+
+- Defines `methods` + `associated functions` tied to a struct
+- First argument determines whether we are making a `method` or an `associated function`
+- `associated function` is similar to a class method, or a class function, or a static method from other languages.
+
+## Main function
+
+```rust
+ fn main() {
+  let mut deck = Deck::new();
+  // ----------------^^
+  // `associated functions` called using the `::` syntax 
+
+  deck.shuffle();
+
+  let cards = deck.deal(3)
+
+  println!("Heres your hand: {:#?}", cards);
+  println!("Heres your deck: {:#?}", deck);
+  // ------------------------^^^^^
+  //                       formatter
+ }
+```
+
+- `main` is called automatically when our program starts
+- `let mut` used when we want to make a variable that can be reassigned or when we want to be able to change the value
+- `{:#?}` is a formatter. Prints a struct in a human-readable way
