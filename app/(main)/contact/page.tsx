@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function ContactPage() {
   return (
-    <div className='h-full w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center'>
+    <div className='h-full w-full bg-background relative flex items-center justify-center'>
       <div className='w-full h-full md:grid grid-cols-2'>
         <div className='col-span-1 flex'>
           <PostList />
