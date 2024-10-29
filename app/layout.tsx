@@ -14,6 +14,7 @@ import { EditorTabs } from '@/components/editor/editor-tabs'
 
 import { Providers } from './providers'
 import { validateRequest } from '@/auth'
+import { headers } from 'next/headers'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -34,10 +35,12 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const sessions = await validateRequest()
+  const header = await headers()
+  const isMobile = header.get('user-agent')?.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)
 
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body className={cn('min-h-screen overscroll-none bg-background font-sans antialiased', fontSans.variable)}>
         <Navbar className='hidden lg:block' />
         <Providers sessions={sessions}>
           <div className='h-full'>
@@ -46,13 +49,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <div className='flex h-full'>
                 <EditorNavSide />
                 <ResizablePanelGroup direction='horizontal' className='h-full'>
-                  <ResizablePanel defaultSize={15}>
+                  <ResizablePanel defaultSize={isMobile ? 0 : 15}>
                     <div className='w-full h-full min-w-40 overflow-x-hidden bg-secondary dark:bg-background border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
                       <EditorSidebar />
                     </div>
                   </ResizablePanel>
                   <ResizableHandle />
-                  <ResizablePanel defaultSize={85}>
+                  <ResizablePanel defaultSize={isMobile ? 100 : 85}>
                     <EditorTabs />
                     <EditorContent>{children}</EditorContent>
                   </ResizablePanel>
