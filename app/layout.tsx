@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn('h-dvh overscroll-none bg-background font-sans antialiased', fontSans.variable)}>
+      <body className={cn('min-h-screen overscroll-none bg-background font-sans antialiased', fontSans.variable)}>
         <Navbar className='hidden lg:block' />
         <Providers sessions={sessions}>
           <div className='h-full'>
