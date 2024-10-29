@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className='container dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] mb-2'>
-      <div className='h-full max-w-4xl mx-auto antialiased py-4 relative'>
+    <section className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] mb-2'>
+      <div className='container h-full max-w-4xl mx-auto antialiased py-4 relative'>
         <div className=''>
           <h2 className='text-3xl mb-1 md:mb-2 sm:text-5xl md:text-6xl lg:text-7xl font-black text-center tracking-wide'>Latest Posts</h2>
           <Separator />

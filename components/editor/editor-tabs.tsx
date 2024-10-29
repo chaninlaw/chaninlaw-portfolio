@@ -30,7 +30,7 @@ export function EditorTabs() {
       <TabsList className='p-0 flex justify-start w-full border border-border rounded-none bg-background overflow-x-scroll whitespace-nowrap hidden-scrollbar'>
         {tabLists.map((tab) => (
           <TabsTrigger
-            className='w-fit h-full flex space-x-1 rounded-b-none group bg-secondary dark:bg-background data-[state=active]:bg-background dark:data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent focus-visible:ring-0'
+            className='w-fit h-full flex space-x-1 rounded-b-none group bg-secondary dark:bg-background data-[state=active]:bg-background dark:data-[state=active]:bg-stone-900 data-[state=active]:border-t data-[state=active]:border-b data-[state=active]:border-t-blue-400 data-[state=active]:border-b-transparent focus-visible:ring-0 data-[state=active]:rounded-none'
             key={tab.value}
             value={tab.value}
             onMouseEnter={() => router.prefetch(tab.value)}

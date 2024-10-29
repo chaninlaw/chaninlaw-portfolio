@@ -57,12 +57,10 @@ export const GetInTouch = () => {
           </form>
           <div className='flex flex-col md:flex-row items-center justify-center gap-6'>
             <div className='space-y-2'>
-              <div className='font-medium'>Chanin Lawlertrattana</div>
-              <div className='text-gray-500 dark:text-gray-400'>
-                <a className='hover:underline' href='#' onClick={() => toast.info('Try calling me 🤷‍♂️')}>
-                  +66 (635) 032-466
-                </a>
-              </div>
+              <Link className='font-medium' href={'mailto:chaninlawlert@gmail.com?subject=Get in Touch'}>
+                <span className='sr-only'>Email</span>
+                <span className='text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'>chaninlaw@gmail.com</span>
+              </Link>
             </div>
             <div className='flex items-center gap-4'>
               <Link

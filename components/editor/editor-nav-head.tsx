@@ -17,7 +17,7 @@ export function EditorNavHead() {
           <ArrowRightIcon className='text-stone-500' />
         </li>
         <li>
-          <div className='h-full p-1 m-1 w-[200px] sm:w-[300px] rounded-lg border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
+          <div className='h-full p-1 m-1 w-[200px] sm:w-[300px] rounded-sm border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
             <VscSearch className='text-foreground text-sm' />
             <span className='text-xs'>Chanin</span>
           </div>

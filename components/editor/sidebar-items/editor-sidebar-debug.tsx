@@ -34,32 +34,29 @@ export function EditorSidebarDebug() {
             }}
             className='grid w-full items-start gap-6'
           >
-            <fieldset className='grid gap-6 rounded-lg border border-border p-4'>
-              <legend className='-ml-1 px-1 text-sm font-medium'>Report Bug</legend>
-              <div className='grid gap-3'>
-                <Label htmlFor='role'>Bug Type</Label>
-                <Select defaultValue='crash'>
-                  <SelectTrigger>
-                    <SelectValue placeholder='Select a type of bugs.' />
-                  </SelectTrigger>
-                  <SelectContent className='capitalize'>
-                    <SelectItem value='crash'>crash</SelectItem>
-                    <SelectItem value='regression'>regression</SelectItem>
-                    <SelectItem value='security'>security</SelectItem>
-                    <SelectItem value='cleanup'>cleanup</SelectItem>
-                    <SelectItem value='polish'>polish</SelectItem>
-                    <SelectItem value='performance'>performance</SelectItem>
-                    <SelectItem value='usability'>usability</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className='grid gap-3'>
-                <Label htmlFor='content'>Content</Label>
-                <Textarea id='content' placeholder='Describe the bug...' className='min-h-[9.5rem]' />
-              </div>
-              {message && <p className='text-sm text-green-500'>{message}</p>}
-              <SubmitButton className='w-full'>Send Report</SubmitButton>
-            </fieldset>
+            <div className='grid gap-6 mt-3'>
+              <Label htmlFor='role'>Bug Type</Label>
+              <Select defaultValue='crash'>
+                <SelectTrigger>
+                  <SelectValue placeholder='Select a type of bugs.' />
+                </SelectTrigger>
+                <SelectContent className='capitalize'>
+                  <SelectItem value='crash'>crash</SelectItem>
+                  <SelectItem value='regression'>regression</SelectItem>
+                  <SelectItem value='security'>security</SelectItem>
+                  <SelectItem value='cleanup'>cleanup</SelectItem>
+                  <SelectItem value='polish'>polish</SelectItem>
+                  <SelectItem value='performance'>performance</SelectItem>
+                  <SelectItem value='usability'>usability</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className='grid gap-3'>
+              <Label htmlFor='content'>Content</Label>
+              <Textarea id='content' placeholder='Describe the bug...' className='min-h-[9.5rem]' />
+            </div>
+            {message && <p className='text-sm text-green-500'>{message}</p>}
+            <SubmitButton className='w-full'>Send Report</SubmitButton>
           </form>
         </div>
       </div>
