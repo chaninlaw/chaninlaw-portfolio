@@ -1,6 +1,6 @@
 import { desc } from 'drizzle-orm'
-import { db } from '@/server/db'
-import { posts } from '@/server/db/schema'
+import { db } from '@/lib/db'
+import { posts } from '@/lib/db/schema'
 
 export type PostsWithUser = Awaited<ReturnType<typeof getPostsWithUser>>
 

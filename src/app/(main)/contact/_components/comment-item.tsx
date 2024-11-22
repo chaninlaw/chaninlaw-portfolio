@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { CommentsWithUser } from '@/server/queries/comments'
+import { CommentsWithUser } from '@/lib/queries/comments'
 import { cn, timeAgo } from '@/lib/utils'
 import { Textarea } from '@/components/ui/textarea'
 import { useComment } from '../_context'

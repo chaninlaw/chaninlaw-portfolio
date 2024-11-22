@@ -4,7 +4,7 @@ import { User } from 'lucia'
 
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { PostsWithUser } from '@/server/queries/posts'
+import { PostsWithUser } from '@/lib/queries/posts'
 import { CommentItem } from './comment-item'
 import { Textarea } from '@/components/ui/textarea'
 import { useComment } from '../_context'

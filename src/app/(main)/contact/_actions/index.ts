@@ -2,14 +2,14 @@
 
 import { cache } from 'react'
 import { z } from 'zod'
-import { db } from '@/server/db'
+import { db } from '@/lib/db'
 import { revalidatePath } from 'next/cache'
 import { env } from '@/env'
 
 import { Resend } from 'resend'
 import WelcomeEmail from '@/emails/welcome'
 
-import { comments, emails, posts } from '@/server/db/schema'
+import { comments, emails, posts } from '@/lib/db/schema'
 import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 import type { ActionResult } from '@/types/serverAction'
 import { paths } from '@/lib/paths'

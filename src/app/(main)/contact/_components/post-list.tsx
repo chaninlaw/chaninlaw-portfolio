@@ -1,5 +1,5 @@
 import { AuthButton } from '@/components/button/auth-button'
-import { getPostsWithUser } from '@/server/queries/posts'
+import { getPostsWithUser } from '@/lib/queries/posts'
 import { PostItem } from './post-item'
 import { CommentProvider } from '../_context'
 import { validateRequest } from '@/auth'

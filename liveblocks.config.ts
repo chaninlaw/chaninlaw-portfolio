@@ -1,7 +1,7 @@
 import { createClient } from '@liveblocks/client'
 import { createRoomContext, createLiveblocksContext } from '@liveblocks/react'
 
-import { paths } from './lib/paths'
+import { paths } from '@/lib/paths'
 
 const client = createClient({
   // publicApiKey: env.NEXT_PUBLIC_LIVEBLOCKS_API_KEY,

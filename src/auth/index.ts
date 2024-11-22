@@ -1,12 +1,12 @@
 import { cache } from 'react'
 import { env } from '@/env'
-import { db } from '@/server/db'
+import { db } from '@/lib/db'
 import { cookies } from 'next/headers'
 
 import { Lucia, TimeSpan, type Session, type User } from 'lucia'
 import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { GitHub } from 'arctic'
-import { sessions, users, type User as DbUser } from '@/server/db/schema'
+import { sessions, users, type User as DbUser } from '@/lib/db/schema'
 import { absoluteUrl } from '@/lib/utils'
 import { paths } from '@/lib/paths'
 
