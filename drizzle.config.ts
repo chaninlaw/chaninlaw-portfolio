@@ -1,13 +1,15 @@
 import type { Config } from 'drizzle-kit'
-import { env } from '@/env'
 import { DATABASE_PREFIX } from '@/lib/constants'
+import { env } from '@/env'
 
-export default {
-  schema: './src/lib/db/schema/*',
+const config: Config = {
+  dialect: 'postgresql',
+  schema: './src/lib/db/{schema.ts,relations.ts}',
   out: './drizzle',
-  driver: 'pg',
   dbCredentials: {
-    connectionString: env.DATABASE_URL
+    url: env.DATABASE_URL
   },
   tablesFilter: [`${DATABASE_PREFIX}_*`]
-} satisfies Config
+}
+
+export default config

@@ -6,7 +6,7 @@ import { cookies } from 'next/headers'
 import { Lucia, TimeSpan, type Session, type User } from 'lucia'
 import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { GitHub } from 'arctic'
-import { sessions, users, type User as DbUser } from '@/lib/db/schema'
+import { sessions, users } from '@/lib/db/schema'
 import { absoluteUrl } from '@/lib/utils'
 import { paths } from '@/lib/paths'
 
@@ -39,9 +39,7 @@ export const lucia = new Lucia(adapter, {
   }
 })
 
-export const github = new GitHub(env.GITHUB_CLIENT_ID, env.GITHUB_CLIENT_SECRET, {
-  redirectURI: absoluteUrl(paths.login.githubCallback)
-})
+export const github = new GitHub(env.GITHUB_CLIENT_ID, env.GITHUB_CLIENT_SECRET, absoluteUrl(paths.login.githubCallback))
 
 declare module 'lucia' {
   interface Register {
@@ -52,11 +50,12 @@ declare module 'lucia' {
 }
 
 interface DatabaseSessionAttributes {}
-interface DatabaseUserAttributes extends Omit<DbUser, 'hashedPassword'> {}
+interface DatabaseUserAttributes extends Omit<typeof users.$inferInsert, 'hashedPassword'> {}
 
 export const uncachedValidateRequest = async (): Promise<{ user: User; session: Session } | { user: null; session: null }> => {
   'use server'
-  const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null
+  const cookieStore = await cookies()
+  const sessionId = cookieStore.get(lucia.sessionCookieName)?.value ?? null
   if (!sessionId) {
     return { user: null, session: null }
   }
@@ -65,11 +64,13 @@ export const uncachedValidateRequest = async (): Promise<{ user: User; session: 
   try {
     if (result.session && result.session.fresh) {
       const sessionCookie = lucia.createSessionCookie(result.session.id)
-      cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+
+      cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
     }
     if (!result.session) {
       const sessionCookie = lucia.createBlankSessionCookie()
-      cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+
+      cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
     }
   } catch {
     console.error('Failed to set session cookie')

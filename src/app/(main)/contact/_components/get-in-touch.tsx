@@ -1,7 +1,6 @@
 'use client'
 import * as React from 'react'
 import { Link } from '@/components/link'
-import { useFormState } from 'react-dom'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -12,7 +11,7 @@ import { toast } from 'sonner'
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 
 export const GetInTouch = () => {
-  const [formState, formAction] = useFormState(sendEmail, { success: null })
+  const [formState, formAction] = React.useActionState(sendEmail, { success: null })
   const formRef = React.useRef<HTMLFormElement>(null)
 
   React.useEffect(() => {

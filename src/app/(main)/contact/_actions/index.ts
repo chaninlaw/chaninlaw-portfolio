@@ -9,7 +9,7 @@ import { env } from '@/env'
 import { Resend } from 'resend'
 import WelcomeEmail from '@/emails/welcome'
 
-import { comments, emails, posts } from '@/lib/db/schema'
+import { email, posts, comments } from '@/lib/db/schema'
 import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 import type { ActionResult } from '@/types/serverAction'
 import { paths } from '@/lib/paths'
@@ -86,7 +86,7 @@ export const sendEmail = cache(async (prevState: ActionResult, formData: FormDat
   const { name, email, message } = parsed.data
 
   try {
-    await db.insert(emails).values({ email, message, name })
+    await db.insert(email).values({ email, message, name })
 
     const resend = new Resend(env.RESEND_API_KEY)
 

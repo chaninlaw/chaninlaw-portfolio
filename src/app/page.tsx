@@ -1,13 +1,11 @@
-import dynamic from 'next/dynamic'
 import { Atma } from 'next/font/google'
 import Image from 'next/image'
 
 import { MotionDiv } from '@/components/ui/motion-div'
+import { BackgroundGradient } from '@/components/ui/background-gradient'
+import { Boxes } from '@/components/ui/background-boxes'
 
 const atma = Atma({ weight: ['500'], subsets: ['bengali'], display: 'swap' })
-
-const BackgroundGradient = dynamic(() => import('@/components/ui/background-gradient').then((mod) => mod.BackgroundGradient), { ssr: false })
-const Boxes = dynamic(() => import('@/components/ui/background-boxes').then((mod) => mod.Boxes), { ssr: false })
 
 export default function Home() {
   return (

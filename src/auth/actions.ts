@@ -8,6 +8,7 @@ import { cache } from 'react'
 import { paths } from '@/lib/paths'
 
 export const logout = cache(async (prevState: ActionResult): Promise<ActionResult> => {
+  const cookieStore = await cookies()
   const { session } = await validateRequest()
 
   if (!session) {
@@ -20,22 +21,23 @@ export const logout = cache(async (prevState: ActionResult): Promise<ActionResul
   await lucia.invalidateSession(session.id)
 
   const sessionCookie = lucia.createBlankSessionCookie()
-  cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+  cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
   return redirect(paths.contact)
 })
 
 export const getUser = cache(async () => {
-  const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null
+  const cookieStore = await cookies()
+  const sessionId = cookieStore.get(lucia.sessionCookieName)?.value ?? null
   if (!sessionId) return null
   const { user, session } = await lucia.validateSession(sessionId)
   try {
     if (session && session.fresh) {
       const sessionCookie = lucia.createSessionCookie(session.id)
-      cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+      cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
     }
     if (!session) {
       const sessionCookie = lucia.createBlankSessionCookie()
-      cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+      cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
     }
   } catch {
     // Next.js throws error when attempting to set cookies when rendering page

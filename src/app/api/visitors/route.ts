@@ -2,13 +2,15 @@ import { redis } from '@/lib/redis'
 import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
+import { ipAddress } from "@vercel/functions";
+
 export async function GET(req: NextRequest) {
   unstable_noStore()
   try {
     if (process.env.NODE_ENV === 'development') {
       return NextResponse.json({ visitCount: 999 }, { status: 200 })
     }
-    const ip = req.headers.get('x-forwarded-for') || req.ip
+    const ip = req.headers.get('x-forwarded-for') || ipAddress(req)
     const today = new Date().toISOString().slice(0, 10)
     const key = 'visitor'
     const value = `visit:${today}:${ip}`

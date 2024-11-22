@@ -9,19 +9,20 @@ import { Tag } from '@/components/tag'
 import { paths } from '@/lib/paths'
 
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string[]
-  }
+  }>
 }
 
-async function getPostFromParams(params: PostPageProps['params']) {
-  const slug = params?.slug?.join('/')
-  const post = posts.find((post) => post.slugAsParams === slug)
+async function getPostFromParams(params: { slug: string[] }) {
+  const slugs = params.slug?.join('/')
+  const post = posts.find((post) => post.slugAsParams === slugs)
 
   return post
 }
 
-export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+export async function generateMetadata(props: PostPageProps): Promise<Metadata> {
+  const params = await props.params
   const post = await getPostFromParams(params)
 
   if (!post) {
@@ -58,11 +59,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 }
 
-export async function generateStaticParams(): Promise<PostPageProps['params'][]> {
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   return posts.map((post) => ({ slug: post.slugAsParams.split('/') }))
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage(props: PostPageProps) {
+  const params = await props.params
   const post = await getPostFromParams(params)
 
   if (!post || !post.published) {

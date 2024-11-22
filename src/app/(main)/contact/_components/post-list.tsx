@@ -10,6 +10,8 @@ export async function PostList() {
   const { user } = await validateRequest()
   const posts = await getPostsWithUser()
 
+  console.log('posts', posts)
+
   return (
     <CommentProvider>
       <div className='w-full px-4 py-6 md:px-6 md:py-12'>

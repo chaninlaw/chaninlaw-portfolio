@@ -5,7 +5,7 @@ import { IoIosWifi } from 'react-icons/io'
 import { BsPersonCircle, BsToggles } from 'react-icons/bs'
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from './ui/menubar'
 import { cn } from '@/lib/utils'
-import React from 'react'
+import React, { type JSX } from 'react';
 
 interface MenuItems {
   name: string | JSX.Element

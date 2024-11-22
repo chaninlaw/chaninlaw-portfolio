@@ -5,9 +5,11 @@ import { env } from '@/env'
 
 export async function GET(): Promise<Response> {
   const state = generateState()
-  const url = await github.createAuthorizationURL(state)
+  const url = github.createAuthorizationURL(state, [])
 
-  cookies().set('github_oauth_state', state, {
+  const cookieStore = await cookies()
+
+  cookieStore.set('github_oauth_state', state, {
     path: '/',
     secure: env.NODE_ENV === 'production',
     httpOnly: true,

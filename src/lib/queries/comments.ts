@@ -2,7 +2,7 @@ import { db } from '@/lib/db'
 
 export type CommentsWithUser = Awaited<ReturnType<typeof getCommentsWithUser>>
 export const getCommentsWithUser = async () => {
-  const comments = await db.query.comments.findMany({
+  const comments = await db.query.portfolioComments.findMany({
     with: {
       author: true
     }
