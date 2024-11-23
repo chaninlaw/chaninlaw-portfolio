@@ -18,8 +18,6 @@ export const metadata: Metadata = {
   description: 'List of all my projects and their links'
 }
 
-export const dynamic = 'force-static'
-
 export default function ProjectsPage() {
   return (
     <div className='bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]'>
