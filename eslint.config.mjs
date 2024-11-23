@@ -3,6 +3,8 @@ import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 
+import perfectionist from 'eslint-plugin-perfectionist'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({
@@ -11,6 +13,17 @@ const compat = new FlatCompat({
   allConfig: js.configs.all
 })
 
-const config = [...compat.extends('next/core-web-vitals')]
+const config = [
+  ...compat.extends('next/core-web-vitals', 'plugin:prettier/recommended'),
+  {
+    plugins: {
+      perfectionist
+    },
+
+    rules: {
+      'perfectionist/sort-imports': 'warn'
+    }
+  }
+]
 
 export default config

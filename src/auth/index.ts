@@ -1,14 +1,13 @@
-import { cache } from 'react'
 import { env } from '@/env'
 import { db } from '@/lib/db'
-import { cookies } from 'next/headers'
-
-import { Lucia, TimeSpan, type Session, type User } from 'lucia'
+import { sessions, users } from '@/lib/db/schema'
+import { paths } from '@/lib/paths'
+import { absoluteUrl } from '@/lib/utils'
 import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { GitHub } from 'arctic'
-import { sessions, users } from '@/lib/db/schema'
-import { absoluteUrl } from '@/lib/utils'
-import { paths } from '@/lib/paths'
+import { Lucia, TimeSpan, type Session, type User } from 'lucia'
+import { cookies } from 'next/headers'
+import { cache } from 'react'
 
 const adapter = new DrizzlePostgreSQLAdapter(db, sessions, users)
 

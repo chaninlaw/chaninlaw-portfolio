@@ -1,18 +1,18 @@
 'use server'
 
-import { cache } from 'react'
-import { z } from 'zod'
-import { db } from '@/lib/db'
-import { revalidatePath } from 'next/cache'
-import { env } from '@/env'
-
-import { Resend } from 'resend'
-import WelcomeEmail from '@/emails/welcome'
-
-import { email, posts, comments } from '@/lib/db/schema'
-import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 import type { ActionResult } from '@/types/serverAction'
+
+import WelcomeEmail from '@/emails/welcome'
+import { env } from '@/env'
+import { db } from '@/lib/db'
+import { email, posts, comments } from '@/lib/db/schema'
 import { paths } from '@/lib/paths'
+import { revalidatePath } from 'next/cache'
+import { cache } from 'react'
+import { Resend } from 'resend'
+import { z } from 'zod'
+
+import { createPostSchema, replyPostSchema, sendEmailSchema } from './validation'
 
 export const createPost = cache(async (data: z.infer<typeof createPostSchema>): Promise<ActionResult> => {
   const parsed = createPostSchema.safeParse(data)

@@ -1,6 +1,6 @@
-import { NextRequest } from 'next/server'
-import { ImageResponse } from 'next/og'
 import { siteConfig } from '@/config/site'
+import { ImageResponse } from 'next/og'
+import { NextRequest } from 'next/server'
 
 // const interBold = fetch(new URL('../../../assets/fonts/Inter-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer())
 

@@ -1,5 +1,5 @@
-import { Metadata } from 'next'
 import { Monaco } from '@/components/monaco'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Playground',

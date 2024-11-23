@@ -1,6 +1,6 @@
 'use client'
-import * as React from 'react'
 import { Session, User } from 'lucia'
+import * as React from 'react'
 
 interface SessionProviderProps {
   children: React.ReactNode

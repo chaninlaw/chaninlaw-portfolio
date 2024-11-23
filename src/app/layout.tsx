@@ -1,20 +1,21 @@
 import '@/styles/globals.css'
-import type { Metadata, Viewport } from 'next'
-import { Inter as FontSans } from 'next/font/google'
-import { cn } from '@/lib/utils'
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
 
-import { Navbar } from '@/components/navbar'
+import type { Metadata, Viewport } from 'next'
+
+import { validateRequest } from '@/auth'
+import { EditorContent } from '@/components/editor/editor-content'
 import { EditorFooter } from '@/components/editor/editor-footer'
 import { EditorNavHead } from '@/components/editor/editor-nav-head'
 import { EditorNavSide } from '@/components/editor/editor-nav-side'
-import { EditorContent } from '@/components/editor/editor-content'
 import { EditorSidebar } from '@/components/editor/editor-sidebar'
 import { EditorTabs } from '@/components/editor/editor-tabs'
+import { Navbar } from '@/components/navbar'
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable'
+import { cn } from '@/lib/utils'
+import { Inter as FontSans } from 'next/font/google'
+import { headers } from 'next/headers'
 
 import { Providers } from './providers'
-import { validateRequest } from '@/auth'
-import { headers } from 'next/headers'
 
 const fontSans = FontSans({
   subsets: ['latin'],

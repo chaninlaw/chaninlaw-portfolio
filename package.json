@@ -17,6 +17,8 @@
     "dev:content": "velite --watch",
     "build:content": "velite --clean",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
     "ts": "tsc --noEmit",
     "email": "email dev --port 3003"
   },
@@ -119,6 +121,9 @@
     "drizzle-kit": "^0.28.1",
     "eslint": "^9.15.0",
     "eslint-config-next": "15.0.3",
+    "eslint-plugin-perfectionist": "^4.0.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "lefthook": "^1.8.4",
     "pg": "8.13.1",
     "postcss": "^8.4.49",
     "prettier": "3.3.3",

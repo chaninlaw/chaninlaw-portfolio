@@ -1,12 +1,11 @@
 import '@/styles/mdx.css'
-import { Metadata } from 'next'
-import { siteConfig } from '@/config/site'
-
-import { posts } from '#site/content'
 import { MDX } from '@/components/mdx-components'
-import { notFound } from 'next/navigation'
 import { Tag } from '@/components/tag'
+import { siteConfig } from '@/config/site'
 import { paths } from '@/lib/paths'
+import { posts } from '#site/content'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 interface PostPageProps {
   params: Promise<{

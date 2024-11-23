@@ -1,0 +1,28 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint:fix && git add .
+    format:
+      run: pnpm format && git add .
+    type-check:
+      run: pnpm ts
+
+# pre-push:
+#   parallel: true
+#   commands:
+#     test:
+#       run: |
+#         cd apps/api && pnpm test
+
+post-checkout:
+  parallel: true
+  commands:
+    install:
+      run: pnpm install

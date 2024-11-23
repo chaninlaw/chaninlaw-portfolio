@@ -1,13 +1,12 @@
 import { Link } from '@/components/link'
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { ModeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-
+import { Button } from '@/components/ui/button'
+import { paths } from '@/lib/paths'
+import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { FaMeta } from 'react-icons/fa6'
 import { TbRosetteDiscountCheckFilled } from 'react-icons/tb'
-import { paths } from '@/lib/paths'
 
 export function EditorSidebarExtensions() {
   return (

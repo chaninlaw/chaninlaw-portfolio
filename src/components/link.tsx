@@ -1,8 +1,9 @@
 'use client'
-import { startTransition } from 'react'
 import NextLink from 'next/link'
-import { Link as ProgressLink } from 'react-transition-progress/next'
 import { useRouter } from 'next/navigation'
+import { startTransition } from 'react'
+import { Link as ProgressLink } from 'react-transition-progress/next'
+
 import { useIsBlocked } from './navigation-block'
 
 export function Link({ children, href, replace, ...props }: Parameters<typeof NextLink>[0]) {

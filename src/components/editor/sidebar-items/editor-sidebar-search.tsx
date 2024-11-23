@@ -1,9 +1,8 @@
+import { ModeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { ModeToggle } from '@/components/theme-toggle'
-
-import { CiSearch } from 'react-icons/ci'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+import { CiSearch } from 'react-icons/ci'
 
 export function EditorSidebarSearch() {
   return (

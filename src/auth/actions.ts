@@ -1,11 +1,11 @@
 'use server'
 
 import { lucia, validateRequest } from '@/auth'
-import { redirect } from 'next/navigation'
-import { cookies } from 'next/headers'
-import { ActionResult } from '@/types/serverAction'
-import { cache } from 'react'
 import { paths } from '@/lib/paths'
+import { ActionResult } from '@/types/serverAction'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import { cache } from 'react'
 
 export const logout = cache(async (prevState: ActionResult): Promise<ActionResult> => {
   const cookieStore = await cookies()

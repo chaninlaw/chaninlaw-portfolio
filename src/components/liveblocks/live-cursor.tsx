@@ -1,5 +1,5 @@
-import { Cursor } from '@/components/liveblocks/cursor'
 import { useMyPresence, useOthers } from '@/../liveblocks.config'
+import { Cursor } from '@/components/liveblocks/cursor'
 
 export const LiveCursor = () => {
   const others = useOthers()

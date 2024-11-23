@@ -1,12 +1,13 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { MotionDiv } from '@/components/ui/motion-div'
+import { Textarea } from '@/components/ui/textarea'
 import { CommentsWithUser } from '@/lib/queries/comments'
 import { cn, timeAgo } from '@/lib/utils'
-import { Textarea } from '@/components/ui/textarea'
+
 import { useComment } from '../_context'
-import { MotionDiv } from '@/components/ui/motion-div'
 
 export function CommentItem({ comment, avatarClassName, ...props }: CommentItemProps) {
   // const { state, dispatch } = useComment()

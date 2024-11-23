@@ -1,11 +1,9 @@
 'use client'
-import React, { useEffect } from 'react'
-
 import { Link } from '@/components/link'
-import { useToast } from '@/components/ui/use-toast'
-import { ToastAction } from '@/components/ui/toast'
 import { Kbd } from '@/components/ui/kbd'
-
+import { ToastAction } from '@/components/ui/toast'
+import { useToast } from '@/components/ui/use-toast'
+import React, { useEffect } from 'react'
 import { SiVisualstudiocode } from 'react-icons/si'
 
 export default function NotFound() {

@@ -1,3 +1,5 @@
+import { Card } from '@/components/ui/card'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 
@@ -7,8 +9,6 @@ import { LanguagesBar } from './_components/languages-bar'
 import { TodayTimeSpentCard } from './_components/today-timespent-card'
 import { TotalTimeSpentCard } from './_components/total-timespent-card'
 import { WeedayBar } from './_components/weekday-bar'
-import { Card } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
 
 export const metadata: Metadata = {
   title: 'Skills',

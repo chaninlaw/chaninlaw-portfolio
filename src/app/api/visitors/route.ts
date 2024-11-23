@@ -1,8 +1,7 @@
 import { redis } from '@/lib/redis'
+import { ipAddress } from '@vercel/functions'
 import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
-
-import { ipAddress } from "@vercel/functions";
 
 export async function GET(req: NextRequest) {
   unstable_noStore()

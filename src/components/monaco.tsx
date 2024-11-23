@@ -1,7 +1,7 @@
 'use client'
 
-import { editor } from 'monaco-editor'
 import Editor from '@monaco-editor/react'
+import { editor } from 'monaco-editor'
 import { useRef } from 'react'
 
 interface MonacoProps {

@@ -1,9 +1,10 @@
 'use client'
 
-import { useFormStatus } from 'react-dom'
 import { Button, ButtonProps } from '@/components/ui/button'
-import { MotionDiv } from '../ui/motion-div'
+import { useFormStatus } from 'react-dom'
 import { VscLoading } from 'react-icons/vsc'
+
+import { MotionDiv } from '../ui/motion-div'
 
 export function SubmitButton({ children, ...props }: { children: React.ReactNode } & ButtonProps) {
   const { pending } = useFormStatus()

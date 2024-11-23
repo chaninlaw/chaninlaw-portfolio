@@ -1,9 +1,8 @@
+import { Boxes } from '@/components/ui/background-boxes'
+import { BackgroundGradient } from '@/components/ui/background-gradient'
+import { MotionDiv } from '@/components/ui/motion-div'
 import { Atma } from 'next/font/google'
 import Image from 'next/image'
-
-import { MotionDiv } from '@/components/ui/motion-div'
-import { BackgroundGradient } from '@/components/ui/background-gradient'
-import { Boxes } from '@/components/ui/background-boxes'
 
 const atma = Atma({ weight: ['500'], subsets: ['bengali'], display: 'swap' })
 

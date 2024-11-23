@@ -1,9 +1,9 @@
 'use client'
 
-import React from 'react'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, TooltipProps } from 'recharts'
 import { Card } from '@/components/ui/card'
 import { Language } from '@/types/wakatime'
+import React from 'react'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, TooltipProps } from 'recharts'
 
 export function HorizontalBar({ data }: { data: Language[] }) {
   return (

@@ -1,5 +1,6 @@
 'use client'
 import * as React from 'react'
+
 import { DEAULT_TABS_LIST, DEFAULT_TABS, SidebarValue, type TabsListValue } from './constants'
 
 interface EditorContextValue {

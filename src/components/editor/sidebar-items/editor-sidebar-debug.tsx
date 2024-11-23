@@ -1,13 +1,12 @@
 'use client'
-import * as React from 'react'
-import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
-import { ModeToggle } from '@/components/theme-toggle'
 import { SubmitButton } from '@/components/button/submit-button'
-
+import { ModeToggle } from '@/components/theme-toggle'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+import * as React from 'react'
 
 export function EditorSidebarDebug() {
   const [message, setMessage] = React.useState('')

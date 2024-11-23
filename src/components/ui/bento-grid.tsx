@@ -1,8 +1,9 @@
-import { cn } from '@/lib/utils'
-import { InfiniteMovingCards } from './infinite-moving-cards'
-import { Badge } from '@/components/ui/badge'
 import { Link } from '@/components/link'
+import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 import React from 'react'
+
+import { InfiniteMovingCards } from './infinite-moving-cards'
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
   return <div className={cn('grid md:auto-rows-auto grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ', className)}>{children}</div>

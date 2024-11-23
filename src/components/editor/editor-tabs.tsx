@@ -1,12 +1,12 @@
 'use client'
-import { useEffect, startTransition, useCallback } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
-import { useProgress } from 'react-transition-progress'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useEditor } from '@/components/editor'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, startTransition, useCallback } from 'react'
+import { BsX } from 'react-icons/bs'
+import { useProgress } from 'react-transition-progress'
 
 import { type TabsListValue } from './constants'
-import { BsX } from 'react-icons/bs'
 
 export function EditorTabs() {
   const { tabLists, setTabLists, currentTab, setCurrentTab } = useEditor()

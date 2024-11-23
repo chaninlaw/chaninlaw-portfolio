@@ -1,10 +1,11 @@
-import { AuthButton } from '@/components/button/auth-button'
-import { getPostsWithUser } from '@/lib/queries/posts'
-import { PostItem } from './post-item'
-import { CommentProvider } from '../_context'
 import { validateRequest } from '@/auth'
-import { CreatePost } from './create-post'
+import { AuthButton } from '@/components/button/auth-button'
 import { Separator } from '@/components/ui/separator'
+import { getPostsWithUser } from '@/lib/queries/posts'
+
+import { CommentProvider } from '../_context'
+import { CreatePost } from './create-post'
+import { PostItem } from './post-item'
 
 export async function PostList() {
   const { user } = await validateRequest()

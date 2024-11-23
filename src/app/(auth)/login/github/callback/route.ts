@@ -1,10 +1,10 @@
 import { github, lucia } from '@/auth'
-import { cookies } from 'next/headers'
-import { OAuth2RequestError } from 'arctic'
-import { generateId } from 'lucia'
-import { paths } from '@/lib/paths'
 import { db } from '@/lib/db'
 import { users } from '@/lib/db/schema'
+import { paths } from '@/lib/paths'
+import { OAuth2RequestError } from 'arctic'
+import { generateId } from 'lucia'
+import { cookies } from 'next/headers'
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url)

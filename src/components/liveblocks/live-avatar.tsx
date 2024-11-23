@@ -1,8 +1,8 @@
 'use client'
-import { useMemo } from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useLiveOthers, useLiveSelf } from '@/hooks/use-live-blocks'
+import { useMemo } from 'react'
 
 export const LiveAvatar = () => {
   const others = useLiveOthers()

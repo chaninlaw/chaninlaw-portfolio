@@ -1,5 +1,6 @@
 import { Link } from '@/components/link'
 import { slug } from 'github-slugger'
+
 import { Badge } from './ui/badge'
 
 interface TagProps {

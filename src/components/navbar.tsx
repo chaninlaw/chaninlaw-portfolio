@@ -1,11 +1,12 @@
 'use client'
-import { FaApple } from 'react-icons/fa'
-import { IoBatteryHalfOutline } from 'react-icons/io5'
-import { IoIosWifi } from 'react-icons/io'
-import { BsPersonCircle, BsToggles } from 'react-icons/bs'
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from './ui/menubar'
 import { cn } from '@/lib/utils'
-import React, { type JSX } from 'react';
+import React, { type JSX } from 'react'
+import { BsPersonCircle, BsToggles } from 'react-icons/bs'
+import { FaApple } from 'react-icons/fa'
+import { IoIosWifi } from 'react-icons/io'
+import { IoBatteryHalfOutline } from 'react-icons/io5'
+
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from './ui/menubar'
 
 interface MenuItems {
   name: string | JSX.Element

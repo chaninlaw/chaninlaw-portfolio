@@ -1,6 +1,6 @@
+import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
 import { Metadata } from 'next'
 import Image from 'next/image'
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
 
 export const metadata: Metadata = {
   title: 'Projects',

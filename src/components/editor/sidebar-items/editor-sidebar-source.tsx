@@ -1,10 +1,9 @@
-import { FiArrowUpRight } from 'react-icons/fi'
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
-
 import { Link } from '@/components/link'
-import { Button } from '@/components/ui/button'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { ModeToggle } from '@/components/theme-toggle'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
+import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 export function EditorSidebarSource() {
   const items = [

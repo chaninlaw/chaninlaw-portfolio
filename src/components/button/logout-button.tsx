@@ -1,9 +1,10 @@
 'use client'
 
-import * as React from 'react'
-import { SubmitButton } from './submit-button'
 import { logout } from '@/auth/actions'
+import * as React from 'react'
 import { toast } from 'sonner'
+
+import { SubmitButton } from './submit-button'
 
 export const LogoutButton = () => {
   const formRef = React.useRef<HTMLFormElement>(null)

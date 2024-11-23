@@ -1,17 +1,15 @@
-import * as React from 'react'
+import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar'
-
+import { cn } from '@/lib/utils'
+import { Message } from 'ai/react'
 import DOMPurify from 'dompurify'
+import hljs from 'highlight.js'
 import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
-import hljs from 'highlight.js'
-
-import { cn } from '@/lib/utils'
+import * as React from 'react'
 import { FaMeta } from 'react-icons/fa6'
 import { VscLoading } from 'react-icons/vsc'
-import { Message } from 'ai/react'
 
 export function Chat({ children }: { children?: React.ReactNode }) {
   return (

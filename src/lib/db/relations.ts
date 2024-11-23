@@ -1,4 +1,5 @@
 import { relations } from 'drizzle-orm/relations'
+
 import { posts, comments, users } from './schema'
 
 export const commentsRelations = relations(comments, ({ one }) => ({

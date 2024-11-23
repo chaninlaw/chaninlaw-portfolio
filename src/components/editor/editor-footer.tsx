@@ -1,8 +1,9 @@
 'use client'
-import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl, VscWarning } from 'react-icons/vsc'
-import Visitors from '@/components/visitors'
-import { Timer } from '@/components/timer'
 import { SyncStatus } from '@/components/sync-status'
+import { Timer } from '@/components/timer'
+import Visitors from '@/components/visitors'
+import { VscBell, VscCheckAll, VscError, VscHistory, VscRemote, VscSourceControl, VscWarning } from 'react-icons/vsc'
+
 import { EditorKeyboardCapture } from './editor-keyboard-capture'
 
 export function EditorFooter() {

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
-import { VscLoading } from 'react-icons/vsc'
 import { MotionDiv } from '@/components/ui/motion-div'
+import { VscLoading } from 'react-icons/vsc'
 
 export const ClientSubmitButton = ({ loading, children }: { loading: boolean; children: React.ReactNode }) => {
   return (

@@ -1,11 +1,11 @@
 'use client'
-import { useCallback, useEffect, useMemo, type JSX } from 'react';
 import { useEditor } from '@/components/editor'
+import { EditorSidebarDebug } from '@/components/editor/sidebar-items/editor-sidebar-debug'
 import { EditorSidebarExplorer } from '@/components/editor/sidebar-items/editor-sidebar-explorer'
+import { EditorSidebarExtensions } from '@/components/editor/sidebar-items/editor-sidebar-extensions'
 import { EditorSidebarSearch } from '@/components/editor/sidebar-items/editor-sidebar-search'
 import { EditorSidebarSource } from '@/components/editor/sidebar-items/editor-sidebar-source'
-import { EditorSidebarDebug } from '@/components/editor/sidebar-items/editor-sidebar-debug'
-import { EditorSidebarExtensions } from '@/components/editor/sidebar-items/editor-sidebar-extensions'
+import { useCallback, useEffect, useMemo, type JSX } from 'react'
 
 export function EditorSidebar() {
   const { currentSidebar, setCurrentSidebar } = useEditor()

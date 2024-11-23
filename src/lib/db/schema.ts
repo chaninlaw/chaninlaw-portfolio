@@ -1,5 +1,5 @@
-import { pgTable, uuid, varchar, text, timestamp, index, unique, foreignKey } from 'drizzle-orm/pg-core'
 import { sql } from 'drizzle-orm'
+import { pgTable, uuid, varchar, text, timestamp, index, unique, foreignKey } from 'drizzle-orm/pg-core'
 
 export const email = pgTable('portfolio_email', {
   id: uuid().defaultRandom().primaryKey().notNull(),

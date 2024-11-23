@@ -1,19 +1,18 @@
 'use client'
 
-import * as React from 'react'
+import { ClientSubmitButton } from '@/components/button/client-submit-button'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Textarea } from '@/components/ui/textarea'
-
-import { z } from 'zod'
 import { Form, FormField, FormLabel, FormItem, FormMessage, FormControl } from '@/components/ui/form'
-import { useForm } from 'react-hook-form'
+import { Textarea } from '@/components/ui/textarea'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { createPostSchema } from '../_actions/validation'
-import { createPost } from '../_actions'
-
 import { PlusCircledIcon } from '@radix-ui/react-icons'
-import { ClientSubmitButton } from '@/components/button/client-submit-button'
+import * as React from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { createPost } from '../_actions'
+import { createPostSchema } from '../_actions/validation'
 
 export const CreatePost = ({ authorId }: { authorId: string }) => {
   const [open, setOpen] = React.useState(false)

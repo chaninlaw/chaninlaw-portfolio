@@ -1,10 +1,11 @@
 'use client'
-import * as React from 'react'
-import useSWR from 'swr'
-import { VscEye, VscLoading } from 'react-icons/vsc'
-import { Statistic } from './ui/Statistic'
-import { fetcher } from '@/lib/utils'
 import { paths } from '@/lib/paths'
+import { fetcher } from '@/lib/utils'
+import * as React from 'react'
+import { VscEye, VscLoading } from 'react-icons/vsc'
+import useSWR from 'swr'
+
+import { Statistic } from './ui/Statistic'
 
 function Visitors() {
   const { data, isLoading } = useSWR<{ visitCount: number }>(paths.api.visitors, fetcher)

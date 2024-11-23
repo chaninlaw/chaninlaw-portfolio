@@ -1,8 +1,9 @@
 'use client'
-import { useEditor } from '.'
-import { VscDebugAlt, VscExtensions, VscFiles, VscSearch, VscSourceControl } from 'react-icons/vsc'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
+import { VscDebugAlt, VscExtensions, VscFiles, VscSearch, VscSourceControl } from 'react-icons/vsc'
+
+import { useEditor } from '.'
 
 export function EditorNavSide() {
   const { currentSidebar, setCurrentSidebar } = useEditor()

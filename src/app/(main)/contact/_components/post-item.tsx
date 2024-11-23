@@ -1,24 +1,22 @@
 'use client'
 
-import { User } from 'lucia'
-
-import { Button } from '@/components/ui/button'
+import { ClientSubmitButton } from '@/components/button/client-submit-button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { PostsWithUser } from '@/lib/queries/posts'
-import { CommentItem } from './comment-item'
-import { Textarea } from '@/components/ui/textarea'
-import { useComment } from '../_context'
-import { MotionDiv } from '@/components/ui/motion-div'
-
+import { Button } from '@/components/ui/button'
 import { Form, FormField, FormLabel, FormItem, FormMessage, FormControl } from '@/components/ui/form'
-import { useForm } from 'react-hook-form'
+import { MotionDiv } from '@/components/ui/motion-div'
+import { Textarea } from '@/components/ui/textarea'
+import { PostsWithUser } from '@/lib/queries/posts'
+import { cn, timeAgo } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { User } from 'lucia'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
 import { replyPost } from '../_actions'
 import { replyPostSchema } from '../_actions/validation'
-
-import { cn, timeAgo } from '@/lib/utils'
-import { z } from 'zod'
-import { ClientSubmitButton } from '@/components/button/client-submit-button'
+import { useComment } from '../_context'
+import { CommentItem } from './comment-item'
 
 export function PostItem({ post, avatarClassName, currentUser, ...props }: PostItemProps) {
   const { state, dispatch } = useComment()

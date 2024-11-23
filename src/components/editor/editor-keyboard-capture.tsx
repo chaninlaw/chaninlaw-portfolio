@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-import { CalendarIcon, EnvelopeClosedIcon, FaceIcon, GearIcon, PersonIcon, RocketIcon } from '@radix-ui/react-icons'
 import {
   CommandDialog,
   CommandEmpty,
@@ -12,6 +10,8 @@ import {
   CommandSeparator,
   CommandShortcut
 } from '@/components/ui/command'
+import { CalendarIcon, EnvelopeClosedIcon, FaceIcon, GearIcon, PersonIcon, RocketIcon } from '@radix-ui/react-icons'
+import * as React from 'react'
 
 export const EditorKeyboardCapture: React.FC = () => {
   const [open, setOpen] = React.useState(false)

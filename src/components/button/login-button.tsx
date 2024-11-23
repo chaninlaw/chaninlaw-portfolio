@@ -2,10 +2,10 @@
 
 import { Link } from '@/components/link'
 import { Button } from '@/components/ui/button'
+import { paths } from '@/lib/paths'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { useState } from 'react'
 import { VscLoading } from 'react-icons/vsc'
-import { paths } from '@/lib/paths'
 
 export const LoginButton = () => {
   const [loading, setLoading] = useState(false)

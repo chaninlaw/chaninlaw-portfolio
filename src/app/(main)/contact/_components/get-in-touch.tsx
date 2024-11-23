@@ -1,14 +1,14 @@
 'use client'
-import * as React from 'react'
-import { Link } from '@/components/link'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
 import { SubmitButton } from '@/components/button/submit-button'
+import { Link } from '@/components/link'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
+import * as React from 'react'
+import { toast } from 'sonner'
 
 import { sendEmail } from '../_actions'
-import { toast } from 'sonner'
-import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 
 export const GetInTouch = () => {
   const [formState, formAction] = React.useActionState(sendEmail, { success: null })

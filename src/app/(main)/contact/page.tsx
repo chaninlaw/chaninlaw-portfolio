@@ -1,5 +1,6 @@
-import { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
+import { Metadata } from 'next'
+
 import { GetInTouch } from './_components/get-in-touch'
 import { PostList } from './_components/post-list'
 

@@ -1,11 +1,11 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
+import { Statistic } from '@/components/ui/Statistic'
+import { dateFormatter } from '@/lib/utils'
 import { CalendarIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 
 import { apiWakatime } from '../_actions'
-import { dateFormatter } from '@/lib/utils'
-import { Statistic } from '@/components/ui/Statistic'
 
 export async function BestdayCard() {
   const data = await apiWakatime.getStats({ range: 'all_time' })

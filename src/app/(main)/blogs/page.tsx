@@ -1,13 +1,12 @@
-import { Metadata } from 'next'
 import { Link } from '@/components/link'
-import { Caladea } from 'next/font/google'
-import { Separator } from '@/components/ui/separator'
-
-import { posts } from '#site/content'
-import { cn, dateFormatter } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
-import { CalendarIcon } from '@radix-ui/react-icons'
+import { Separator } from '@/components/ui/separator'
 import { paths } from '@/lib/paths'
+import { cn, dateFormatter } from '@/lib/utils'
+import { CalendarIcon } from '@radix-ui/react-icons'
+import { posts } from '#site/content'
+import { Metadata } from 'next'
+import { Caladea } from 'next/font/google'
 
 const calsans = Caladea({ subsets: ['latin'], weight: ['400', '700'] })
 

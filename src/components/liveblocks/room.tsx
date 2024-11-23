@@ -1,10 +1,9 @@
 'use client'
-import * as React from 'react'
-
 import { RoomProvider } from '@/../liveblocks.config'
 import { ClientSideSuspense } from '@liveblocks/react'
-import { VscLoading } from 'react-icons/vsc'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
+import * as React from 'react'
+import { VscLoading } from 'react-icons/vsc'
 
 export function Room({ children }: { children: React.ReactNode }) {
   return (
