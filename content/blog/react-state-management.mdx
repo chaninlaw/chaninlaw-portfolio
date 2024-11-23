@@ -1,5 +1,5 @@
 ---
-title: "React State Management: An Epic Tale of Love, Loss, and Redux"
+title: 'React State Management: An Epic Tale of Love, Loss, and Redux'
 description: Embark on a dramatic journey through the realm of React state management. Witness the love triangles, betrayals, and heartaches that components face as they navigate the complex world of state management, with a special appearance by Redux.
 date: 2024-02-24
 published: true
@@ -14,7 +14,7 @@ In the grand drama of React development, the saga of state management is one fil
 Our story begins with a young component, fresh and eager, falling deeply in love with a beautiful piece of state. This state, so pristine and full of potential, promises to bring the best out of our component, making it dynamic and interactive.
 
 ```jsx
-const [love, setLove] = useState("undeniable");
+const [love, setLove] = useState('undeniable')
 ```
 
 ## The Jealous Sibling: Prop Drilling
@@ -23,8 +23,8 @@ But as in any good soap opera, there's a twist. A sibling component, envious of 
 
 ```jsx
 const DramaComponent = ({ love }) => {
-  return <div>{`The love is now shared: ${love}`}</div>;
-};
+  return <div>{`The love is now shared: ${love}`}</div>
+}
 ```
 
 ## The Arrival of Redux: A New Hope
@@ -32,14 +32,14 @@ const DramaComponent = ({ love }) => {
 Just when all seems lost, a new character enters the scene: Redux. With its powers of global state management, Redux promises to end the jealousy and confusion, allowing state to be shared harmoniously among all components.
 
 ```jsx
-const loveReducer = (state = "undeniable", action) => {
+const loveReducer = (state = 'undeniable', action) => {
   switch (action.type) {
-    case "SHARE_LOVE":
-      return action.love;
+    case 'SHARE_LOVE':
+      return action.love
     default:
-      return state;
+      return state
   }
-};
+}
 ```
 
 ## The Dramatic Finale: State Reconciliation

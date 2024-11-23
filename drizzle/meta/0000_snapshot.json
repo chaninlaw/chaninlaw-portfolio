@@ -1,10 +1,8 @@
 {
-  "id": "d266dac3-2a34-4e66-9b25-c35487daf17e",
-  "prevId": "00000000-0000-0000-0000-000000000000",
-  "version": "5",
-  "dialect": "pg",
+  "version": "7",
+  "dialect": "postgresql",
   "tables": {
-    "portfolio_email": {
+    "public.portfolio_email": {
       "name": "portfolio_email",
       "schema": "",
       "columns": {
@@ -50,9 +48,12 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false,
+      "checkConstraints": {}
     },
-    "portfolio_comments": {
+    "public.portfolio_comments": {
       "name": "portfolio_comments",
       "schema": "",
       "columns": {
@@ -100,21 +101,20 @@
         "portfolio_comments_post_id_portfolio_posts_id_fk": {
           "name": "portfolio_comments_post_id_portfolio_posts_id_fk",
           "tableFrom": "portfolio_comments",
+          "columnsFrom": ["post_id"],
           "tableTo": "portfolio_posts",
-          "columnsFrom": [
-            "post_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "columnsTo": ["id"],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false,
+      "checkConstraints": {}
     },
-    "portfolio_posts": {
+    "public.portfolio_posts": {
       "name": "portfolio_posts",
       "schema": "",
       "columns": {
@@ -154,9 +154,12 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false,
+      "checkConstraints": {}
     },
-    "portfolio_sessions": {
+    "public.portfolio_sessions": {
       "name": "portfolio_sessions",
       "schema": "",
       "columns": {
@@ -181,18 +184,29 @@
       },
       "indexes": {
         "session_user_idx": {
-          "name": "session_user_idx",
           "columns": [
-            "user_id"
+            {
+              "expression": "user_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
           ],
-          "isUnique": false
+          "with": {},
+          "name": "session_user_idx",
+          "isUnique": false,
+          "method": "btree",
+          "concurrently": false
         }
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false,
+      "checkConstraints": {}
     },
-    "portfolio_users": {
+    "public.portfolio_users": {
       "name": "portfolio_users",
       "schema": "",
       "columns": {
@@ -246,19 +260,26 @@
       "uniqueConstraints": {
         "portfolio_users_github_id_unique": {
           "name": "portfolio_users_github_id_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "github_id"
-          ]
+          "columns": ["github_id"],
+          "nullsNotDistinct": false
         }
-      }
+      },
+      "policies": {},
+      "isRLSEnabled": false,
+      "checkConstraints": {}
     }
   },
   "enums": {},
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
-  }
+    "tables": {},
+    "columns": {}
+  },
+  "id": "d266dac3-2a34-4e66-9b25-c35487daf17e",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "sequences": {},
+  "policies": {},
+  "views": {},
+  "roles": {}
 }

@@ -8,6 +8,27 @@
       "when": 1714397188096,
       "tag": "0000_clammy_captain_marvel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1732298292074,
+      "tag": "0001_overjoyed_nighthawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1732333202939,
+      "tag": "0002_regular_the_fury",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1732333229537,
+      "tag": "0003_sparkling_mysterio",
+      "breakpoints": true
     }
   ]
 }
