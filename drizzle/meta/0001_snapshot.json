@@ -53,12 +53,8 @@
           "name": "portfolio_comments_post_id_portfolio_posts_id_fk",
           "tableFrom": "portfolio_comments",
           "tableTo": "portfolio_posts",
-          "columnsFrom": [
-            "post_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["post_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -268,9 +264,7 @@
         "portfolio_users_github_id_unique": {
           "name": "portfolio_users_github_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "github_id"
-          ]
+          "columns": ["github_id"]
         }
       },
       "policies": {},

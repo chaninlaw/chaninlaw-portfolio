@@ -28,7 +28,7 @@ export async function GET(request: Request): Promise<Response> {
     const githubUser: GitHubUser = await githubUserResponse.json()
 
     // Check if user already exists
-    const existingUser = await db.query.portfolioUsers.findFirst({
+    const existingUser = await db.query.users.findFirst({
       where: (user, opt) => opt.eq(user.githubId, githubUser.id)
     })
 

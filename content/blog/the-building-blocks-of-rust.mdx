@@ -1,8 +1,8 @@
 ---
-title: "The Building Blocks of Rust"
+title: 'The Building Blocks of Rust'
 description: The lecture from my study basic of Rust with Stephen Grider's course.
 date: 2024-10-24
-tags: ["rust", "language", "basic"]
+tags: ['rust', 'language', 'basic']
 published: true
 ---
 
@@ -16,7 +16,10 @@ The basics of Rust revolve around understanding the language's key constructs, s
 use rand::{seq::SliceRandom, thread_rng};
 ```
 
-- import code from crates (packages) or other files in your project
+- import code from crates (packages) or other files in your projec
+
+  t
+
 - You can import multiple things on a single line using curly braces
 
 ## Attributes
@@ -43,7 +46,6 @@ struct Deck {
 - Defines a collection of fields (data) that are related in some way
 - Can be used to tie together data + functionality if we add an `impl` block
 
-
 ## Inherent Implementations
 
 ```rust
@@ -68,7 +70,7 @@ impl Deck {
  fn main() {
   let mut deck = Deck::new();
   // ----------------^^
-  // `associated functions` called using the `::` syntax 
+  // `associated functions` called using the `::` syntax
 
   deck.shuffle();
 

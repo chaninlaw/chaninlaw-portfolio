@@ -5,7 +5,7 @@ import type { ActionResult } from '@/types/serverAction'
 import WelcomeEmail from '@/emails/welcome'
 import { env } from '@/env'
 import { db } from '@/lib/db'
-import { email, posts, comments } from '@/lib/db/schema'
+import { email as emailTable, posts, comments } from '@/lib/db/schema'
 import { paths } from '@/lib/paths'
 import { revalidatePath } from 'next/cache'
 import { cache } from 'react'
@@ -86,7 +86,7 @@ export const sendEmail = cache(async (prevState: ActionResult, formData: FormDat
   const { name, email, message } = parsed.data
 
   try {
-    await db.insert(email).values({ email, message, name })
+    await db.insert(emailTable).values({ email, message, name })
 
     const resend = new Resend(env.RESEND_API_KEY)
 

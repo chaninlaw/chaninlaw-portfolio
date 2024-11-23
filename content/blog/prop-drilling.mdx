@@ -1,8 +1,8 @@
 ---
-title: "Prop Drilling: The Horror Movie - A Tale of React Components"
+title: 'Prop Drilling: The Horror Movie - A Tale of React Components'
 description: Step into a spine-chilling narrative where React components face the dread of prop drilling. Discover how using Context API or Redux can save your components from the depths of despair in this humorous take on a common React challenge.
 date: 2024-02-28
-tags: ["code", "react", "props"]
+tags: ['code', 'react', 'props']
 published: true
 ---
 
@@ -15,9 +15,9 @@ In the shadowy depths of a complex React application, a horror story unfolds. Co
 Our story begins in a seemingly ordinary app, where a deep nesting of components lives in harmony. But beneath the surface, a curse lurks: the curse of prop drilling. Props, those precious pieces of data, must traverse through an endless labyrinth of components, each more terrifying than the last.
 
 ```jsx
-const Grandparent = ({ terror }) => <Parent terror={terror} />;
-const Parent = ({ terror }) => <Child terror={terror} />;
-const Child = ({ terror }) => <div>{`The terror has arrived: ${terror}`}</div>;
+const Grandparent = ({ terror }) => <Parent terror={terror} />
+const Parent = ({ terror }) => <Child terror={terror} />
+const Child = ({ terror }) => <div>{`The terror has arrived: ${terror}`}</div>
 ```
 
 ## The Scream in the Console
@@ -29,13 +29,11 @@ As the props descend deeper into the component tree, strange things begin to hap
 Just when all hope seems lost, heroes emerge from the shadows: the Context API and Redux. With their powers of global state management, they offer a beacon of light in the dark, illuminating a path to safety for the beleaguered props.
 
 ```jsx
-const TerrorContext = React.createContext();
+const TerrorContext = React.createContext()
 const TerrorProvider = ({ children }) => {
-  const [terror, setTerror] = useState("everywhere");
-  return (
-    <TerrorContext.Provider value={terror}>{children}</TerrorContext.Provider>
-  );
-};
+  const [terror, setTerror] = useState('everywhere')
+  return <TerrorContext.Provider value={terror}>{children}</TerrorContext.Provider>
+}
 ```
 
 ## The Final Showdown

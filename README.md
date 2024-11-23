@@ -1,4 +1,5 @@
 # 🚀 Project about my portfolio
+
 UI & styled base on vscode editor
 
 ## Getting Started
@@ -15,6 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## 👀 Project Structure
+
 Inside of this project, you'll see the following folders and files:
 
 ```
@@ -58,10 +60,11 @@ Inside of this project, you'll see the following folders and files:
 - **velite.config.ts**: Configuration file for the Velite module.
 
 ## 🚩 Commands
+
 All commands are run from the root of the project, from a terminal:
 
 | Command          | Action                                                                             |
-|------------------|------------------------------------------------------------------------------------|
+| ---------------- | ---------------------------------------------------------------------------------- |
 | pnpm install     | Installs dependencies                                                              |
 | pnpm dev         | Starts local dev server at localhost:3000                                          |
 | pnpm build       | Build production site to ./.next/                                                  |

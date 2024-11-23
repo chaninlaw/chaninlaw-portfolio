@@ -30,7 +30,8 @@ export function CommentItem({ comment, avatarClassName, ...props }: CommentItemP
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <div className='font-medium'>{comment.author?.username}</div>
-            <div className='text-xs text-gray-500 dark:text-gray-400'>{timeAgo(comment.createdAt)}</div>
+            {/* <div className='text-xs text-gray-500 dark:text-gray-400'>{timeAgo(comment.createdAt)}</div> */}
+            <div className='text-xs text-gray-500 dark:text-gray-400'>{comment.createdAt}</div>
           </div>
           <div className='flex items-center gap-2'>
             {/* <Button size='sm' variant='ghost' onClick={() => handleReply(comment.id)}>

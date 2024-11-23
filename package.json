@@ -17,8 +17,8 @@
     "dev:content": "velite --watch",
     "build:content": "velite --clean",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "format": "prettier --write .",
+    "lint:fix": "next lint --fix --quiet",
+    "format": "prettier --write --list-different .",
     "ts": "tsc --noEmit",
     "email": "email dev --port 3003"
   },
@@ -85,6 +85,7 @@
     "next": "15.0.3",
     "next-themes": "^0.4.3",
     "oslo": "^1.2.1",
+    "portfolio": "link:",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-countup": "^6.5.3",
     "react-day-picker": "^9.3.2",
