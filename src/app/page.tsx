@@ -1,10 +1,10 @@
 import { Boxes } from '@/components/ui/background-boxes'
 import { BackgroundGradient } from '@/components/ui/background-gradient'
 import { MotionDiv } from '@/components/ui/motion-div'
-import { Atma } from 'next/font/google'
+import { Lexend } from 'next/font/google'
 import Image from 'next/image'
 
-const atma = Atma({ weight: ['500'], subsets: ['bengali'], display: 'swap' })
+const lexend = Lexend({ weight: ['500'], subsets: ['latin'], display: 'swap' })
 
 export default function Home() {
   return (
@@ -32,8 +32,8 @@ export default function Home() {
             </BackgroundGradient>
           </div>
           <div className='flex flex-col items-center relative z-20'>
-            <h1 className='md:text-6xl text-xl text-foreground dark:text-white relative z-20 select-none' style={atma.style}>
-              Hi, I am <span className='tracking-widest'>Chanin</span>
+            <h1 className='md:text-6xl text-xl text-foreground dark:text-white relative z-20 select-none' style={lexend.style}>
+              Hi, I am <span className='tracking-normal'>Chanin</span>
             </h1>
             <p className='mt-2 text-neutral-400 dark:text-neutral-300 uppercase'>Frontend Developer</p>
             <div className='mt-4 max-w-lg text-center'>

@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 export default function Loading() {
   return (
-    <section className=''>
+    <section className='mx-2'>
       <div className='h-full max-w-4xl mx-auto antialiased space-y-4 relative my-6'>
         <Skeleton className='h-[20px] w-[38px]' />
         <Skeleton className='h-[28px] w-full' />

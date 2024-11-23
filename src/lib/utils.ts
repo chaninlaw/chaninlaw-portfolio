@@ -26,7 +26,10 @@ export function absoluteUrl(path: string) {
   return new URL(path, env.NEXT_PUBLIC_APP_URL).href
 }
 
-export function timeAgo(date: Date) {
+export function timeAgo(date: Date | string) {
+  if (typeof date === 'string') {
+    date = new Date(date)
+  }
   const now = new Date()
   const seconds = Math.round((now.getTime() - date.getTime()) / 1000)
   const minutes = Math.round(seconds / 60)
