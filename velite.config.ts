@@ -1,7 +1,8 @@
-import { defineConfig, defineCollection, s } from 'velite'
-import rehypeSlug from 'rehype-slug'
-import rehypePrettyCode from 'rehype-pretty-code'
+import { Route } from 'next'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeSlug from 'rehype-slug'
+import { defineConfig, defineCollection, s, Schema } from 'velite'
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
