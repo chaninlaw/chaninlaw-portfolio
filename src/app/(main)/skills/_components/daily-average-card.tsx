@@ -11,9 +11,9 @@ export async function DailyAverageCard() {
   const data = await apiWakatime.getStats({ range: 'all_time' })
 
   return (
-    <Card className='border-stone-800 flex-1'>
-      <CardHeader className='flex flex-row justify-between items-center pb-0 space-y-0'>
-        <CardTitle className='uppercase text-sm'>Daily Average</CardTitle>
+    <Card className='flex-1 border-stone-800'>
+      <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-0'>
+        <CardTitle className='text-sm uppercase'>Daily Average</CardTitle>
         <CardDescription>
           <HoverCard>
             <HoverCardTrigger asChild>
@@ -28,7 +28,7 @@ export async function DailyAverageCard() {
                 <div className='flex-1 space-y-1'>
                   <h4 className='text-sm font-semibold'>@{data.username}</h4>
                   <p className='text-sm'>Number of languages: {data.languages.length}</p>
-                  <div className='flex justify-end items-center pt-2'>
+                  <div className='flex items-center justify-end pt-2'>
                     <CalendarIcon className='mr-2 h-4 w-4 opacity-70' />
                     <span className='text-xs text-muted-foreground'>{dateFormatter(data.modified_at)}</span>
                   </div>
@@ -38,7 +38,7 @@ export async function DailyAverageCard() {
           </HoverCard>
         </CardDescription>
       </CardHeader>
-      <CardContent className='pb-0 pt-2 flex items-end text-2xl space-x-2 font-bold'>
+      <CardContent className='flex items-end space-x-2 pb-0 pt-2 text-2xl font-bold'>
         <Statistic start={0} end={data.daily_average / 3600} />
         <span className='text-lg'>hrs</span> <Statistic start={0} end={(data.daily_average / 60) % 60} />
         <span className='text-lg'>mins</span>

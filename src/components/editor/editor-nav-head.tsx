@@ -3,11 +3,11 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 import { VscLayout, VscLayoutPanel, VscLayoutSidebarLeft, VscLayoutSidebarRightOff, VscSearch } from 'react-icons/vsc'
 export function EditorNavHead() {
   return (
-    <div aria-hidden='true' className='border-b border-border flex justify-between'>
-      <ul className='flex items-center p-2 space-x-2 '>
-        <li className='w-3 h-3 rounded-full bg-red-500'></li>
-        <li className='w-3 h-3 rounded-full bg-yellow-500'></li>
-        <li className='w-3 h-3 rounded-full bg-green-500'></li>
+    <div aria-hidden='true' className='flex justify-between border-b border-border'>
+      <ul className='flex items-center space-x-2 p-2'>
+        <li className='h-3 w-3 rounded-full bg-red-500'></li>
+        <li className='h-3 w-3 rounded-full bg-yellow-500'></li>
+        <li className='h-3 w-3 rounded-full bg-green-500'></li>
       </ul>
       <ul className='flex items-center space-x-2'>
         <li className='hidden sm:block'>
@@ -17,13 +17,13 @@ export function EditorNavHead() {
           <ArrowRightIcon className='text-stone-500' />
         </li>
         <li>
-          <div className='h-full p-1 m-1 w-[200px] sm:w-[300px] rounded-sm border border-stone-500 bg-secondary dark:bg-white/5 flex justify-center items-center space-x-1'>
-            <VscSearch className='text-foreground text-sm' />
+          <div className='m-1 flex h-full w-[200px] items-center justify-center space-x-1 rounded-sm border border-stone-500 bg-secondary p-1 dark:bg-white/5 sm:w-[300px]'>
+            <VscSearch className='text-sm text-foreground' />
             <span className='text-xs'>Chanin</span>
           </div>
         </li>
       </ul>
-      <ul className='flex items-center p-2 space-x-2 dark:text-white/60'>
+      <ul className='flex items-center space-x-2 p-2 dark:text-white/60'>
         <li className='hidden sm:block'>
           <VscLayoutSidebarLeft />
         </li>

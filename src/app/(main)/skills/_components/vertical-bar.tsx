@@ -21,7 +21,7 @@ export function VerticalBar({ data }: { data: any[] }) {
 const CustomTooltip = ({ active, payload, label }: TooltipProps<any, any>) => {
   if (active && payload && payload.length) {
     return (
-      <Card className='dark:border-stone-800 dark:bg-stone-900 py-3 px-4'>
+      <Card className='px-4 py-3 dark:border-stone-800 dark:bg-stone-900'>
         <p className='text-sm'>Average: {(payload[0].payload as Weekday).human_readable_average}</p>
         <p className='text-sm'>
           Total in {label}: {(payload[0].payload as Weekday).human_readable_total}

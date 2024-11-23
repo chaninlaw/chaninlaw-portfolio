@@ -45,13 +45,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Navbar className='hidden lg:block' />
         <Providers sessions={sessions}>
           <div className='h-full'>
-            <div className='border-2 border-border rounded-xl flex flex-col w-full h-full'>
+            <div className='flex h-full w-full flex-col rounded-xl border-2 border-border'>
               <EditorNavHead />
               <div className='flex h-full'>
                 <EditorNavSide />
                 <ResizablePanelGroup direction='horizontal' className='h-full'>
                   <ResizablePanel defaultSize={isMobile ? 0 : 15}>
-                    <div className='w-full h-full min-w-40 overflow-x-hidden bg-secondary dark:bg-background border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
+                    <div className='flex h-full w-full min-w-40 flex-col justify-between overflow-x-hidden border-l border-border bg-secondary text-[10px] tracking-wide dark:bg-background'>
                       <EditorSidebar />
                     </div>
                   </ResizablePanel>

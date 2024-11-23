@@ -84,7 +84,7 @@ export function EditorSidebarSource() {
   return (
     <>
       <div className='flex flex-col'>
-        <div className='flex justify-between items-center px-2 py-1.5'>
+        <div className='flex items-center justify-between px-2 py-1.5'>
           <p className='uppercase'>Certification</p>
           <ModeToggle>
             <Button variant='ghost' aria-label='Toggle theme' className='h-5 w-5 p-0'>
@@ -95,19 +95,19 @@ export function EditorSidebarSource() {
 
         <Accordion type='single' defaultValue='item-1' collapsible>
           <AccordionItem value='item-1' className='border-0'>
-            <AccordionTrigger className='font-bold uppercase flex justify-start space-x-1 my-1 pt-1 border-t dark:border-secondary'>
+            <AccordionTrigger className='my-1 flex justify-start space-x-1 border-t pt-1 font-bold uppercase dark:border-secondary'>
               Udemy
             </AccordionTrigger>
             <AccordionContent>
-              <ul className='text-nowrap space-y-1'>
+              <ul className='space-y-1 text-nowrap'>
                 {items.map((item) => (
                   <Link key={item.id} href={item.url} target='_blank' className='group'>
-                    <li className='pl-8 flex flex-col space-x-1 cursor-pointer group-hover:bg-slate-300/20 dark:group-hover:bg-zinc-100/10 transition-transform'>
-                      <p className='font-medium text-sm text-ellipsis group-hover:underline'>{item.name}</p>
+                    <li className='flex cursor-pointer flex-col space-x-1 pl-8 transition-transform group-hover:bg-slate-300/20 dark:group-hover:bg-zinc-100/10'>
+                      <p className='text-ellipsis text-sm font-medium group-hover:underline'>{item.name}</p>
                       <p>Instructors: {item.instructors[0]}</p>
-                      <p className='text-xs text-muted-foreground flex items-center gap-1'>
+                      <p className='flex items-center gap-1 text-xs text-muted-foreground'>
                         <span>{item.date}</span>
-                        <span className=' group-hover:translate-x-[10%] group-hover:-translate-y-[10%]'>
+                        <span className='group-hover:-translate-y-[10%] group-hover:translate-x-[10%]'>
                           <FiArrowUpRight />
                         </span>
                       </p>

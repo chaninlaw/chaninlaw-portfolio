@@ -52,7 +52,7 @@ export function PostItem({ post, avatarClassName, currentUser, ...props }: PostI
         <AvatarImage alt={post.author?.username || undefined} src={post.author?.avatar || undefined} />
         <AvatarFallback>{post.author?.username?.slice(0, 1) ?? 'AN'}</AvatarFallback>
       </Avatar>
-      <div className='space-y-1 w-full'>
+      <div className='w-full space-y-1'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <div className='font-medium'>{post.author?.username}</div>

@@ -128,6 +128,7 @@
     "pg": "8.13.1",
     "postcss": "^8.4.49",
     "prettier": "3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.14.0",
     "rehype-slug": "^6.0.0",

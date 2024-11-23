@@ -21,12 +21,12 @@ export function CommentItem({ comment, avatarClassName, ...props }: CommentItemP
   // }
 
   return (
-    <div {...props} className='flex items-start gap-4 p-3 border-l-2 border-gray-200 pl-4 dark:border-white/50'>
+    <div {...props} className='flex items-start gap-4 border-l-2 border-gray-200 p-3 pl-4 dark:border-white/50'>
       <Avatar className={cn('h-8 w-8', avatarClassName)}>
         <AvatarImage alt={comment.author?.username || undefined} src={comment.author?.avatar || undefined} />
         <AvatarFallback>{comment.author?.username?.slice(0, 2) ?? 'AN'}</AvatarFallback>
       </Avatar>
-      <div className='space-y-1 w-full'>
+      <div className='w-full space-y-1'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <div className='font-medium'>{comment.author?.username}</div>

@@ -21,7 +21,7 @@ export function HorizontalBar({ data }: { data: Language[] }) {
 const CustomTooltip = ({ active, payload, label }: TooltipProps<number, any>) => {
   if (active && payload && payload.length) {
     return (
-      <Card className='dark:border-stone-800 dark:bg-stone-900 py-3 px-4'>
+      <Card className='px-4 py-3 dark:border-stone-800 dark:bg-stone-900'>
         <p className='text-sm'>{`${label}: ${payload[0].value?.toFixed(0)} hrs`}</p>
       </Card>
     )

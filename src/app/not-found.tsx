@@ -24,11 +24,11 @@ export default function NotFound() {
   }, [])
 
   return (
-    <main className='w-full h-full bg-white dark:bg-stone-900'>
+    <main className='h-full w-full bg-white dark:bg-stone-900'>
       <div className='container max-w-sm space-y-10 py-24'>
         <SiVisualstudiocode className='h-80 w-80 fill-secondary dark:fill-background' />
         <div className='grid grid-cols-3'>
-          <div className='col-span-2 text-end text-stone-500 space-y-4'>
+          <div className='col-span-2 space-y-4 text-end text-stone-500'>
             <p>Show all commands</p>
             <p>Go to File</p>
             <p>Find in file</p>
@@ -37,26 +37,26 @@ export default function NotFound() {
           </div>
 
           <div className='col-span-1 space-y-4'>
-            <pre className='text-sm flex justify-end gap-2'>
+            <pre className='flex justify-end gap-2 text-sm'>
               <Kbd>⇧</Kbd>
               <Kbd>⌘</Kbd>
               <Kbd>P</Kbd>
             </pre>
-            <pre className='text-sm flex justify-end gap-2'>
+            <pre className='flex justify-end gap-2 text-sm'>
               <Kbd>⌘</Kbd>
               <Kbd>P</Kbd>
             </pre>
-            <pre className='text-sm flex justify-end gap-2'>
+            <pre className='flex justify-end gap-2 text-sm'>
               <Kbd>⇧</Kbd>
               <Kbd>⌘</Kbd>
               <Kbd>F</Kbd>
             </pre>
-            <pre className='text-sm flex justify-end gap-2'>
+            <pre className='flex justify-end gap-2 text-sm'>
               <Kbd>^</Kbd>
               <Kbd>⌘</Kbd>
               <Kbd>F</Kbd>
             </pre>
-            <pre className='text-sm flex justify-end gap-2'>
+            <pre className='flex justify-end gap-2 text-sm'>
               <Kbd>⌘</Kbd>
               <Kbd>,</Kbd>
             </pre>

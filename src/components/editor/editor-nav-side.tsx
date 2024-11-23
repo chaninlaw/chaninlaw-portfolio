@@ -11,7 +11,7 @@ export function EditorNavSide() {
   const items = [
     {
       key: 'explorer',
-      icon: <VscFiles className='w-6 h-6' />,
+      icon: <VscFiles className='h-6 w-6' />,
       content: 'Explorer',
       shortcut: '⇧⌘E',
       badge: 0,
@@ -19,7 +19,7 @@ export function EditorNavSide() {
     },
     {
       key: 'search',
-      icon: <VscSearch className='w-6 h-6' />,
+      icon: <VscSearch className='h-6 w-6' />,
       content: 'Search',
       shortcut: '⇧⌘F',
       badge: 0,
@@ -27,7 +27,7 @@ export function EditorNavSide() {
     },
     {
       key: 'source',
-      icon: <VscSourceControl className='w-6 h-6' />,
+      icon: <VscSourceControl className='h-6 w-6' />,
       content: 'Source Control',
       shortcut: '⇧⌘G',
       badge: 0,
@@ -35,7 +35,7 @@ export function EditorNavSide() {
     },
     {
       key: 'debug',
-      icon: <VscDebugAlt className='w-6 h-6' />,
+      icon: <VscDebugAlt className='h-6 w-6' />,
       content: 'Run and Debug',
       shortcut: '⇧⌘D',
       badge: 0,
@@ -43,7 +43,7 @@ export function EditorNavSide() {
     },
     {
       key: 'extensions',
-      icon: <VscExtensions className='w-6 h-6' />,
+      icon: <VscExtensions className='h-6 w-6' />,
       content: 'Extensions',
       shortcut: '⇧⌘X',
       badge: 1,
@@ -53,12 +53,12 @@ export function EditorNavSide() {
 
   return (
     <div className='h-full'>
-      <div className='w-12 flex flex-col items-center text-foreground/70 dark:text-white/60'>
+      <div className='flex w-12 flex-col items-center text-foreground/70 dark:text-white/60'>
         {items.map((item) => (
           <Tooltip key={item.key} delayDuration={0}>
             <TooltipTrigger
-              className={cn('w-full relative py-3 flex justify-center hover:text-black dark:hover:text-white', {
-                'text-black dark:text-white border-l-2 border-blue-500/90': currentSidebar === item.key
+              className={cn('relative flex w-full justify-center py-3 hover:text-black dark:hover:text-white', {
+                'border-l-2 border-blue-500/90 text-black dark:text-white': currentSidebar === item.key
               })}
               aria-label={item.key}
               aria-selected={currentSidebar === item.key}
@@ -68,13 +68,13 @@ export function EditorNavSide() {
               {item.badge > 0 && (
                 <span
                   aria-hidden
-                  className='absolute right-2 bottom-2 h-4 w-4 flex justify-center items-center font-black text-white text-[8px] rounded-full bg-blue-600'
+                  className='absolute bottom-2 right-2 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[8px] font-black text-white'
                 >
                   {item.badge > 9 ? '9+' : item.badge}
                 </span>
               )}
             </TooltipTrigger>
-            <TooltipContent className='bg-background text-primary border border-muted-foreground shadow-xl' side='right' align='center'>
+            <TooltipContent className='border border-muted-foreground bg-background text-primary shadow-xl' side='right' align='center'>
               <small className='text-xs text-black/75 dark:text-white/75'>
                 {item.content} (<kbd className='font-sans tracking-widest'>{item.shortcut}</kbd>)
               </small>

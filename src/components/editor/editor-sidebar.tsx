@@ -54,7 +54,7 @@ export function EditorSidebar() {
   )
 
   return (
-    <div className='w-full h-full min-w-40 overflow-x-hidden bg-secondary dark:bg-background border-l border-border text-[10px] tracking-wide flex flex-col justify-between'>
+    <div className='flex h-full w-full min-w-40 flex-col justify-between overflow-x-hidden border-l border-border bg-secondary text-[10px] tracking-wide dark:bg-background'>
       {sidebar}
     </div>
   )

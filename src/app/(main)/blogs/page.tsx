@@ -17,25 +17,25 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className='dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] mb-2'>
-      <div className='container h-full max-w-4xl mx-auto antialiased py-4 relative'>
+    <section className='mb-2 bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]'>
+      <div className='container relative mx-auto h-full max-w-4xl py-4 antialiased'>
         <div className=''>
-          <h2 className='text-3xl mb-1 md:mb-2 sm:text-5xl md:text-6xl lg:text-7xl font-black text-center tracking-wide'>Latest Posts</h2>
+          <h2 className='mb-1 text-center text-3xl font-black tracking-wide sm:text-5xl md:mb-2 md:text-6xl lg:text-7xl'>Latest Posts</h2>
           <Separator />
         </div>
         {posts
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
           .map((post) => (
             <div key={post.slug}>
-              <article className='prose prose-sm dark:prose-invert max-w-full my-6'>
+              <article className='prose prose-sm my-6 max-w-full dark:prose-invert'>
                 <Link href={paths.blog(post.slugAsParams)}>
                   <h2 className={cn('text-xl', calsans.className)}>{post.title}</h2>
                 </Link>
-                {post.description && <p className='text-sm m-0'>{post.description}</p>}
-                <div className='flex justify-between items-center'>
+                {post.description && <p className='m-0 text-sm'>{post.description}</p>}
+                <div className='flex items-center justify-between'>
                   <dl className='m-0'>
                     <dt className='sr-only'>Published On</dt>
-                    <dd className='p-0 text-xs sm:text-sm font-medium flex items-center gap-1'>
+                    <dd className='flex items-center gap-1 p-0 text-xs font-medium sm:text-sm'>
                       <CalendarIcon className='h-4 w-4' />
                       <time dateTime={post.date}>{dateFormatter(post.date)}</time>
                     </dd>

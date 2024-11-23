@@ -18,17 +18,17 @@ export default async function ContactPage() {
   const { user } = await validateRequest()
 
   return (
-    <div className='h-full w-full bg-background relative flex items-center justify-center'>
-      <div className='w-full h-full md:grid grid-cols-2'>
+    <div className='relative flex h-full w-full items-center justify-center bg-background'>
+      <div className='h-full w-full grid-cols-2 md:grid'>
         <div className='col-span-1 flex'>
           <div className='w-full px-4 py-6 md:px-6 md:py-12'>
             <div className='space-y-6'>
-              <div className='block space-y-2 sm:grid grid-cols-2 items-center'>
+              <div className='block grid-cols-2 items-center space-y-2 sm:grid'>
                 <div>
                   <h2 className='text-2xl font-bold'>Posts to me</h2>
                   {user && <p className='text-gray-500 dark:text-gray-400'>Welcome, {user.username}</p>}
                 </div>
-                <div className='block sm:flex justify-end gap-3 flex-wrap-reverse'>
+                <div className='block flex-wrap-reverse justify-end gap-3 sm:flex'>
                   {user && <CreatePost authorId={user.id} />}
                   <AuthButton />
                 </div>

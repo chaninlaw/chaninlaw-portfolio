@@ -71,10 +71,10 @@ export default async function PostPage(props: PostPageProps) {
   }
 
   return (
-    <article className='container py-6 prose dark:prose-invert max-w-3xl mx-auto'>
+    <article className='container prose mx-auto max-w-3xl py-6 dark:prose-invert'>
       <h1 className='mb-2'>{post.title}</h1>
-      <div className='flex gap-2 mb-2'>{post.tags?.map((tag) => <Tag tag={tag} key={tag} />)}</div>
-      {post.description ? <p className='text-xl mt-0 text-muted-foreground'>{post.description}</p> : null}
+      <div className='mb-2 flex gap-2'>{post.tags?.map((tag) => <Tag tag={tag} key={tag} />)}</div>
+      {post.description ? <p className='mt-0 text-xl text-muted-foreground'>{post.description}</p> : null}
       <hr className='my-4' />
       <MDX content={post.body} />
     </article>

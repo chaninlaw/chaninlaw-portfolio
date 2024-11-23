@@ -2,9 +2,9 @@ import { VscLoading } from 'react-icons/vsc'
 
 export default function Loading() {
   return (
-    <div className='h-full flex justify-center items-center'>
+    <div className='flex h-full items-center justify-center'>
       <div className='flex items-center'>
-        <VscLoading className='animate-spin mr-4' />
+        <VscLoading className='mr-4 animate-spin' />
         Loading...
       </div>
     </div>

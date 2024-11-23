@@ -25,17 +25,17 @@ export const GetInTouch = () => {
   }, [formState])
 
   return (
-    <section className='w-full bg-transparent dark:bg-transparent py-12 md:py-24'>
+    <section className='w-full bg-transparent py-12 dark:bg-transparent md:py-24'>
       <div className='container px-4 md:px-6'>
-        <div className='max-w-3xl mx-auto space-y-6 text-center'>
+        <div className='mx-auto max-w-3xl space-y-6 text-center'>
           <div className='space-y-2'>
             <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>Get in Touch</h2>
-            <p className='text-gray-500 dark:text-gray-400 text-lg'>
+            <p className='text-lg text-gray-500 dark:text-gray-400'>
               Have a question or want to work together? Fill out the form below or reach out through my social channels.
             </p>
           </div>
           <form ref={formRef} action={formAction} className='space-y-4 text-left'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
               <div className='space-y-2'>
                 <Label htmlFor='name'>Name</Label>
                 <Input id='name' name='name' placeholder='Enter your name' required />
@@ -54,7 +54,7 @@ export const GetInTouch = () => {
             </p>
             <SubmitButton className='w-full'>Send Message</SubmitButton>
           </form>
-          <div className='flex flex-col md:flex-row items-center justify-center gap-6'>
+          <div className='flex flex-col items-center justify-center gap-6 md:flex-row'>
             <div className='space-y-2'>
               <Link className='font-medium' href={'mailto:chaninlawlert@gmail.com?subject=Get in Touch'}>
                 <span className='sr-only'>Email</span>

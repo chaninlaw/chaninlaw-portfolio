@@ -7,7 +7,7 @@ export const ClientSubmitButton = ({ loading, children }: { loading: boolean; ch
     <Button type='submit' disabled={loading}>
       {loading && (
         <MotionDiv initial={{ x: 10 }} animate={{ x: 0 }}>
-          <VscLoading className='animate-spin mr-1' />
+          <VscLoading className='mr-1 animate-spin' />
         </MotionDiv>
       )}
       {children}

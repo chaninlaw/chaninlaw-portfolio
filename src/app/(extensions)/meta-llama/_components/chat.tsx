@@ -15,7 +15,7 @@ export function Chat({ children }: { children?: React.ReactNode }) {
   return (
     <div className='h-full w-full'>
       <div className='h-full w-full overflow-hidden'>
-        <div className='h-full flex flex-col flex-no-wrap overflow-y-auto'>{children}</div>
+        <div className='flex-no-wrap flex h-full flex-col overflow-y-auto'>{children}</div>
       </div>
     </div>
   )
@@ -23,9 +23,9 @@ export function Chat({ children }: { children?: React.ReactNode }) {
 
 export function ChatHeader({ children, className }: { children?: React.ReactNode; className?: string }) {
   return (
-    <div className='sticky top-0 z-10 flex-shrink-0 min-w-0 min-h-0'>
-      <div className='flex items-center bg-background backdrop-blur shadow justify-center py-3 pl-3 pr-2'>
-        <div className={cn('text-sm text-foreground bg-background py-2 px-4 rounded-full border border-border', className)}>{children}</div>
+    <div className='sticky top-0 z-10 min-h-0 min-w-0 flex-shrink-0'>
+      <div className='flex items-center justify-center bg-background py-3 pl-3 pr-2 shadow backdrop-blur'>
+        <div className={cn('rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground', className)}>{children}</div>
       </div>
     </div>
   )
@@ -42,12 +42,12 @@ export function ChatMessages({ messages, isLoading }: { messages: Message[]; isL
   })
 
   return (
-    <div ref={scrollerRef} className='flex-1 min-w-0 overflow-auto touch-auto will-change-scroll overscroll-y-auto scroll-smooth'>
-      <div className='h-full w-full relative'>
+    <div ref={scrollerRef} className='min-w-0 flex-1 touch-auto overflow-auto overscroll-y-auto scroll-smooth will-change-scroll'>
+      <div className='relative h-full w-full'>
         <div className='h-full divide-y divide-border pb-12'>
           {isEmpty && (
-            <div className='h-full flex flex-col justify-center items-center'>
-              <span className='h-12 w-12 mb-4 border-2 border-muted-foreground rounded-full flex justify-center items-center'>
+            <div className='flex h-full flex-col items-center justify-center'>
+              <span className='mb-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-muted-foreground'>
                 <FaMeta className='h-8 w-8' />
               </span>
               How can I help you today?
@@ -56,11 +56,11 @@ export function ChatMessages({ messages, isLoading }: { messages: Message[]; isL
 
           {!isEmpty &&
             messages.map((m) => (
-              <div key={m.id} className={cn('px-3 @md:py-4 py-2.5 group transition-opacity', { 'bg-zinc-100 dark:bg-zinc-900': m.role === 'user' })}>
-                <div className='flex items-start max-w-2xl mx-auto space-x-3'>
+              <div key={m.id} className={cn('@md:py-4 group px-3 py-2.5 transition-opacity', { 'bg-zinc-100 dark:bg-zinc-900': m.role === 'user' })}>
+                <div className='mx-auto flex max-w-2xl items-start space-x-3'>
                   <Avatar className='h-8 w-8'>
                     <AvatarImage
-                      className='object-contain bg-white'
+                      className='bg-white object-contain'
                       src={
                         m.role === 'user'
                           ? 'https://liveblocks.io/avatars/avatar-29.png'
@@ -71,7 +71,7 @@ export function ChatMessages({ messages, isLoading }: { messages: Message[]; isL
                   </Avatar>
                   <div className='w-full min-w-0 text-sm sm:text-base'>
                     <div
-                      className='prose prose-stone dark:prose-invert prose-sm sm:prose-base prose-pre:rounded-md prose-p:whitespace-pre-wrap prose-p:break-words w-full flex-1 leading-6 prose-p:leading-7 prose-pre:bg-[#292524] max-w-full'
+                      className='prose prose-sm prose-stone w-full max-w-full flex-1 leading-6 dark:prose-invert sm:prose-base prose-p:whitespace-pre-wrap prose-p:break-words prose-p:leading-7 prose-pre:rounded-md prose-pre:bg-[#292524]'
                       dangerouslySetInnerHTML={{
                         __html: DOMPurify.sanitize(
                           new Marked(
@@ -93,10 +93,10 @@ export function ChatMessages({ messages, isLoading }: { messages: Message[]; isL
               </div>
             ))}
           {isLoading && (
-            <div className={'px-3 @md:py-4 py-2.5 group transition-opacity'}>
-              <div className='flex items-center max-w-2xl mx-auto space-x-3'>
+            <div className={'@md:py-4 group px-3 py-2.5 transition-opacity'}>
+              <div className='mx-auto flex max-w-2xl items-center space-x-3'>
                 <Avatar className='h-8 w-8'>
-                  <AvatarImage className='object-contain bg-white' src={'https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png'} />
+                  <AvatarImage className='bg-white object-contain' src={'https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png'} />
                   <AvatarFallback>AI</AvatarFallback>
                 </Avatar>
                 <div className='w-full min-w-0 text-sm sm:text-base'>
@@ -131,17 +131,17 @@ export function ChatInput({
   }
 
   return (
-    <div className='sticky bottom-0 flex-shrink-0 min-w-0 min-h-0'>
-      <div className='p-3 pr-2.5 text-foreground bg-background backdrop-blur border-t border-border'>
+    <div className='sticky bottom-0 min-h-0 min-w-0 flex-shrink-0'>
+      <div className='border-t border-border bg-background p-3 pr-2.5 text-foreground backdrop-blur'>
         <form ref={formRef} className='md:mx-4 lg:mx-auto lg:max-w-2xl xl:max-w-3xl' onSubmit={onSubmit}>
           <div className='relative flex h-full max-w-full flex-1 flex-col'>
             <div className='absolute bottom-full left-0 right-0'>{/*  */}</div>
             <div className='flex w-full items-center'>
-              <div className='relative w-full rounded-xl overflow-hidden flex items-center border border-border'>
+              <div className='relative flex w-full items-center overflow-hidden rounded-xl border border-border'>
                 <Textarea
                   dir='auto'
                   rows={1}
-                  className='w-full m-0 p-5 resize-none border-0 bg-secondary focus:ring-0 focus-visible:ring-0'
+                  className='m-0 w-full resize-none border-0 bg-secondary p-5 focus:ring-0 focus-visible:ring-0'
                   placeholder='Ask me anything...'
                   value={input}
                   onChange={onInputChange}

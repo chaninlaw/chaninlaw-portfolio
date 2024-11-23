@@ -44,7 +44,7 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <header className='bg-background'>
       <nav aria-hidden='true' className={cn(className)}>
-        <Menubar className='h-7 flex justify-between items-center py-0 border-0 border-b border-border bg-white/5'>
+        <Menubar className='flex h-7 items-center justify-between border-0 border-b border-border bg-white/5 py-0'>
           {menuitems.map((item, index) => (
             <MenubarMenu key={`menu=${index}`}>
               <div className='flex items-center text-sm'>

@@ -20,7 +20,7 @@ export const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
                 width='100'
                 height='100'
                 alt='Chanin Law'
-                className='my-0 mx-auto'
+                className='mx-auto my-0'
               />
             </Section>
             <h1 className='text-3xl font-extrabold text-blue-600'>Let&apos;s Connect!</h1>
@@ -34,11 +34,11 @@ export const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
                 Chanin L.
               </Text>
             </Section>
-            <Hr className='border border-solid border-[#eaeaea] my-[26px] mx-0 w-full' />
+            <Hr className='mx-0 my-[26px] w-full border border-solid border-[#eaeaea]' />
             <Section className='mt-8 space-y-4 text-sm'>
-              <Text className='text-gray-600 '>For urgent matters, Textlease contact me at chaninlawlert@gmail.com</Text>
-              <Text className='text-gray-600 '>I typically respond to emails within 24 hours.</Text>
-              <Text className='text-gray-600 '>Looking forward to hearing from you!</Text>
+              <Text className='text-gray-600'>For urgent matters, Textlease contact me at chaninlawlert@gmail.com</Text>
+              <Text className='text-gray-600'>I typically respond to emails within 24 hours.</Text>
+              <Text className='text-gray-600'>Looking forward to hearing from you!</Text>
             </Section>
           </Container>
         </Body>

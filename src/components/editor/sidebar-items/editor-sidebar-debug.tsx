@@ -15,7 +15,7 @@ export function EditorSidebarDebug() {
   return (
     <>
       <div className='flex flex-col'>
-        <div className='flex justify-between items-center px-2 py-1.5'>
+        <div className='flex items-center justify-between px-2 py-1.5'>
           <p className='uppercase'>Run and Debug</p>
           <ModeToggle>
             <Button variant='ghost' aria-label='Toggle theme' className='h-5 w-5 p-0'>
@@ -33,7 +33,7 @@ export function EditorSidebarDebug() {
             }}
             className='grid w-full items-start gap-6'
           >
-            <div className='grid gap-6 mt-3'>
+            <div className='mt-3 grid gap-6'>
               <Label htmlFor='role'>Bug Type</Label>
               <Select defaultValue='crash'>
                 <SelectTrigger>

@@ -11,7 +11,7 @@ interface TagProps {
 export function Tag({ tag, current, count }: TagProps) {
   return (
     // <Link href={`/tags/${slug(tag)}`}>
-    <Badge className='no-underline rounded-md select-none' variant={current ? 'default' : 'secondary'}>
+    <Badge className='select-none rounded-md no-underline' variant={current ? 'default' : 'secondary'}>
       {tag} {count ? `(${count})` : null}
     </Badge>
     // </Link>

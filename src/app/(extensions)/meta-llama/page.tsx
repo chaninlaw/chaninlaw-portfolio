@@ -19,14 +19,14 @@ export default function MetaLlamaChat() {
   return (
     <Chat>
       <ChatHeader>
-        <div className='flex items-center space-x-2 group'>
+        <div className='group flex items-center space-x-2'>
           <Avatar className='h-8 w-8'>
             <AvatarImage className='object-contain' src='https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png' />
             <AvatarFallback>HF</AvatarFallback>
           </Avatar>
           <Link className='flex items-center space-x-1' href='https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct' target='_blank'>
-            <span className='select-none upp group-hover:underline'>Hugging Face</span>
-            <ArrowTopRightIcon className='group-hover:-translate-y-1 transition-all' />
+            <span className='upp select-none group-hover:underline'>Hugging Face</span>
+            <ArrowTopRightIcon className='transition-all group-hover:-translate-y-1' />
           </Link>
         </div>
       </ChatHeader>

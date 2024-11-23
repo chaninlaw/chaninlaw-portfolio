@@ -46,12 +46,12 @@ export const CreatePost = ({ authorId }: { authorId: string }) => {
   return (
     <Dialog open={open} onOpenChange={handleOpen}>
       <DialogTrigger asChild>
-        <Button className='flex justify-center items-center gap-1'>
+        <Button className='flex items-center justify-center gap-1'>
           <PlusCircledIcon />
           Create Post
         </Button>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-[425px] border-white/25'>
+      <DialogContent className='border-white/25 sm:max-w-[425px]'>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)}>
             <DialogHeader>
