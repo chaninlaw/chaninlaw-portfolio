@@ -8,9 +8,9 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: pnpm lint:fix && git add .
+      run: pnpm lint:fix
     format:
-      run: pnpm format && git add .
+      run: pnpm format
     type-check:
       run: pnpm ts
 
