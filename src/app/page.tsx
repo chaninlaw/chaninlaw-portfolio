@@ -37,7 +37,10 @@ export default function Home() {
             </h1>
             <p className='mt-2 uppercase text-neutral-400 dark:text-neutral-300'>Frontend Developer</p>
             <div className='mt-4 max-w-lg text-center'>
-              <p>&ldquo;Crafting clean code and captivating interfaces – welcome to my world of frontend development.&rdquo;</p>
+              <p>
+                &ldquo;Optimistic problem-solver focused on clean, high-performance frontend development and crafting seamless user
+                experiences.&rdquo;
+              </p>
             </div>
           </div>
         </MotionDiv>
