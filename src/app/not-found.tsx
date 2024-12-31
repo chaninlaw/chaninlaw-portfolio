@@ -4,7 +4,7 @@ import { Kbd } from '@/components/ui/kbd'
 import { ToastAction } from '@/components/ui/toast'
 import { useToast } from '@/components/ui/use-toast'
 import React, { useEffect } from 'react'
-import { SiVisualstudiocode } from 'react-icons/si'
+import { TbError404 } from 'react-icons/tb'
 
 export default function NotFound() {
   const { toast } = useToast()
@@ -24,9 +24,9 @@ export default function NotFound() {
   }, [])
 
   return (
-    <main className='h-full w-full bg-white dark:bg-stone-900'>
+    <main className='h-full w-full bg-white dark:bg-background'>
       <div className='container max-w-sm space-y-10 py-24'>
-        <SiVisualstudiocode className='h-80 w-80 fill-secondary dark:fill-background' />
+        <TbError404 className='h-80 w-80 fill-border dark:fill-secondary' />
         <div className='grid grid-cols-3'>
           <div className='col-span-2 space-y-4 text-end text-stone-500'>
             <p>Show all commands</p>
