@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 })
 
 const config = [
-  ...compat.extends('next/core-web-vitals', 'plugin:prettier/recommended'),
+  ...compat.extends('next/core-web-vitals'),
   {
     plugins: {
       perfectionist

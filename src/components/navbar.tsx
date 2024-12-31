@@ -1,7 +1,6 @@
-'use client'
 import { cn } from '@/lib/utils'
 import React, { type JSX } from 'react'
-import { BsPersonCircle, BsToggles } from 'react-icons/bs'
+import { BsPersonCircle } from 'react-icons/bs'
 import { FaApple } from 'react-icons/fa'
 import { IoIosWifi } from 'react-icons/io'
 import { IoBatteryHalfOutline } from 'react-icons/io5'
@@ -44,7 +43,7 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <header className='bg-background'>
       <nav aria-hidden='true' className={cn(className)}>
-        <Menubar className='flex h-7 items-center justify-between border-0 border-b border-border bg-white/5 py-0'>
+        <Menubar className='flex h-7 items-center justify-between rounded-none border-0 border-b border-border bg-white/5 py-0'>
           {menuitems.map((item, index) => (
             <MenubarMenu key={`menu=${index}`}>
               <div className='flex items-center text-sm'>
