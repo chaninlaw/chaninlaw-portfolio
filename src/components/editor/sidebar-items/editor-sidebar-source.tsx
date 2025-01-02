@@ -8,60 +8,20 @@ import { FiArrowUpRight } from 'react-icons/fi'
 export function EditorSidebarSource() {
   const items = [
     {
-      id: 'UC-50500d01-1110-490e-a02c-efe06c4b1456',
-      name: 'The Complete 2023 Web Development Bootcamp',
-      url: 'https://ude.my/UC-50500d01-1110-490e-a02c-efe06c4b1456',
-      instructors: ['Dr. Angela Yu'],
-      date: 'March 8, 2023',
-      length: '65.5 total hours'
-    },
-    {
-      id: 'UC-3c8935e9-2c42-4782-9028-98f1b6131db1',
-      name: 'The HTML & CSS Bootcamp 2023 Edition',
-      url: 'https://ude.my/UC-3c8935e9-2c42-4782-9028-98f1b6131db1',
-      instructors: ['Colt Steele'],
-      date: 'March 9, 2023',
-      length: '37 total hours'
-    },
-    {
-      id: 'UC-b49fba56-66ab-4036-b6f6-67e017f5fe26',
-      name: 'The Git & Github Bootcamp',
-      url: 'https://ude.my/UC-b49fba56-66ab-4036-b6f6-67e017f5fe26',
-      instructors: ['Colt Steele'],
-      date: 'April 21, 2023',
-      length: '17 total hours'
-    },
-    {
-      id: 'UC-774916c7-9968-456d-b2f7-276860f03dc5',
-      name: 'Modern React with Redux 2023 Update]',
-      url: 'https://ude.my/UC-774916c7-9968-456d-b2f7-276860f03dc5',
+      id: 'UC-8692a7d7-9d08-44c9-9ce5-506ea4baa8c3',
+      name: "Rust: The Complete Developer's Guide",
+      url: 'https://ude.my/UC-8692a7d7-9d08-44c9-9ce5-506ea4baa8c3',
       instructors: ['Stephen Grider'],
-      date: 'March 24, 2023',
-      length: '37.5 total hours'
+      date: 'Jan. 1, 2025',
+      length: '10 total hours'
     },
     {
-      id: 'UC-3d139556-b0b1-492c-a64c-5c3217029200',
-      name: "Microfrontends with React: A Complete Developer's Guide",
-      url: 'https://ude.my/UC-3d139556-b0b1-492c-a64c-5c3217029200',
+      id: 'UC-dee34f9c-6972-4443-842e-7950a3eb0a3e',
+      name: "Next JS: The Complete Developer's Guide",
+      url: 'https://ude.my/UC-dee34f9c-6972-4443-842e-7950a3eb0a3e',
       instructors: ['Stephen Grider'],
-      date: 'May 23, 2023',
-      length: '9 total hours'
-    },
-    {
-      id: 'UC-8a2d1075-53d8-4113-9aea-4f1f351369e5',
-      name: 'React and Typescript: Build a Portfolio Project',
-      url: 'https://ude.my/UC-8a2d1075-53d8-4113-9aea-4f1f351369e5',
-      instructors: ['Stephen Grider'],
-      date: 'Aug. 30, 2023',
-      length: '29.5 total hours'
-    },
-    {
-      id: 'UC-bc4a3b2c-61b1-421e-a5af-2df76af3d8f0',
-      name: "Typescript: The Complete Developer's Guide",
-      url: 'https://ude.my/UC-bc4a3b2c-61b1-421e-a5af-2df76af3d8f0',
-      instructors: ['Stephen Grider'],
-      date: 'Nov. 15, 2023',
-      length: '27.5 total hours'
+      date: 'Dec. 7, 2023',
+      length: '15.5 total hours'
     },
     {
       id: 'UC-2c666dcc-3d02-4cf3-a9d0-3172fac13a2d',
@@ -72,13 +32,61 @@ export function EditorSidebarSource() {
       length: '22 total hours'
     },
     {
-      id: 'UC-dee34f9c-6972-4443-842e-7950a3eb0a3e',
-      name: "Next JS: The Complete Developer's Guide",
-      url: 'https://ude.my/UC-dee34f9c-6972-4443-842e-7950a3eb0a3e',
+      id: 'UC-bc4a3b2c-61b1-421e-a5af-2df76af3d8f0',
+      name: "Typescript: The Complete Developer's Guide",
+      url: 'https://ude.my/UC-bc4a3b2c-61b1-421e-a5af-2df76af3d8f0',
       instructors: ['Stephen Grider'],
-      date: 'Dec. 7, 2023',
-      length: '15.5 total hours'
-    }
+      date: 'Nov. 15, 2023',
+      length: '27.5 total hours'
+    },
+    {
+      id: 'UC-8a2d1075-53d8-4113-9aea-4f1f351369e5',
+      name: 'React and Typescript: Build a Portfolio Project',
+      url: 'https://ude.my/UC-8a2d1075-53d8-4113-9aea-4f1f351369e5',
+      instructors: ['Stephen Grider'],
+      date: 'Aug. 30, 2023',
+      length: '29.5 total hours'
+    },
+    {
+      id: 'UC-3d139556-b0b1-492c-a64c-5c3217029200',
+      name: "Microfrontends with React: A Complete Developer's Guide",
+      url: 'https://ude.my/UC-3d139556-b0b1-492c-a64c-5c3217029200',
+      instructors: ['Stephen Grider'],
+      date: 'May 23, 2023',
+      length: '9 total hours'
+    },
+    {
+      id: 'UC-b49fba56-66ab-4036-b6f6-67e017f5fe26',
+      name: 'The Git & Github Bootcamp',
+      url: 'https://ude.my/UC-b49fba56-66ab-4036-b6f6-67e017f5fe26',
+      instructors: ['Colt Steele'],
+      date: 'April 21, 2023',
+      length: '17 total hours'
+    },
+    {
+      id: 'UC-3c8935e9-2c42-4782-9028-98f1b6131db1',
+      name: 'The HTML & CSS Bootcamp 2023 Edition',
+      url: 'https://ude.my/UC-3c8935e9-2c42-4782-9028-98f1b6131db1',
+      instructors: ['Colt Steele'],
+      date: 'March 9, 2023',
+      length: '37 total hours'
+    },
+    {
+      id: 'UC-50500d01-1110-490e-a02c-efe06c4b1456',
+      name: 'The Complete 2023 Web Development Bootcamp',
+      url: 'https://ude.my/UC-50500d01-1110-490e-a02c-efe06c4b1456',
+      instructors: ['Dr. Angela Yu'],
+      date: 'March 8, 2023',
+      length: '65.5 total hours'
+    },
+    {
+      id: 'UC-774916c7-9968-456d-b2f7-276860f03dc5',
+      name: 'Modern React with Redux 2023 Update]',
+      url: 'https://ude.my/UC-774916c7-9968-456d-b2f7-276860f03dc5',
+      instructors: ['Stephen Grider'],
+      date: 'March 24, 2023',
+      length: '37.5 total hours'
+    },
   ]
 
   return (
