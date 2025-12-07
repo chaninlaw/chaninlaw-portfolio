@@ -86,7 +86,7 @@ export function EditorSidebarSource() {
       instructors: ['Stephen Grider'],
       date: 'March 24, 2023',
       length: '37.5 total hours'
-    },
+    }
   ]
 
   return (
